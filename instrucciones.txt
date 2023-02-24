@@ -1,0 +1,8 @@
+<--------------------------------------------------Version de PHP--------------------------------------------->
+
+PHP 8.1.1 (cli) (built: Dec 15 2021 10:31:43) (ZTS Visual C++ 2019 x64)
+Copyright (c) The PHP Group
+Zend Engine v4.1.1, Copyright (c) Zend Technologies
+
+<--------------------------------------------------Version de Coomposer--------------------------------------->
+Composer version 2.2.6 2022-02-04 17:00:38
