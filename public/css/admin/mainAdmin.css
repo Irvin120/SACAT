@@ -1,73 +1,63 @@
-h2 {
-    color: rgb(0, 0, 0);
-}
+.containerTarjetas {
+    min-width: 300px;
+    min-height: 100vh;
+    /* background-color: violet; */
+    margin: 25px 30px;
 
-.mainConten {
-    background-color: #019EFF;
-    min-height: 10vh;
-
-}
-
-.mainConten3 {
-    background-color: #ffffff;
-    min-height: 10vh;
-
-}
-
-.titleAulas h2,
-.fechaUser h2 {
-    overflow: hidden;
-    font-size: 2vh;
-    max-height: 50px;
-    padding: 0px !important;
-    margin: 0 20px !important;
-}
-
-.nombreUser h2 {
-    overflow: hidden;
-    font-size: 2vh;
-    max-height: 50px;
-    padding: 0px !important;
-    margin: 0 20px !important;
-}
-
-.search {
-    display: flex;
-    align-items: end;
-}
-
-.input-search {
-    max-width: 44vw;
-    flex: 6;
-    /* float: left; */
-    background-color: rgba(200, 200, 200, 0.697);
-    border-radius: 2px 0px 0px 2px;
-}
-
-.btn-icon {
-    /* float: right; */
-    font-size: 20px;
-    padding: 0;
-    height: 24px;
-    background-color: rgb(172, 172, 172);
-    width: 5vw;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 0px 2px 2px 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
 
 }
 
 
+.tarjeta {
+    position: relative;
 
-
-.nombreUser,
-.fechaUser {
-    padding: 0px;
+    min-width: 250px;
+    min-height: 160px;
+    max-height: 40vh;
+    margin: 0 auto;
+    background-color: #ccc;
+    padding: 20px;
+    border-radius: 0px 15px 0px 15px;
+    /* border: black solid 3px; */
 }
 
-.row {
-    --bs-gutter-x: 0rem !important;
+.tarjeta p {
+    overflow: auto;
+    max-width: 200px;
+    max-height: 100px;
+    margin: 0;
 }
+
+#botones {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+    min-width: 30px;
+    min-height: 30px;
+
+}
+
+#botones button i {
+    min-width: 25px;
+    min-height: 25px;
+    max-width: 25px;
+    max-height: 25px;
+
+
+}
+
+.btn{
+    max-width: 30px;
+    max-height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+}
+/*
+.fa-solid{ */
+    /* line-height: null !important; */
+/* } */
