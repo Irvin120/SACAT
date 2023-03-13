@@ -10,21 +10,45 @@ function mostrarBotones() {
             botonesDiv.style.display = "none"; // Ocultar si está visible
         }
     }
-
-
 }
 
 
-function cambiarBoton() {
-    var miBoton = document.getElementById("miBoton");
-    if (miBoton.classList.contains("active")) {
-      miBoton.classList.remove("active");
-      miBoton.style.border = "none";
-      miBoton.style.transition = "background-color 0.5s ease-in-out";
+function mostrarForm() {
+    var form = document.getElementById("containerForm");
+    if (form.style.display === "none") {
+        form.style.display = "block";
     } else {
-      miBoton.classList.add("active");
-      miBoton.style.border = "2px solid white";
-      miBoton.style.border = "2px solid white";
-      miBoton.style.transition = "background-color 0.5s ease-in-out";
+        form.style.display = "none";
     }
-  }
+}
+
+
+function cambiarBoton(miBoton) {
+    if (miBoton.classList.contains("active")) {
+        miBoton.classList.remove("active");
+        miBoton.style.border = "none";
+        miBoton.style.transition = "background-color 0.5s ease-in-out";
+    } else {
+        miBoton.classList.add("active");
+        miBoton.style.border = "2px solid white";
+        miBoton.style.border = "2px solid white";
+        miBoton.style.transition = "background-color 0.5s ease-in-out";
+    }
+}
+
+
+function addActividad() {
+    var addActividadB = document.getElementById("#containerForm")
+    if (addActividadB.style.display === "none") {
+        addActividadB.style.display = "block";
+    } else {
+        add.style.display = "none";
+    }
+
+}
+
+function cancelarFormulario() {
+    document.getElementById("formularioAdd").reset(); // Reinicia el formulario
+    mostrarForm();
+    
+}

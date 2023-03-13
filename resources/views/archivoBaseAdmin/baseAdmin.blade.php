@@ -25,19 +25,28 @@
             </a>
 
             <ul class="nav nav-pills">
-                <li class="nav-item mx-3"><a onclick="mostrarBotones(); cambiarBoton()" href="#" class="nav-link rounded" aria-current="page" id="miBoton"> <i
-                            class="fa-solid fa-trash-can icon-header"></i></a></li>
-                <li class="nav-item mx-3"><a href="#" class="nav-link"> <i
+                <li class="nav-item mx-3"><a onclick="mostrarBotones(); cambiarBoton(this)" href="#"
+                        class="nav-link rounded" aria-current="page" id="miBoton">
+                        <i class="fa-solid fa-trash-can icon-header"></i></a></li>
+
+                <li class="nav-item mx-3"><a href="#" class="nav-link" id="mostrarFormulario"> <i
                             class="fa-solid fa-pencil icon-header"></i> </a></li>
-                <li class="nav-item mx-3"><a href="#" class="nav-link"> <i
-                            class="fa-solid fa-circle-plus icon-header"></i> </a></li>
+
+                <li class="nav-item mx-3"><a onclick="cambiarBoton(this); mostrarForm()" href="#"
+                    class="nav-link" id="addButton"> <i class="fa-solid fa-circle-plus icon-header" ></i> </a></li>
+
                 <li class="nav-item mx-3"><a href="#" class="nav-link"> <i
                             class="fa-regular fa-circle-user icon-header"></i> </a></li>
             </ul>
         </header>
     </div>
 
+
+    @yield('alerta')
+
     @yield('content')
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
