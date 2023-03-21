@@ -1,0 +1,22 @@
+.mainConten {
+    background-color: #019EFF;
+    min-height: 10vh;
+
+}
+
+.titleAulas h2,
+.fechaUser h2 {
+    overflow: hidden;
+    font-size: 2vh;
+    max-height: 50px;
+    padding: 0px !important;
+    margin: 0 20px !important;
+}
+
+.nombreUser h2 {
+    overflow: hidden;
+    font-size: 2vh;
+    max-height: 50px;
+    padding: 0px !important;
+    margin: 0 20px !important;
+}
