@@ -6,7 +6,47 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('base',function(){ return view ('archivoBaseAdmin.base'); });
+
+Route::get('base',function(){ 
+    return view ('archivoBaseAdmin.base'); });
+
+
+
+  
+// login
+Route::get('/login', function () {
+    return view('login/login');
+}); 
+
+
+// Registro de usuarios
+Route::get('/register-user', function () {
+    return view('login/register-user');
+});
+// Registro de usuarios GUARDADO
+Route::get('/save-register', function () {
+    return view('login/saveregister');
+});
+
+
+// Restraurar contraseña
+Route::get('/restaure-password', function () {
+    return view('login/restore-password');
+});
+// Restraurar contraseña GUARDADA
+Route::get('/save-restaure', function () {
+    return view('login/save-restore');
+});
+
+
+
+
+
+// Panel admin
+Route::get('/panel-admin', function () {
+    return view('archivoBaseAdmin/baseAdmin');
+});
+
 
 
 //Ruta del panel principal del administardor
