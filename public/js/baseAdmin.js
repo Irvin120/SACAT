@@ -50,5 +50,8 @@ function addActividad() {
 function cancelarFormulario() {
     document.getElementById("formularioAdd").reset(); // Reinicia el formulario
     mostrarForm();
-    
 }
+
+
+
+

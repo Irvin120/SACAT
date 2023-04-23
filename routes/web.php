@@ -40,13 +40,15 @@ Route::get('/save-restaure', function () {
 
 
 
-
-
 // Panel admin
 Route::get('/panel-admin', function () {
     return view('archivoBaseAdmin/baseAdmin');
 });
 
+// Panel de admin para actividaes
+Route::get('/panel-admin-activid', function () {
+    return view('admin/panelactividades');
+});
 
 
 //Ruta del panel principal del administardor
