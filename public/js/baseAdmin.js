@@ -50,10 +50,9 @@ function addActividad() {
 function cancelarFormulario() {
     document.getElementById("formularioAdd").reset(); // Reinicia el formulario
     mostrarForm();
-<<<<<<< HEAD
-=======
-
 }
+
+
 
 function entradaArea(event) {
     var idAula = $(event.currentTarget).data('id');
@@ -70,10 +69,7 @@ function entradaArea(event) {
             var errorMessage = xhr.status + ': ' + xhr.statusText;
             $('#mensajeError').text('Se ha producido un error al recuperar las actividades: ' + errorMessage);
         }
-    });
->>>>>>> e50743c117046e04c7c7403f7b8d9949417263fd
-}
-
+    });}
 
 
 

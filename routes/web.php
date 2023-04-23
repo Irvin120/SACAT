@@ -4,6 +4,7 @@ use App\Http\Controllers\AccesoController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Middleware\AdminMiddleware;
 
 
 
@@ -68,10 +69,12 @@ Route::get('inicio', function () {
 Route::get('/login',[AccesoController::class, 'showLogin'])->name('login');
 Route::post('/login',[AccesoController::class, 'login'])->name('loginPost');
 Route::get('/logincre',[AccesoController::class, 'createAdmin'])->name('loginPostd');
+Route::post('/logout', [AccesoController::class, 'logout'])->name('logout');
 
 
-
-Route::get('mainAdmin/{idAdmin}', [AdminController::class, 'index'])->name('mainAdmin');
+Route::get('mainAdmin/{idAdmin}', [AdminController::class, 'index'])
+    ->name('mainAdmin')
+    ->middleware(adminMiddleware::class);
 
 //Creacion de una nuea aula
 Route::post('mainAdmin/crAu', [AdminController::class, 'store'])->name('createAula');

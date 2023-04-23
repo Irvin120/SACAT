@@ -6,6 +6,8 @@ use App\Models\admin;
 use App\Models\Aula;
 use App\Models\usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 class AdminController extends Controller
 {
@@ -33,11 +35,15 @@ class AdminController extends Controller
 
     public function store(Request $request)
     {
+        $admin = Auth::guard('admin')->user();
+        if (!$admin) {
+            return redirect()->route('login')->with('error', 'Debes iniciar sesión como administrador.');
+        }
         $aula = new Aula;
         $aula->nombreAula = $request->post('nombreAula');
         $aula->asignatura = $request->post('asignatura');
         $aula->grupo = $request->post('grupo');
-        $aula->idAdmin = 2;
+        $aula->idAdmin = $admin->idAdmin;
         $aula->timestamps = false; // indicamos que no se usen las columnas "updated_at" y "created_at"
         $aula->save();
 
@@ -69,7 +75,15 @@ class AdminController extends Controller
     public function destroy($id)
     {
         $aula = Aula::where('idAula', $id)->first();
-        $aula->delete();
+        if ($aula) {
+            $aula->delete();
+        }
         return back();
     }
+
+
+
+
+
+
 }

@@ -33,7 +33,13 @@
                 <li class="nav-item mx-3"><a onclick="cambiarBoton(this); mostrarForm()" href="#" class="nav-link"
                         id="addButton"> <i class="fa-solid fa-circle-plus icon-header"></i> </a></li>
 
-                <li class="nav-item mx-3"><a href="#" class="nav-link"> <i class="fa-regular fa-circle-user icon-header"></i>  </a></li>
+                <li class="nav-item mx-3">
+                    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                        @csrf
+                        <button type="submit" class="nav-link btn-unstyled"><i
+                                class="fa-regular fa-circle-user icon-header"></i></button>
+                    </form>
+                </li>
             </ul>
         </header>
     </div>

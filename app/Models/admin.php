@@ -20,4 +20,15 @@ class Admin extends Authenticatable
     protected $hidden = [
         'contraseñaAdmin',
     ];
+
+    public function aulas()
+    {
+        return $this->hasMany('App\Models\Aula', 'idAdmin');
+    }
+
+    public function actividades()
+    {
+        return $this->hasManyThrough('App\Models\Actividad', 'App\Models\Aula', 'idAdmin', 'idAula');
+    }
+
 }
