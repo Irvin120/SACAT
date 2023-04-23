@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccesoController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
@@ -7,16 +8,6 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('base',function(){ 
-    return view ('archivoBaseAdmin.base'); });
-
-
-
-  
-// login
-Route::get('/login', function () {
-    return view('login/login');
-}); 
 
 
 // Registro de usuarios
@@ -51,11 +42,36 @@ Route::get('/panel-admin-activid', function () {
 });
 
 
-//Ruta del panel principal del administardor
+
+
+Route::get('mainUser', function () {
+    return view('user.mainUser');
+});
+Route::get('inicio', function () {
+    return view('inicio.archivoinicio');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+//------------------------------------------------Ruta del panel principal del administardor--------------------
+
+// login
+Route::get('/login',[AccesoController::class, 'showLogin'])->name('login');
+Route::post('/login',[AccesoController::class, 'login'])->name('loginPost');
+Route::get('/logincre',[AccesoController::class, 'createAdmin'])->name('loginPostd');
+
+
+
 Route::get('mainAdmin', [AdminController::class, 'index'])->name('mainAdmin');
-Route::get('mainAdmin/createActiviad',[AdminController::class, 'createActividad'])->name('agregarActividad');
-
-
 
 //Creacion de una nuea aula
 Route::post('mainAdmin/crAu', [AdminController::class, 'store'])->name('createAula');
@@ -65,5 +81,5 @@ Route::delete('mainAdmin/delete/{id}', [AdminController::class, 'destroy'])->nam
 Route::put('mainAdmin/update/{id}', [AdminController::class, 'update'])->name('updateAula');
 
 
+Route::get('mainAdmin/createActividad/{idAula}', [AdminController::class, 'createActividad'])->name('agregarActividad');
 
-Route::get('mainUser',function(){ return view ('user.mainUser'); });

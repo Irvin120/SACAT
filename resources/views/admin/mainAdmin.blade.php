@@ -13,8 +13,6 @@
 
         </div>
 
-
-
         <form id="formularioAdd" method="POST" action="{{ route('createAula') }}">
             @csrf
             <div class="containerInput p-3">
@@ -54,11 +52,13 @@
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/admin/mainAdmin.css') }}">
-
     <div class="containerTarjetas ">
 
         @foreach ($datos as $aula)
-            <div class="tarjeta d-flex align-items-center justify-content-center">
+            <div class="tarjeta d-flex align-items-center justify-content-center"
+                onclick="entradaArea({{ $aula->idAula }})">
+
+                {{-- Botones de borrado de targeta --}}
                 <div id="botones" style="display:none;">
                     <form action="{{ route('destroyAula', $aula->idAula) }}" method="POST">
                         @csrf
@@ -69,19 +69,21 @@
                         </button>
                     </form>
                 </div>
-                {{-- {<p>{{$aula->idAula}}</p>} --}}
 
-                <form action="{{route('updateAula', $aula->idAula)}}" method="POST">
+                <form action="{{ route('updateAula', $aula->idAula) }}" method="POST">
                     @csrf
-                    @method('PUT')
-                    <input class="text-center"type="text" name="nombreAula" value="{{ $aula->nombreAula }}">
+                    @method('PUT') <strong> <input class="text-center"type="text" name="nombreAula"
+                            value="{{ $aula->nombreAula }}"></strong>
+                    <i class="fa-solid fa-pencil icon-header"></i>
                     <br>
                     <br>
-                    <div class="contenBotones">
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                    <button type="submit" class="btn btn-danger">Cancelar</button>
-                   </div>
+
+                    <div class="contenBotones" style="display:none">
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="submit" class="btn btn-danger">Cancelar</button>
+                    </div>
                 </form>
+
             </div>
         @endforeach
 

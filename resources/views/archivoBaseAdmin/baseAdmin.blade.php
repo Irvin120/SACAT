@@ -12,6 +12,7 @@
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/2400098b91.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('css/baseAdmin.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ asset('js/baseAdmin.js') }}"></script>
 
 </head>
@@ -29,11 +30,8 @@
                         class="nav-link rounded" aria-current="page" id="miBoton">
                         <i class="fa-solid fa-trash-can icon-header"></i></a></li>
 
-                <li class="nav-item mx-3"><a href="#" class="nav-link" id="mostrarFormulario"> <i
-                            class="fa-solid fa-pencil icon-header"></i> </a></li>
-
-                <li class="nav-item mx-3"><a onclick="cambiarBoton(this); mostrarForm()" href="#"
-                    class="nav-link" id="addButton"> <i class="fa-solid fa-circle-plus icon-header" ></i> </a></li>
+                <li class="nav-item mx-3"><a onclick="cambiarBoton(this); mostrarForm()" href="#" class="nav-link"
+                        id="addButton"> <i class="fa-solid fa-circle-plus icon-header"></i> </a></li>
 
                 <li class="nav-item mx-3"><a href="#" class="nav-link"> <i
                             class="fa-regular fa-circle-user icon-header"></i> </a></li>
