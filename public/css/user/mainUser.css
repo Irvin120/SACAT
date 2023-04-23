@@ -1,73 +1,106 @@
 h2 {
     color: rgb(0, 0, 0);
 }
-
-.mainConten {
-    background-color: #019EFF;
-    min-height: 10vh;
-
+/*contenedor general*/
+.content{
+    padding: 0;
+    margin: 0;
 }
-
-.mainConten3 {
-    background-color: #ffffff;
-    min-height: 10vh;
-
-}
-
-.titleAulas h2,
-.fechaUser h2 {
-    overflow: hidden;
-    font-size: 2vh;
-    max-height: 50px;
-    padding: 0px !important;
-    margin: 0 20px !important;
-}
-
-.nombreUser h2 {
-    overflow: hidden;
-    font-size: 2vh;
-    max-height: 50px;
-    padding: 0px !important;
-    margin: 0 20px !important;
-}
-
-.search {
+/*contenedor general info user*/
+.content-user{
     display: flex;
-    align-items: end;
+    justify-content: space-between;
+    background-color: #019EFF;
+    align-items: center;
+    min-height: 10vh;
+    padding: 30px;
+}
+.tittleAulas{
+    padding: 10px 30px;
+}
+.nombreUser h2,
+.fechaUser h2,
+.tittleAulas h2{
+    font-size: 2vh;
+    max-height: 50px;
+    padding: 0px !important;
+    margin: 0 20px !important;
 }
 
+/*Contenedor general Buscador*/
+.content-search{
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+}
+
+/*Buscador*/
+.search{
+    display: inline-flex;
+}
+/*input*/
 .input-search {
-    max-width: 44vw;
-    flex: 6;
-    /* float: left; */
+    width: 30vw;
+    height: 100%;
     background-color: rgba(200, 200, 200, 0.697);
     border-radius: 2px 0px 0px 2px;
+    outline: 0;
 }
 
+/*icon*/
 .btn-icon {
-    /* float: right; */
-    font-size: 20px;
-    padding: 0;
-    height: 24px;
+    height: 100%;
     background-color: rgb(172, 172, 172);
     width: 5vw;
+    border-radius: 0px 2px 2px 0px;
+}
 
+#box-search{
+    position: fixed;
+    left: 65%;
+    margin-left: auto;
+    background-color: #019EFF;
+    width: 35vw;
+    height: 100%;
+    overflow: hidden;
+    display: none;
+}
+ul {
+    padding: 0;
+  }
+  
+  li {
+    list-style: none;
+    margin: 0;
+  }
+
+#box-search li a{
+    display: block;
+    width: 35vw;
+    color: #777777;
+    padding: 12px 20px;
+    list-style: none;
+    text-decoration: none;
+}
+#box-search li a:hover{
+    background: aqua;
+}
+
+#box-search li a i{
+    margin-right: 10px;
+    color: #777777;
+}
+
+
+.content-aulas{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 70vh;
+}
 
-    border-radius: 0px 2px 2px 0px;
-
+.no-hay{
+    opacity: 20%;
 }
 
 
-
-
-.nombreUser,
-.fechaUser {
-    padding: 0px;
-}
-
-.row {
-    --bs-gutter-x: 0rem !important;
-}

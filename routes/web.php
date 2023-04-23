@@ -65,6 +65,8 @@ Route::put('mainAdmin/update/{id}', [AdminController::class, 'update'])->name('u
 
 
 Route::get('mainUser',function(){ return view ('user.mainUser'); });
+//Buscador 
+Route::get('/bucacar','BuscarController@buscar')->name('buscar');
 
 
 Route::get('inicio',function(){ return view ('inicio.archivoinicio'); });
