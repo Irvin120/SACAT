@@ -50,5 +50,26 @@ function addActividad() {
 function cancelarFormulario() {
     document.getElementById("formularioAdd").reset(); // Reinicia el formulario
     mostrarForm();
-    
+
+}
+
+function entradaArea(idAula) {
+    console.log(idAula);
+    $.ajax({
+        url: '/mainAdmin/createActividad/' + idAula,
+        type: 'GET',
+        data: {idAula: idAula},
+        dataType: 'html',
+        success: function(response) {
+            window.location.href = '/mainAdmin/createActividad/' + idAula + '?idAula=' + idAula;
+
+
+
+        },
+        error: function(xhr, status, error) {
+            // Mostrar un mensaje de error en la página
+            var errorMessage = xhr.status + ': ' + xhr.statusText;
+            $('#mensajeError').text('Se ha producido un error al recuperar las actividades: ' + errorMessage);
+        }
+    });
 }

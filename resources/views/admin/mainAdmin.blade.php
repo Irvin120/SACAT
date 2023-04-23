@@ -13,8 +13,6 @@
 
         </div>
 
-
-
         <form id="formularioAdd" method="POST" action="{{ route('createAula') }}">
             @csrf
             <div class="containerInput p-3">
@@ -54,11 +52,11 @@
 
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/admin/mainAdmin.css') }}">
-
     <div class="containerTarjetas ">
 
         @foreach ($datos as $aula)
-            <div class="tarjeta d-flex align-items-center justify-content-center" onclick="">
+            <div class="tarjeta d-flex align-items-center justify-content-center"
+                onclick="entradaArea({{ $aula->idAula }})">
 
                 {{-- Botones de borrado de targeta --}}
                 <div id="botones" style="display:none;">
@@ -74,8 +72,9 @@
 
                 <form action="{{ route('updateAula', $aula->idAula) }}" method="POST">
                     @csrf
-                    @method('PUT')
-                    <input class="text-center"type="text" name="nombreAula" value="{{ $aula->nombreAula }}">
+                    @method('PUT') <strong> <input class="text-center"type="text" name="nombreAula"
+                            value="{{ $aula->nombreAula }}"></strong>
+                    <i class="fa-solid fa-pencil icon-header"></i>
                     <br>
                     <br>
 
