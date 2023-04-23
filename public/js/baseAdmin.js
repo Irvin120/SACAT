@@ -53,18 +53,15 @@ function cancelarFormulario() {
 
 }
 
-function entradaArea(idAula) {
+function entradaArea(event) {
+    var idAula = $(event.currentTarget).data('id');
     console.log(idAula);
     $.ajax({
         url: '/mainAdmin/createActividad/' + idAula,
         type: 'GET',
-        data: {idAula: idAula},
         dataType: 'html',
         success: function(response) {
-            window.location.href = '/mainAdmin/createActividad/' + idAula + '?idAula=' + idAula;
-
-
-
+            window.location.href = '/mainAdmin/createActividad/' + idAula;
         },
         error: function(xhr, status, error) {
             // Mostrar un mensaje de error en la página

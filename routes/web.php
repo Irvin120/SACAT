@@ -69,7 +69,7 @@ Route::get('/logincre',[AccesoController::class, 'createAdmin'])->name('loginPos
 
 
 
-Route::get('mainAdmin', [AdminController::class, 'index'])->name('mainAdmin');
+Route::get('mainAdmin/{idAdmin}', [AdminController::class, 'index'])->name('mainAdmin');
 
 //Creacion de una nuea aula
 Route::post('mainAdmin/crAu', [AdminController::class, 'store'])->name('createAula');

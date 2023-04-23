@@ -33,8 +33,7 @@
                 <li class="nav-item mx-3"><a onclick="cambiarBoton(this); mostrarForm()" href="#" class="nav-link"
                         id="addButton"> <i class="fa-solid fa-circle-plus icon-header"></i> </a></li>
 
-                <li class="nav-item mx-3"><a href="#" class="nav-link"> <i
-                            class="fa-regular fa-circle-user icon-header"></i> </a></li>
+                <li class="nav-item mx-3"><a href="#" class="nav-link"> <i class="fa-regular fa-circle-user icon-header"></i>  </a></li>
             </ul>
         </header>
     </div>

@@ -9,17 +9,26 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    public function index()
+    public function index($idAdmin)
     {
+        $admin = Admin::find($idAdmin);
+
         $datos = aula::all();
-        return view('admin.mainAdmin', compact('datos'));
+        return view('admin.mainAdmin', compact('datos', 'admin'));
     }
 
-    public function createActividad()
+
+
+    public function createActividad(Request $request)
     {
-        return view('admin.createActividad');
+        try {
+            $idAula = $request->route('idAula');
+            $aula = Aula::findOrFail($idAula);
+            return view('admin.createActividad', compact('aula'));
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            return abort(404, 'El ID de Aula proporcionado no es válido');
+        }
     }
-
 
 
     public function store(Request $request)
@@ -35,18 +44,15 @@ class AdminController extends Controller
         return back();
     }
 
-
     public function show(admin $admin)
     {
         //
     }
 
-
     public function edit(admin $admin)
     {
         //
     }
-
 
     public function update(Request $request, $id)
     {
@@ -59,7 +65,6 @@ class AdminController extends Controller
             return back();
         }
     }
-
 
     public function destroy($id)
     {
