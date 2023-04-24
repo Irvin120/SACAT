@@ -37,10 +37,6 @@ Route::get('/panel-admin', function () {
     return view('archivoBaseAdmin/baseAdmin');
 });
 
-// Panel de admin para actividaes
-Route::get('/panel-admin-activid', function () {
-    return view('admin/panelactividades');
-});
 
 
 
@@ -51,12 +47,6 @@ Route::get('mainUser', function () {
 Route::get('inicio', function () {
     return view('inicio.archivoinicio');
 });
-
-
-
-
-
-
 
 
 
@@ -83,6 +73,8 @@ Route::delete('mainAdmin/delete/{id}', [AdminController::class, 'destroy'])->nam
 //Actualizacion del nombre del aula
 Route::put('mainAdmin/update/{id}', [AdminController::class, 'update'])->name('updateAula');
 
+// Panel de admin para actividaes
+Route::get('/panel-admin-activid', function () { return view('admin/panelactividades'); });
 
 Route::get('mainAdmin/createActividad/{idAula}', [AdminController::class, 'createActividad'])->name('agregarActividad');
 
