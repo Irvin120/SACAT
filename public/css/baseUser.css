@@ -34,3 +34,24 @@ header span{
 .icon-header {
     color: rgb(0, 0, 0);
 }
+
+/*contenedor general info user*/
+.content-user{
+    display: flex;
+    justify-content: space-between;
+    background-color: #019EFF;
+    align-items: center;
+    min-height: 10vh;
+    padding: 30px;
+}
+.tittleAulas{
+    padding: 10px 30px;
+}
+.nombreUser h2,
+.fechaUser h2,
+.tittleAulas h2{
+    font-size: 2vh;
+    max-height: 50px;
+    padding: 0px !important;
+    margin: 0 20px !important;
+}

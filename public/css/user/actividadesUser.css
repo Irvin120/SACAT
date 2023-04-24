@@ -1,0 +1,50 @@
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    flex-direction: column;
+}
+
+.content-activades{
+    display: flex;
+    flex-direction: column;
+    background-color:#1B59F8;
+    width: 80%;
+    height: 80%;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.actividades{
+    display: flex;
+    align-items: center;
+    background-color:#019EFF;
+    height: 100px;
+}
+
+.actividades a {
+    text-decoration: none;
+    font-size: 3vh;
+    color: black;
+    margin-left: 20px;
+}
+
+.actividades a li{
+    font-size: .0px;
+    color: black;
+}
+.actividades a span{
+    margin-left: 20px;
+}
+.botones-container{
+    margin: 20px;
+}
+.botones-container button{
+    background-color: #019EFF;
+    border-radius: 15px;
+    margin: 0 60px;
+    padding: 10px 20px;
+    font-size: 3vh;
+}
+

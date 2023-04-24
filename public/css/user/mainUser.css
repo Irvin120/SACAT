@@ -6,20 +6,7 @@ h2 {
     padding: 0;
     margin: 0;
 }
-/*contenedor general info user*/
-.content-user{
-    display: flex;
-    justify-content: space-between;
-    background-color: #019EFF;
-    align-items: center;
-    min-height: 10vh;
-    padding: 30px;
-}
-.tittleAulas{
-    padding: 10px 30px;
-}
-.nombreUser h2,
-.fechaUser h2,
+
 .tittleAulas h2{
     font-size: 2vh;
     max-height: 50px;
@@ -49,6 +36,9 @@ h2 {
 
 /*icon*/
 .btn-icon {
+    text-align: center;
+    padding: 2%;
+    font-size: 20px;
     height: 100%;
     background-color: rgb(172, 172, 172);
     width: 5vw;
@@ -91,16 +81,122 @@ ul {
     color: #777777;
 }
 
+/*--------------------------ventana Emergente-----------------------------------*/
+#ventana-emergente {
+    padding: 0px !important;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background-color: #85CDFD;
+    padding: 20px;
+    z-index: 10;
+    display: none;
+}
 
+#ventana-emergente h2{
+    color:white;
+    text-align: center;
+    background-color:#019EFF ;
+}
+
+#ventana-emergente p{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 3vh;
+}
+.input-container {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.input-container input {
+    text-align: center;
+    background-color: #DEFCF9;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.botones-container {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.botones-container button {
+    background-color: #019EFF;
+    border-radius: 15px;
+    margin: 0 60px;
+    padding: 10px 20px;
+}
+/*---------------------ventana-emergente-confirmacion-----------------*/
+#ventana-emergente-confirmacion{
+    padding: 0px !important;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+    background-color: #85CDFD;
+    padding: 20px;
+    z-index: 10;
+    display: none;
+}
+
+#ventana-emergente-confirmacion h2{
+    color:white;
+    text-align: center;
+    background-color:#019EFF ;
+}
+    
+#ventana-emergente-confirmacion p{
+    padding-top: 20px;
+    text-align: center;
+    font-size: 3vh;
+}
+
+
+/*--------------------------texto no hay aulas*/
 .content-aulas{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 70vh;
+    display: none;
 }
 
 .no-hay{
     opacity: 20%;
 }
 
+/*------------targetas aulas---------------------------*/
 
+.aulas{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.aula{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 180px;
+    background-color: #019EFF;
+    margin: 20px;
+    
+}
+.aula h5{
+    color: white;
+    text-align: center;
+    justify-items: center;
+}
