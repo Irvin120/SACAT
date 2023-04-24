@@ -44,6 +44,15 @@ Route::get('/panel-admin', function () {
 Route::get('mainUser', function () {
     return view('user.mainUser');
 });
+Route::get('actividadesUser', function () {
+    return view('user.actividadesUser');
+});
+Route::get('checklisUser', function () {
+    return view('user.checklisUser');
+});
+
+
+
 Route::get('inicio', function () {
     return view('inicio.archivoinicio');
 });

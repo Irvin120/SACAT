@@ -23,7 +23,14 @@
               <li class="nav-item mx-3"><a href="#" class="nav-link"> <i class="fa-regular fa-circle-user icon-header fa-3x"></i> </a></li>
             </ul>
           </header>
-
+          <div class="content-user ">
+            <div class="nombreUser">
+                <h2 class="text-start text-white">Bienvenido @user123</h2>
+            </div>
+            <div class="fechaUser">
+                <h2 class="text-end">Fecha: 01/03/2023</h2>
+            </div>
+          </div>
     </div>
 
 
