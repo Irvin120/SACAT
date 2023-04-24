@@ -11,4 +11,13 @@ class Aula extends Model
     protected $table = 'aula';
     protected $primaryKey = 'idAula';
 
+    public function admin()
+    {
+        return $this->belongsTo('App\Models\Admin', 'idAdmin');
+    }
+
+    public function actividades()
+    {
+        return $this->hasMany('App\Models\Actividad', 'idAula');
+    }
 }

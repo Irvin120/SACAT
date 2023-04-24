@@ -55,8 +55,8 @@
     <div class="containerTarjetas ">
 
         @foreach ($datos as $aula)
-            <div class="tarjeta d-flex align-items-center justify-content-center"
-                onclick="entradaArea({{ $aula->idAula }})">
+            <div class="tarjeta d-flex align-items-center justify-content-center" data-id="{{ $aula->idAula }}"
+                ondblclick="entradaArea(event)">
 
                 {{-- Botones de borrado de targeta --}}
                 <div id="botones" style="display:none;">
