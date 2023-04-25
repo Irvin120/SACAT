@@ -9,6 +9,7 @@ class actividad extends Model
 {
     use HasFactory;
     protected $table = 'actividad';
+    public $timestamps = false;
 
     public function aula()
     {
