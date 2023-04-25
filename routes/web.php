@@ -5,45 +5,49 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\AdminMiddleware;
+//------------controladores de sesion de usuario--------------------
 
+use App\Http\Controllers\AuthUser\RegisterController;
+use App\Http\Controllers\AuthUser\SessionsController;
+use App\Http\Controllers\AuthUser\mainUserController;
+//-----------------------inicion----------------------------------
 
-
-
-
-
-// Registro de usuarios
-Route::get('/register-user', function () {
-    return view('login/register-user');
+Route::get('/', function () {
+    return view('inicio.archivoinicio');
 });
+
+
+//------------------------------------usuarios------------------------------------------------
+
+//vista de login
+Route::get('/login-user',[SessionsController::class, 'create'])->name('login-user');
+
+// Ruta para procesar la información del formulario de login
+Route::post('/login-user', [SessionsController::class, 'loginUser'])->name('login-inicio');
+
+
+// Vista de registro
+Route::get('/register-user', [RegisterController::class, 'create'])->name('register.create');
+//
+Route::post('/register-user', [RegisterController::class, 'store'])->name('register.store');
+
 // Registro de usuarios GUARDADO
 Route::get('/save-register', function () {
-    return view('login/saveregister');
+    return view('loginUser/saveregister');
 });
 
 
 // Restraurar contraseña
 Route::get('/restaure-password', function () {
-    return view('login/restore-password');
+    return view('loginUser/restore-password');
 });
 // Restraurar contraseña GUARDADA
 Route::get('/save-restaure', function () {
-    return view('login/save-restore');
+    return view('loginUser/save-restore');
 });
 
+Route::get('/user/mainUser', [mainUserController::class, 'mainUser'])->name('mainUser');
 
-
-// Panel admin
-Route::get('/panel-admin', function () {
-    return view('archivoBaseAdmin/baseAdmin');
-});
-
-
-
-
-
-Route::get('mainUser', function () {
-    return view('user.mainUser');
-});
 Route::get('actividadesUser', function () {
     return view('user.actividadesUser');
 });
@@ -53,16 +57,20 @@ Route::get('checklisUser', function () {
 
 
 
-Route::get('inicio', function () {
-    return view('inicio.archivoinicio');
-});
-
-
-
-
 
 
 //------------------------------------------------Ruta del panel principal del administardor--------------------
+
+// Panel admin
+Route::get('/panel-admin', function () {
+    return view('archivoBaseAdmin/baseAdmin');
+});
+
+// Panel de admin para actividaes
+Route::get('/panel-admin-activid', function () {
+    return view('admin/panelactividades');
+});
+
 
 // login
 Route::get('/login',[AccesoController::class, 'showLogin'])->name('login');
@@ -87,3 +95,5 @@ Route::get('/panel-admin-activid', function () { return view('admin/panelactivid
 
 Route::get('mainAdmin/createActividad/{idAula}', [AdminController::class, 'createActividad'])->name('agregarActividad');
 
+Route::post('mainAdmin/createActividad/', [AdminController::class, 'nuevaActividad'])->name('nuevaActividad');
+Route::post('mainAdmin/deleteActividad/{idActividad}', [AdminController::class, 'deleteActividad'])->name('deleteActividad');

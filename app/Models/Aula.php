@@ -18,6 +18,7 @@ class Aula extends Model
 
     public function actividades()
     {
-        return $this->hasMany('App\Models\Actividad', 'idAula');
+        return $this->hasMany(Actividad::class, 'idAula');
     }
+
 }
