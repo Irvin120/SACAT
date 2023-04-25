@@ -21,8 +21,7 @@ class AccesoController extends Controller
         $admin = Admin::where('correoAdmin', $credentials['correoAdmin'])->first();
         $idAdmin = session('idAdmin');
 
-
-
+        
         if ($admin && Hash::check($credentials['contraseñaAdmin'], $admin->contraseñaAdmin)) {
             Auth::guard('admin')->login($admin);
 

@@ -9,6 +9,7 @@ use App\Http\Middleware\AdminMiddleware;
 
 use App\Http\Controllers\AuthUser\RegisterController;
 use App\Http\Controllers\AuthUser\SessionsController;
+use App\Http\Controllers\AuthUser\mainUserController;
 //-----------------------inicion----------------------------------
 
 Route::get('/', function () {
@@ -16,15 +17,18 @@ Route::get('/', function () {
 });
 
 
-
 //------------------------------------usuarios------------------------------------------------
 
-//login user 
+//vista de login
 Route::get('/login-user',[SessionsController::class, 'create'])->name('login-user');
 
+// Ruta para procesar la información del formulario de login
+Route::post('/login-user', [SessionsController::class, 'loginUser'])->name('login-inicio');
 
-// Registro de usuarios
+
+// Vista de registro
 Route::get('/register-user', [RegisterController::class, 'create'])->name('register.create');
+//
 Route::post('/register-user', [RegisterController::class, 'store'])->name('register.store');
 
 // Registro de usuarios GUARDADO
@@ -42,23 +46,8 @@ Route::get('/save-restaure', function () {
     return view('loginUser/save-restore');
 });
 
+Route::get('/user/mainUser', [mainUserController::class, 'mainUser'])->name('mainUser');
 
-<<<<<<< HEAD
-=======
-
-// Panel admin
-Route::get('/panel-admin', function () {
-    return view('archivoBaseAdmin/baseAdmin');
-});
-
-
-
-
-
->>>>>>> 5708e6e1fae02b0c118e9edcf9e622b434bdd85c
-Route::get('mainUser', function () {
-    return view('user.mainUser');
-});
 Route::get('actividadesUser', function () {
     return view('user.actividadesUser');
 });
@@ -68,16 +57,6 @@ Route::get('checklisUser', function () {
 
 
 
-<<<<<<< HEAD
-=======
-Route::get('inicio', function () {
-    return view('inicio.archivoinicio');
-});
-
-
-
-
->>>>>>> 5708e6e1fae02b0c118e9edcf9e622b434bdd85c
 
 
 //------------------------------------------------Ruta del panel principal del administardor--------------------

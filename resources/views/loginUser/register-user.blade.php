@@ -51,6 +51,9 @@
             <div class="col-sm-7 entradas" >
               <input type="number" class="form-control" id="validationDefault01 inputMatric" placeholder="99999999" name="matriculaUsuario" value="" required>
             </div>
+            @if ($errors->has('matriculaUsuario'))
+              <div class="alert alert-danger">{{ $errors->first('matriculaUsuario', ':message') }}</div>
+            @endif
           </div>
 
           <!-- correo electronico -->
@@ -59,6 +62,9 @@
             <div class="col-sm-7 entradas" >
               <input type="email" class="form-control" id="validationDefault01 inputUser" name="correoUsuario" placeholder="ejemplo@hotmail.com" value="" required>
             </div>
+            @if ($errors->has('correoUsuario'))
+              <div class="alert alert-danger">{{ $errors->first('correoUsuario', ':message') }}</div>
+            @endif
           </div>
 
           <!-- contraseña -->

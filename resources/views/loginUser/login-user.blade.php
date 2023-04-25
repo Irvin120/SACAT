@@ -22,7 +22,7 @@
 
 <body>
 
-    <form method="POST" action="">
+    <form method="POST" action="{{ route('login-inicio') }}">
         @csrf
 
         <div class="mb-0 col-sm-0" id="form_login">
@@ -34,14 +34,14 @@
             <div class="col-sm-0" id="conten_form">
                 <!-- usuario -->
                 <div class="mb-2 row">
-                    <label for="validationDefault01" class="col-sm-5 form-label">EMAIL</label>
+                    <label for="validationDefault01" class="col-sm-5 form-label">CORREO</label>
                     <div class="col-sm-7 entradas">
-                        <input type="email" class="form-control" id=" validationDefault01 inputUser email" name="correoUser" placeholder="Ingresa correo electronico"
-                            required>
-                        @error('correoAdmin')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
+                        <input type="email" class="form-control" id=" validationDefault01 inputUser" 
+                        name="correoUsuario" placeholder="Ingresa correo electronico" required>
+                        @error('correoUsuario')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
                         @enderror
                     </div>
                 </div>
@@ -50,9 +50,9 @@
                 <div class="mb-2  row">
                     <label for="validationDefaultPassword" class="col-sm-5 form-label">CONTRASEÑA</label>
                     <div class="col-sm-7  entradas">
-                        <input type="password" class="form-control" id="validationDefaultPassword Password"
-                            name="contraseñaUser" placeholder="Ingresa contraseña" required>
-                        @error('contraseñaAdmin')
+                        <input type="password" class="form-control" id="validationDefaultPassword"
+                                name="contraseñaUsuario" placeholder="Ingresa contraseña" required>
+                        @error('contraseñaUsuario')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
