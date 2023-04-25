@@ -102,7 +102,7 @@
                                                 <p class="nameDate">Fecha Final</p> <input class="nameDate" type="date" name="" id="">
                                             </div>
 
-                                            <div class="Para">
+                                            <!-- <div class="Para">
                                                 <p class="ParaOption">Para:</p>
                                                 <select class="form-select" aria-label="Default select example">
                                                     <option selected class="ParaOption">Seleccionar para quienes</option>
@@ -110,7 +110,8 @@
                                                     <option value="2">Estudiante 1</option>
                                                     <option value="3">Estudiante 2</option>
                                                 </select>
-                                            </div>
+                                            </div> -->
+
                                         </div>
             
                                     </div>
@@ -130,22 +131,72 @@
         </div>
 
 
-        <div class="accordion accordion-flush" id="accordionFlushExample">
-            <div class="accordion-item">
-                <div class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" 
-                            data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            Revisar actividades
-                            <i class="icon fa-solid fa-pen-to-square fa-xl" style="color: #000000;"></i>
-                    </button>
-                </div>
-                <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the 
-                        <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Revisar actividades
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 TitleModal" id="staticBackdropLabel">Actividad</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="MostrarActividades">
+                    
+                    <div class="InfoActyMost">
+                        <i class="iconActivity fa-solid  fa-calendar fa-4x" style="color: #000000;"></i>
+                        <h4 class="NameActivityM">Resumen de videos - Semana 1</h4>
                     </div>
+                    
+                    <div class="InfoActyMost">
+                        <i class="iconActivity fa-solid  fa-calendar fa-4x" style="color: #000000;"></i>
+                        <h4 class="NameActivityM">Resumen de videos - Semana 2</h4>
+                    </div>
+
+                    <div class="InfoActyMost">
+                        <i class="iconActivity fa-solid  fa-calendar fa-4x" style="color: #000000;"></i>
+                        <h4 class="NameActivityM">Resumen de videos - Semana 3</h4>
+                    </div>
+                    
                 </div>
+
+
+
+
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <div class="modal-footer d-grid gap-2 mx-auto">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
+            </div>
             </div>
         </div>
+        </div>
+
+
+
+
+
+
+ 
 
 
         <div class="accordion accordion-flush" id="accordionFlushExample">

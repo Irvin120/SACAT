@@ -46,6 +46,14 @@
     font-weight: bold;
 }
 
+.btnmodal{
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .contendbutton{
     text-align: center;
 }
@@ -187,4 +195,24 @@
 
     font-size: 18px;
     font-weight: bold;
+}
+
+
+
+
+.InfoActyMost{
+    background: #3C84AB;
+    display: flex;
+    padding: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.iconActivity{
+    margin: 0;
+    margin-right: 2rem;
+}
+
+.NameActivityM{
+    margin: 0;
 }
