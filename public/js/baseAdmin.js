@@ -13,6 +13,8 @@ function mostrarBotones() {
 }
 
 
+
+
 function mostrarForm() {
     var form = document.getElementById("containerForm");
     if (form.style.display === "none") {
@@ -61,15 +63,23 @@ function entradaArea(event) {
         url: '/mainAdmin/createActividad/' + idAula,
         type: 'GET',
         dataType: 'html',
-        success: function(response) {
+        success: function (response) {
             window.location.href = '/mainAdmin/createActividad/' + idAula;
         },
-        error: function(xhr, status, error) {
+        error: function (xhr, status, error) {
             // Mostrar un mensaje de error en la página
             var errorMessage = xhr.status + ': ' + xhr.statusText;
             $('#mensajeError').text('Se ha producido un error al recuperar las actividades: ' + errorMessage);
         }
-    });}
+    });
+}
 
 
 
+function confirmDelete() {
+    if (confirm('¿Estás seguro de que deseas eliminar esta actividad?')) {
+        return true;
+    } else {
+        return false;
+    }
+}

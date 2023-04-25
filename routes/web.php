@@ -43,6 +43,19 @@ Route::get('/save-restaure', function () {
 });
 
 
+<<<<<<< HEAD
+=======
+
+// Panel admin
+Route::get('/panel-admin', function () {
+    return view('archivoBaseAdmin/baseAdmin');
+});
+
+
+
+
+
+>>>>>>> 5708e6e1fae02b0c118e9edcf9e622b434bdd85c
 Route::get('mainUser', function () {
     return view('user.mainUser');
 });
@@ -55,6 +68,16 @@ Route::get('checklisUser', function () {
 
 
 
+<<<<<<< HEAD
+=======
+Route::get('inicio', function () {
+    return view('inicio.archivoinicio');
+});
+
+
+
+
+>>>>>>> 5708e6e1fae02b0c118e9edcf9e622b434bdd85c
 
 
 //------------------------------------------------Ruta del panel principal del administardor--------------------
@@ -88,6 +111,10 @@ Route::delete('mainAdmin/delete/{id}', [AdminController::class, 'destroy'])->nam
 //Actualizacion del nombre del aula
 Route::put('mainAdmin/update/{id}', [AdminController::class, 'update'])->name('updateAula');
 
+// Panel de admin para actividaes
+Route::get('/panel-admin-activid', function () { return view('admin/panelactividades'); });
 
 Route::get('mainAdmin/createActividad/{idAula}', [AdminController::class, 'createActividad'])->name('agregarActividad');
 
+Route::post('mainAdmin/createActividad/', [AdminController::class, 'nuevaActividad'])->name('nuevaActividad');
+Route::post('mainAdmin/deleteActividad/{idActividad}', [AdminController::class, 'deleteActividad'])->name('deleteActividad');
