@@ -19,8 +19,8 @@
   </head> 
   <body>
 
-    <form>
-
+    <form method="POST"  action="{{ route('register.store') }}">
+    @csrf
 
       <div class="mb-0 col-sm-0" id="form_login" >
 
@@ -33,7 +33,7 @@
           <div class="mb-2 row">
             <label for="validationDefault01" class="col-sm-5 form-label">NOMBRE</label>
             <div class="col-sm-7 entradas" >
-              <input type="text" class="form-control" id="validationDefault01 inputName" value="" required>
+              <input type="text" class="form-control" id="validationDefault01 inputName" placeholder="Hernesto " name= "nombreUsuario" value="" required>
             </div>
           </div>
 
@@ -41,7 +41,7 @@
           <div class="mb-2 row">
             <label for="validationDefault01" class="col-sm-5 form-label">APELLIDO</label>
             <div class="col-sm-7 entradas" >
-              <input type="text" class="form-control" id="validationDefault01 inputLastName" value="" required>
+              <input type="text" class="form-control" id="validationDefault01 inputLastName" placeholder="Orduña Osirio" name="apellidosUsuario" value="" required>
             </div>
           </div>
 
@@ -49,15 +49,15 @@
           <div class="mb-2 row">
             <label for="validationDefault01" class="col-sm-5 form-label">MATRICULA</label>
             <div class="col-sm-7 entradas" >
-              <input type="number" class="form-control" id="validationDefault01 inputMatric" value="" required>
+              <input type="number" class="form-control" id="validationDefault01 inputMatric" placeholder="99999999" name="matriculaUsuario" value="" required>
             </div>
           </div>
 
           <!-- correo electronico -->
           <div class="mb-2 row">
-            <label for="validationDefault01" class="col-sm-5 form-label">USUARIO</label>
+            <label for="validationDefault01" class="col-sm-5 form-label">EMAIL</label>
             <div class="col-sm-7 entradas" >
-              <input type="email" class="form-control" id="validationDefault01 inputUser" value="" required>
+              <input type="email" class="form-control" id="validationDefault01 inputUser" name="correoUsuario" placeholder="ejemplo@hotmail.com" value="" required>
             </div>
           </div>
 
@@ -65,7 +65,7 @@
           <div class="mb-2  row">
             <label for="validationDefaultPassword" class="col-sm-5 form-label">CONTRASEÑA</label>
             <div class="col-sm-7  entradas">
-              <input type="password" class="form-control" id="validationDefaultPassword" value="" required>         
+              <input type="password" class="form-control" id="validationDefaultPassword" placeholder="**********" name="contraseñaUsuario" value="" required>         
             </div>
           </div>
 
@@ -73,7 +73,7 @@
           <div class="mb-2  row">
             <label for="validationDefaultPassword" class="col-sm-5 form-label">CONFIRMAR CONTRASEÑA</label>
             <div class="col-sm-7  entradas">
-              <input type="password" class="form-control" id="validationDefaultPassword" value="" required>         
+              <input type="password" class="form-control" id="validationDefaultPassword " placeholder="**********" value="" required>         
             </div>
           </div>
 
@@ -81,7 +81,7 @@
           <!-- botones aceptar y cancelar -->
           <div class="ms-0 contenedor_ops">
             <button class="btn btn-primary col-sm-4 ms-3 mb-1" type="submit">Aceptar</button>
-            <button class="btn btn-primary col-sm-4 ms-3 mb-1" type="submit">Cancelar</button>
+            <a href="{{ route('login-user') }}"  class="btn btn-primary col-sm-4 ms-3 mb-1">Cancelar</a>
           </div>
         </div>
       </div>

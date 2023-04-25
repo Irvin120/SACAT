@@ -5,44 +5,42 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware\AdminMiddleware;
+//------------controladores de sesion de usuario--------------------
+
+use App\Http\Controllers\AuthUser\RegisterController;
+use App\Http\Controllers\AuthUser\SessionsController;
+//-----------------------inicion----------------------------------
+
+Route::get('/', function () {
+    return view('inicio.archivoinicio');
+});
 
 
 
+//------------------------------------usuarios------------------------------------------------
 
+//login user 
+Route::get('/login-user',[SessionsController::class, 'create'])->name('login-user');
 
 
 // Registro de usuarios
-Route::get('/register-user', function () {
-    return view('login/register-user');
-});
+Route::get('/register-user', [RegisterController::class, 'create'])->name('register.create');
+Route::post('/register-user', [RegisterController::class, 'store'])->name('register.store');
+
 // Registro de usuarios GUARDADO
 Route::get('/save-register', function () {
-    return view('login/saveregister');
+    return view('loginUser/saveregister');
 });
 
 
 // Restraurar contraseña
 Route::get('/restaure-password', function () {
-    return view('login/restore-password');
+    return view('loginUser/restore-password');
 });
 // Restraurar contraseña GUARDADA
 Route::get('/save-restaure', function () {
-    return view('login/save-restore');
+    return view('loginUser/save-restore');
 });
-
-
-
-// Panel admin
-Route::get('/panel-admin', function () {
-    return view('archivoBaseAdmin/baseAdmin');
-});
-
-// Panel de admin para actividaes
-Route::get('/panel-admin-activid', function () {
-    return view('admin/panelactividades');
-});
-
-
 
 
 Route::get('mainUser', function () {
@@ -57,22 +55,20 @@ Route::get('checklisUser', function () {
 
 
 
-Route::get('inicio', function () {
-    return view('inicio.archivoinicio');
-});
-
-
-
-
-
-
-
-
-
-
 
 
 //------------------------------------------------Ruta del panel principal del administardor--------------------
+
+// Panel admin
+Route::get('/panel-admin', function () {
+    return view('archivoBaseAdmin/baseAdmin');
+});
+
+// Panel de admin para actividaes
+Route::get('/panel-admin-activid', function () {
+    return view('admin/panelactividades');
+});
+
 
 // login
 Route::get('/login',[AccesoController::class, 'showLogin'])->name('login');

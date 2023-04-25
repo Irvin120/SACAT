@@ -34,7 +34,7 @@
  
           <!-- boton aceptar -->
           <div class="ms-0 contenedor_ops">
-            <button class="btn btn-primary col-sm-8 ms-5 mb-0" type="submit">Aceptar</button>
+            <a href="{{ route('login-user')}}"  class="btn btn-primary col-sm-8 ms-5 mb-0" type="submit">Aceptar</a>
           </div>
         
         </div>
