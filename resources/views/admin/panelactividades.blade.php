@@ -140,18 +140,7 @@
                         the
                         <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this
                         being filled with some actual content.
-                    </div>
-                    
-                    <div class="InfoActyMost">
-                        <i class="iconActivity fa-solid  fa-calendar fa-4x" style="color: #000000;"></i>
-                        <h4 class="NameActivityM">Resumen de videos - Semana 2</h4>
-                    </div>
-
-                    <div class="InfoActyMost">
-                        <i class="iconActivity fa-solid  fa-calendar fa-4x" style="color: #000000;"></i>
-                        <h4 class="NameActivityM">Resumen de videos - Semana 3</h4>
-                    </div>
-                    
+                    </div>                    
                 </div>
 
 
@@ -160,24 +149,7 @@
                 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
-            <div class="modal-footer d-grid gap-2 mx-auto">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Volver</button>
-            </div>
-            </div>
-        </div>
         </div>
 
 
