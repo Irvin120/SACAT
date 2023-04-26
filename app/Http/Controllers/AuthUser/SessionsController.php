@@ -20,7 +20,7 @@ class SessionsController extends Controller
 
         $user = usuario::where('correoUsuario', $credentials['correoUsuario'])->first();
         $idUsuario = session('idUsuario');
-        
+
 
         if ($user && Hash::check($credentials['contraseñaUsuario'], $user->contraseñaUsuario)) {
             Auth::guard('usuario')->login($user);
@@ -32,6 +32,7 @@ class SessionsController extends Controller
             ]);
         }
     }
+
     public function logoutUser(Request $request)
     {
         Auth::guard('usuario')->logout();
@@ -43,3 +44,4 @@ class SessionsController extends Controller
         return redirect()->route('login-user')->with('success', 'Has cerrado sesión correctamente.');
     }
 }
+

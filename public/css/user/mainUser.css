@@ -53,12 +53,12 @@ h2 {
     width: 35vw;
     height: 100%;
     overflow: hidden;
-    display: none;
+    /* display: none; */
 }
 ul {
     padding: 0;
   }
-  
+
   li {
     list-style: none;
     margin: 0;
@@ -155,7 +155,7 @@ ul {
     text-align: center;
     background-color:#019EFF ;
 }
-    
+
 #ventana-emergente-confirmacion p{
     padding-top: 20px;
     text-align: center;
@@ -198,4 +198,39 @@ ul {
     color: white;
     text-align: center;
     justify-items: center;
+}
+
+.searchinput{
+    width: 80%;
+    height: 40px;
+    min-height: 40px;
+    border-radius: 10px 0px 0px 10px;
+    background: gray;
+    color: black !important;
+}
+.searchinput::placeholder{
+    color: black;
+}
+.searchinput::placeholder{
+    margin: 5px !important;
+}
+
+
+.sectionSearch{
+    height: 40px;
+    min-height:40px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.bthSearch{
+    border-radius: 0px 10px 10px 0px !important;
+    min-width: 20% !important;
+    min-height: 40px;
+    height: 40px;
+}
+
+.barinfo{
+    background: gray;
+    margin-top: 10px;
 }

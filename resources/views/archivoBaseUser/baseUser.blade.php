@@ -34,10 +34,10 @@
           </header>
           <div class="content-user ">
             <div class="nombreUser">
-                <h2 class="text-start text-white">Bienvenido @user123</h2>
+                <h2 class="text-start text-white">Bienvenido {{ session('nombreUsuario') }}</h2>
             </div>
             <div class="fechaUser">
-                <h2 class="text-end">Fecha: 01/03/2023</h2>
+                <h2 class="text-end">Fecha: {{ date('d/m/Y') }}</h2>
             </div>
           </div>
     </div>

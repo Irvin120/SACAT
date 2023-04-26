@@ -41,7 +41,6 @@ Route::get('/save-register', function () {
 });
 
 // buscador de aulas del Usuario
-Route::get('/mainUser', [BuscadorController::class, 'indexUsuario'])->name('buscar');
 
 // Restraurar contraseña
 Route::get('/restaure-password', function () {
@@ -52,14 +51,17 @@ Route::get('/save-restaure', function () {
     return view('loginUser/save-restore');
 });
 
-Route::get('/user/mainUser', [mainUserController::class, 'mainUser'])->name('mainUser');
-
 Route::get('actividadesUser', function () {
     return view('user.actividadesUser');
 });
 Route::get('checklisUser', function () {
     return view('user.checklisUser');
 });
+
+
+
+
+
 
 
 
@@ -103,3 +105,9 @@ Route::get('mainAdmin/createActividad/{idAula}', [AdminController::class, 'creat
 
 Route::post('mainAdmin/createActividad/', [AdminController::class, 'nuevaActividad'])->name('nuevaActividad');
 Route::post('mainAdmin/deleteActividad/{idActividad}', [AdminController::class, 'deleteActividad'])->name('deleteActividad');
+
+
+// ----------------------------------------user-----------------------------
+Route::get('/user/mainUser/', [mainUserController::class, 'mainUser'])->name('mainUser');
+Route::get('/user/searchAula', [mainUserController::class, 'searchAula'])->name('searchAula');
+
