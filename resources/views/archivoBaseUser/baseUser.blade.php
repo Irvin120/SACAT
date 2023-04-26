@@ -19,9 +19,18 @@
             <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-dark text-decoration-none mx-5">
               <span class="fs-1 mx-2"> <strong> SACAT</strong></span>
             </a>
-            <ul class="nav nav-pills">
-              <li class="nav-item mx-3"><a href="#" class="nav-link"> <i class="fa-regular fa-circle-user icon-header fa-3x"></i> </a></li>
-            </ul>
+            <form action="{{ route('logout-user') }}" method="POST" style="display: inline;">
+              @csrf
+
+            </form>
+            <form action="{{ route('logout-user') }}" method="POST" style="display: inline;">
+                @csrf
+                <button type="submit" class="nav-link btn-unstyled ">
+                  <ul class="nav nav-pills">
+                    <li class="nav-item mx-3"><a href="#" class="nav-link"> <i class="fa-regular fa-circle-user icon-header fa-3x"></i> </a></li>
+                  </ul>
+                </button>
+            </form>
           </header>
           <div class="content-user ">
             <div class="nombreUser">

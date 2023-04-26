@@ -83,3 +83,39 @@ function confirmDelete() {
         return false;
     }
 }
+
+function confirmLogout() {
+    if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validarFormularioCrearAula() {
+    var nombreAula = document.getElementById("nombreAula").value;
+    var asignatura = document.getElementById("asignatura").value;
+    var grupo = document.getElementById("grupo").value;
+
+    if (nombreAula == "" || asignatura == "" || grupo == "") {
+        alert("No se pueden dejar campos vacíos.");
+        return false;
+    }
+
+    return true;
+}
+
+function validarFormularioActividad(){
+    var idActividad =document.getElementById("idActividad").value;
+    var nombreActividad =document.getElementById("nombreActividad").value;
+    var exampleFormControlTextarea1 =document.getElementById("exampleFormControlTextarea1").value;
+    var fechaI =document.getElementById("fechaI").value;
+    var fechaF =document.getElementById("fechaF").value;
+
+    if (idActividad == "" || nombreActividad == "" || exampleFormControlTextarea1 == ""|| fechaI == ""|| fechaF == "") {
+        alert("No se pueden dejar campos vacíos.");
+        return false;
+    }
+
+    return true;
+}

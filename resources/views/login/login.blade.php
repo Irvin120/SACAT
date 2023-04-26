@@ -80,13 +80,13 @@
 
     </form>
 
-    <!-- otras opciones -->
+    <!-- otras opciones 
     <div class="contenedor_ops">
         <button class="btn btn-primary col-sm-4 ms-6 mb-1 ">Olvide mi contraseña</button>
     </div>
     <div class="contenedor_ops">
         <button class="btn btn-primary col-sm-4 ms-6 mb-1 ">Registrarme</button>
-    </div>
+    </div>-->
 
 
 

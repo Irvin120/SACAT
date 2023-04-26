@@ -10,6 +10,7 @@ use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\AuthUser\RegisterController;
 use App\Http\Controllers\AuthUser\SessionsController;
 use App\Http\Controllers\AuthUser\mainUserController;
+use App\Http\Controllers\funtUser\BuscadorController;
 //-----------------------inicion----------------------------------
 
 Route::get('/', function () {
@@ -25,17 +26,22 @@ Route::get('/login-user',[SessionsController::class, 'create'])->name('login-use
 // Ruta para procesar la información del formulario de login
 Route::post('/login-user', [SessionsController::class, 'loginUser'])->name('login-inicio');
 
+//ruta para el logout
+Route::post('/logout-user',[SessionsController::class, 'logoutUser'])->name('logout-user');
+
 
 // Vista de registro
 Route::get('/register-user', [RegisterController::class, 'create'])->name('register.create');
 //
 Route::post('/register-user', [RegisterController::class, 'store'])->name('register.store');
 
-// Registro de usuarios GUARDADO
+// Registro de usuarios creado con exito
 Route::get('/save-register', function () {
     return view('loginUser/saveregister');
 });
 
+// buscador de aulas del Usuario
+Route::get('/mainUser', [BuscadorController::class, 'indexUsuario'])->name('buscar');
 
 // Restraurar contraseña
 Route::get('/restaure-password', function () {
