@@ -12,7 +12,7 @@
                 Nueva Aula
             </h2>
         </div>
-
+        <!--Formulario para crear una nueva aula-->
         <form id="formularioAdd" method="POST" action="{{ route('createAula') }}" onsubmit="return validarFormularioCrearAula()">
             @csrf
             <div class="containerInput p-3">
@@ -69,11 +69,11 @@
                         </button>
                     </form>
                 </div>
-
+                <!--Formulario para editar el-->
                 <form id="EditNombreAula" action="{{ route('updateAula', $aula->idAula) }}" method="POST">
                     @csrf
                     @method('PUT') <strong> <input class="text-center" type="text" name="nombreAula"
-                            value="{{ $aula->nombreAula }}"  onchange="if(confirm('¿Está seguro de que desea cambiar el nombre del aula {{ $aula->nombreAula }}  y guardar los cambios?')){this.form.submit();}"></strong>
+                            value="{{ $aula->nombreAula }}" onchange="if(window.confirm('¿Está seguro de que desea cambiar el nombre del aula {{ $aula->nombreAula }} y guardar los cambios?')){this.form.submit();}else{this.value='{{ $aula->nombreAula }}';}"></strong>
                     <i class="fa-solid fa-pencil icon-header"></i>
                     <br>
                     <br>

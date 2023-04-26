@@ -44,8 +44,7 @@
                     <form action="{{ route('logout') }}" method="POST" style="display: inline;">
                         @csrf
                             <button type="submit" class="nav-link btn-unstyled text-white" onclick="return confirmLogout()" title="Cerrar Sesion ">
-                            <i class="fa-regular fa-circle-user icon-header"></i>
-                            
+                            <i class="fa-regular fa-circle-user "></i>
                         </button>
                     </form>
                 </li>

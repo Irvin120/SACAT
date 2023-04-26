@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+body{
+    background-image: url('/img/bkg.png');
+    font-family: 'Inter', sans-serif;
+}
+
+.contenedor{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.info{
+  width: 50%;
+  height: 90%;
+  flex-direction: column;
+  text-align:justify;
+  background-image: url('/img/libros.jpg');
+  background-size: cover;
+}
+h2, h3, h4{
+  font-family: 'Inter', sans-serif;
+  padding: 30px;
+  margin: 0;
+
+}
+h4{
+  font-size: 1.8vh;
+}
+
+img{
+  border-radius: 30%;
+}
+
+.titulo{
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  padding: 20px;
+  margin: 0;
+}
+
+.ingresar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  width: 30%;
+  height: 90%;
+  }
+.ancla{
+  padding-top: 50%;
+  width: 80%;
+}
+.ancla a {
+  width: 100%;
+    cursor: pointer;
+    background-color: #1B59F8;
+    color: #fff;
+  }
+
+  .btn{
+    color: white;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+  }
+  

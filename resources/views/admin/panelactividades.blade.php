@@ -1,7 +1,7 @@
 @extends('archivoBaseAdmin.baseAdmin')
 
 @section('botones')
-<li class="nav-item mx-3 d-flex justify-content-center">
+<li class="nav-item mx-3 d-flex justify-content-center align-items-center">
     <a href="#" onclick="window.history.back();" class="text-white text-decoration-none">Volver</a>
 </li>
 
