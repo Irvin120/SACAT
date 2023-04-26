@@ -216,3 +216,238 @@
 .NameActivityM{
     margin: 0;
 }
+
+
+
+.contendButtonRevi{
+    width: 33.333%;
+}
+
+.buttonActivityOptions{
+    width: 100%;
+
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    padding: 1rem;
+    border-radius: 0;
+    
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+
+}
+
+.buttonActivityOptions:hover{
+    background-color: #019EFF;
+    border: solid 1px#000000;
+    color: #000000;
+}
+
+
+
+
+.actividaxRevisar{
+    display: flex;
+    align-items: center;
+    
+    background-color: #019EFF;
+    margin-top: 1rem;
+    
+}
+
+.iconActividaxRevisar{
+    margin-left: 1rem;
+    width: 10%;
+}
+
+.btnActividadxRevisar{
+    width: 90%;
+
+    padding: 1rem;
+    
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+}
+
+
+
+.titleVistas{
+    background-color: #019EFF;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    width: 100%;
+} 
+
+/* tabla semana */
+.encabezadoSemana{
+    display: flex;
+
+    background-color: #a0a0a0;
+
+    padding: 1rem 0rem;
+    margin: 1rem 0rem;
+}
+
+.titleSem{
+    width: 20%;
+}
+
+
+.nameSem{
+    margin-left: 1rem;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+
+    margin-bottom: 0rem;
+}
+
+.diasDeSem{
+    display: flex;
+    width: 65%;
+
+    justify-content: space-between;
+}
+
+.diaSem{
+    margin-bottom: 0rem;
+
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+
+    padding: 0rem .5rem;
+
+}
+
+
+
+
+
+.alumnoActivSem{
+    display: flex;
+    width: 100%;
+
+    background-color: #bababa;
+}
+
+.conteNameAlumno{
+    width: 20%;
+}
+.nameAlumno{
+    margin-left: 1rem;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+
+    margin-bottom: 0rem;
+}
+
+
+.resultadosDia{
+    width: 65%;
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.cumplimientoDia{
+    margin-bottom: 0rem;
+
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+
+    padding: 0rem 1rem;
+}
+
+
+
+.notaSema{
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.btnVerNotas{
+    margin-bottom: 0rem;
+
+    font-size: 16px;
+    font-weight: bold;
+    color: #3C84AB;
+
+    padding: 0rem 1rem;
+}
+
+
+
+
+
+.titleSemNotas{
+    width: 20%;
+}
+
+.diasDeSemNotas{
+    width: 80%;
+    display: flex;
+
+    justify-content: space-between;
+}
+
+
+.conteNameAlumnoNotas{
+    width: 20%;
+}
+
+.resultadosDiaNotas{
+    width: 80%;
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.notasDia{
+    margin-bottom: 0rem;
+
+    font-size: 12px;
+    color: #000000;
+
+    padding: 0rem 0.5rem;
+}
+
+
+
+
+
+
+
+
+.btnVolver{
+    margin-top: 4rem;
+}
+
+
+
+
+
+
+/* Contenedor Oculto */
+.contenedor-actividades{
+    visibility: hidden;
+    display: none;
+}
+
+
+/* La clase active hace que el contenedor se vea */
+.contenedor-actividades.activo{
+    visibility: visible;
+    display: block;
+}
+
+.contenedor-actividades.desactivo{
+    visibility: hidden;
+    display: none;
+}
+
