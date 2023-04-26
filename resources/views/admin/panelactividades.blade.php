@@ -107,8 +107,7 @@
                                                 <h5>Establecer fecha de la semana</h5>
                                                 <div class="date-if">
                                                     <p class="nameDate">Fecha inicio</p>
-                                                    <input class="nameDate" type="date" name="fechaInicio"
-                                                        id="fechaI">
+                                                    <input class="nameDate" type="date" name="fechaInicio" id="fechaI">
                                                 </div>
 
                                                 <div class="date-if">
