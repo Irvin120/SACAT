@@ -36,7 +36,7 @@
                 <div class="mb-2 row">
                     <label for="validationDefault01" class="col-sm-5 form-label">CORREO</label>
                     <div class="col-sm-7 entradas">
-                        <input type="email" class="form-control" id=" validationDefault01 inputUser" 
+                        <input type="email" class="form-control" id=" validationDefault01 inputUser"
                         name="correoUsuario" placeholder="Ingresa correo electronico" required>
                         @error('correoUsuario')
                         <span class="invalid-feedback" role="alert">
@@ -116,10 +116,3 @@
 
 </html>
 
-
-
-<!-- php artisan serve --host=0.0.0.0 -->
-
-<!-- git add .
-        git commit -m "name"
-        git push -->
