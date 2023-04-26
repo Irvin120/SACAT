@@ -26,18 +26,27 @@
             </a>
 
             <ul class="nav nav-pills">
-                <li class="nav-item mx-3"><a onclick="mostrarBotones(); cambiarBoton(this)" href="#"
-                        class="nav-link rounded" aria-current="page" id="miBoton">
-                        <i class="fa-solid fa-trash-can icon-header"></i></a></li>
+                @section('botones')
+                <li class="nav-item mx-3">
+                    <a onclick="mostrarBotones(); cambiarBoton(this)" href="#"class="nav-link rounded" aria-current="page" id="miBoton" title="Elminar clases" >
+                        <i class="fa-solid fa-trash-can icon-header"></i>
+                    </a>
+                </li>
 
-                <li class="nav-item mx-3"><a onclick="cambiarBoton(this); mostrarForm()" href="#" class="nav-link"
-                        id="addButton"> <i class="fa-solid fa-circle-plus icon-header"></i> </a></li>
-
+                <li class="nav-item mx-3">
+                    <a onclick="cambiarBoton(this); mostrarForm()" href="#" class="nav-link"
+                        id="addButton" title="Crear aula "> 
+                        <i class="fa-solid fa-circle-plus icon-header"></i> 
+                    </a>
+                </li>
+                @show
                 <li class="nav-item mx-3">
                     <form action="{{ route('logout') }}" method="POST" style="display: inline;">
                         @csrf
-                        <button type="submit" class="nav-link btn-unstyled"><i
-                                class="fa-regular fa-circle-user icon-header"></i></button>
+                            <button type="submit" class="nav-link btn-unstyled text-white" onclick="return confirmLogout()" title="Cerrar Sesion ">
+                            <i class="fa-regular fa-circle-user icon-header"></i>
+                            
+                        </button>
                     </form>
                 </li>
             </ul>
@@ -53,7 +62,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
-
 </body>
 
 </html>

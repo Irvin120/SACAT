@@ -18,10 +18,7 @@
         </div>
     </div>
     <ul id="box-search">
-        <li><a href=""><i class="fa-solid fa-magnifying-glass"></i>Planeación Organización del trabajo</a></li>
-        <li><a href=""><i class="fa-solid fa-magnifying-glass"></i>Expresión Original y Escrita</a></li>
-        <li><a href=""><i class="fa-solid fa-magnifying-glass"></i>Base de datos</a></li>
-        <li><a href=""><i class="fa-solid fa-magnifying-glass"></i>Desarrollo Web Profesional</a></li>
+
     </ul>
     <div id="ventana-emergente">
         <h2>Enviar solicitud a aula</h2>
@@ -73,5 +70,5 @@
     </div>
 </div>
 
-<script href="{{ asset('js/mainUser.js')}}"></script>
+<script src="{{ asset('js/mainUser.js') }}"></script>
 @endsection

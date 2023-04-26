@@ -1,5 +1,13 @@
 @extends('archivoBaseAdmin.baseAdmin')
 
+@section('botones')
+<li class="nav-item mx-3 d-flex justify-content-center">
+    <a href="#" onclick="window.history.back();" class="text-white text-decoration-none">Volver</a>
+</li>
+
+@endsection
+
+
 @section('content')
     <link rel="stylesheet" href="{{ asset('css/admin/panelActividades.css') }}">
     <!-- icons -->
@@ -56,7 +64,7 @@
 
                         <!-- Modal -->
                         <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
-                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true" onsubmit="return validarFormularioActividad()">
                             <form action="{{ route('nuevaActividad') }}" method="POST">
                                 @csrf
                                 <div class="modal-dialog modal-lg modal-dialog-centered">
@@ -73,7 +81,7 @@
 
                                             <div class="card-instruc card">
                                                 <div class="cardDesc card-body">
-                                                    <input readonly class="form-control" id="nombreActividad"
+                                                    <input readonly class="form-control" id="idActividad"
                                                         placeholder="ID Aula" name="idAula" value="{{ $aula->idAula }}">
                                                 </div>
 
@@ -87,9 +95,6 @@
                                                         name="resumen"></textarea>
                                                 </div>
 
-
-
-
                                             </div>
 
                                             <div class="fecha">
@@ -97,11 +102,11 @@
                                                 <div class="date-if">
                                                     <p class="nameDate">Fecha inicio</p>
                                                     <input class="nameDate" type="date" name="fechaInicio"
-                                                        id="">
+                                                        id="fechaI">
                                                 </div>
                                                 <div class="date-if">
                                                     <p class="nameDate">Fecha Final</p>
-                                                    <input class="nameDate" type="date" name="fechaFin" id="">
+                                                    <input class="nameDate" type="date" name="fechaFin" id="fechaF">
                                                 </div>
 
 

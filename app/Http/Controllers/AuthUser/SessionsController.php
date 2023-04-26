@@ -32,4 +32,14 @@ class SessionsController extends Controller
             ]);
         }
     }
+    public function logoutUser(Request $request)
+    {
+        Auth::guard('usuario')->logout();
+
+        $request->session()->invalidate();
+
+        $request->session()->regenerateToken();
+
+        return redirect()->route('login-user')->with('success', 'Has cerrado sesión correctamente.');
+    }
 }

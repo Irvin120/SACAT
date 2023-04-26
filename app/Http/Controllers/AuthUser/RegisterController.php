@@ -46,15 +46,6 @@ class RegisterController extends Controller
             $user->contraseñaUsuario = Hash::make($validatedData['contraseñaUsuario']);
             $user->timestamps = false;
             $user->save();
-            /*
-            $user = new usuario();
-            $user->nombreUsuario = $request->post('nombreUsuario');
-            $user->apellidosUsuario = $request->post('apellidosUsuario');
-            $user->matriculaUsuario = $request->post('matriculaUsuario');
-            $user->correoUsuario = $request->post('correoUsuario');
-            $user->contraseñaUsuario = Hash::make($request->post('contraseñaUsuario'));
-            $user->timestamps = false; // indicamos que no se usen las columnas "updated_at" y "created_at"
-            $user->save();*/
         
         return redirect('/save-register');
     }

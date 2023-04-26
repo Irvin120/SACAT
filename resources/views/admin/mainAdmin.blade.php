@@ -4,34 +4,34 @@
 
 
 @section('alerta')
+
     <div class="containerForm" id="containerForm" style="display:none;">
 
         <div class="div-title">
             <h2 class="text-center ">
                 Nueva Aula
             </h2>
-
         </div>
 
-        <form id="formularioAdd" method="POST" action="{{ route('createAula') }}">
+        <form id="formularioAdd" method="POST" action="{{ route('createAula') }}" onsubmit="return validarFormularioCrearAula()">
             @csrf
             <div class="containerInput p-3">
 
                 <div class="input-group input-group-sm mb-3 my-4">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Nombre del Aula</span>
-                    <input name="nombreAula" type="text" class="form-control" aria-label="Sizing example input"
+                    <input id="nombreAula" name="nombreAula" type="text" class="form-control" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-sm" maxlength="50" placeholder="Laboratorio de Informática 1">
                 </div>
 
                 <div class="input-group input-group-sm mb-3 my-4">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Asignatura</span>
-                    <input name="asignatura" type="text" class="form-control" aria-label="Sizing example input"
+                    <input id="asignatura" name="asignatura" type="text" class="form-control" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-sm" maxlength="50" placeholder="Nombre de la materia">
                 </div>
 
                 <div class="input-group input-group-sm mb-3 my-4">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Grupo</span>
-                    <input name="grupo" type="text" class="form-control" aria-label="Sizing example input"
+                    <input id="grupo" name="grupo" type="text" class="form-control" aria-label="Sizing example input"
                         aria-describedby="inputGroup-sizing-sm" maxlength="10" placeholder="1A-DGS">
                 </div>
 
@@ -60,7 +60,7 @@
 
                 {{-- Botones de borrado de targeta --}}
                 <div id="botones" style="display:none;">
-                    <form action="{{ route('destroyAula', $aula->idAula) }}" method="POST">
+                    <form action="{{ route('destroyAula', $aula->idAula) }}" method="POST"  onsubmit="return confirm('¿Está seguro que desea eliminar {{ $aula->nombreAula }}?');">
                         @csrf
                         @method('DELETE')
                         <button type="submit"
@@ -70,10 +70,10 @@
                     </form>
                 </div>
 
-                <form action="{{ route('updateAula', $aula->idAula) }}" method="POST">
+                <form id="EditNombreAula" action="{{ route('updateAula', $aula->idAula) }}" method="POST">
                     @csrf
-                    @method('PUT') <strong> <input class="text-center"type="text" name="nombreAula"
-                            value="{{ $aula->nombreAula }}"></strong>
+                    @method('PUT') <strong> <input class="text-center" type="text" name="nombreAula"
+                            value="{{ $aula->nombreAula }}"  onchange="if(confirm('¿Está seguro de que desea cambiar el nombre del aula {{ $aula->nombreAula }}  y guardar los cambios?')){this.form.submit();}"></strong>
                     <i class="fa-solid fa-pencil icon-header"></i>
                     <br>
                     <br>
