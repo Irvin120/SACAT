@@ -105,6 +105,6 @@ Route::post('mainAdmin/deleteActividad/{idActividad}', [AdminController::class, 
 // ----------------------------------------user-----------------------------
 Route::post('/login-user', [SessionsController::class, 'loginUser'])->name('login-inicio');
 
-Route::get('/user/mainUser/{idUsuario}/{correoUsuario}', [mainUserController::class, 'mainUser'])->name('mainUser');
+Route::get('/user/mainUser/{idUsuario}/{correoUsuario}', [mainUserController::class, 'mainUser'])->name('mainUser')->middleware('auth.user');
 
 Route::get('/user/searchAula', [mainUserController::class, 'searchAula'])->name('searchAula');
