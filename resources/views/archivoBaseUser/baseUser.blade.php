@@ -28,11 +28,10 @@
             </form>
             <form action="{{ route('logout-user') }}" method="POST" style="display: inline;">
                 @csrf
-                <button type="submit" class="nav-link btn-unstyled ">
-                    <ul class="nav nav-pills">
-                        <li class="nav-item mx-3"><a href="#" class="nav-link"> <i
-                                    class="fa-regular fa-circle-user icon-header fa-3x"></i> </a></li>
-                    </ul>
+                <button style="background-color: #1B59F8;" type="submit" class="nav-link btn-unstyled ">
+                  <ul class="nav nav-pills">
+                    <li class="nav-item mx-3"><a href="#" class="nav-link"> <i class="fa-regular fa-circle-user icon-header fa-3x"></i> </a></li>
+                  </ul>
                 </button>
             </form>
         </header>
