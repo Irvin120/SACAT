@@ -69,6 +69,16 @@ Route::get('checklisUser', function () {
 
 //------------------------------------------------Ruta del panel principal del administardor--------------------
 
+// base admin
+Route::get('/base-admin', function () {
+    return view('archivoBaseAdmin/baseAdmin');
+});
+
+
+
+
+
+
 // Panel admin
 Route::get('/panel-admin', function () {
     return view('archivoBaseAdmin/baseAdmin');

@@ -40,11 +40,26 @@
                     </a>
                 </li>
                 @show
+
+                <!-- boton de perfil de usuario -->
                 <li class="nav-item mx-3">
                     <form action="{{ route('logout') }}" method="POST" style="display: inline;">
                         @csrf
-                            <button type="submit" class="nav-link btn-unstyled text-white" onclick="return confirmLogout()" title="Cerrar Sesion ">
-                            <i class="fa-regular fa-circle-user "></i>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Cuenta
+                            </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Cerrar secion</a></li>
+                                    <li><a class="dropdown-item" href="#">Cambiar contraseña</a></li>
+                                    <li><a class="dropdown-item" href="#">Cambiar correo</a></li>
+                                </ul>
+                            </div>
+
+
+                            <!-- <button type="submit" class="nav-link btn-unstyled text-white" onclick="return confirmLogout()" title="Cerrar Sesion ">
+                            <i class="fa-regular fa-circle-user "></i> -->
+
                         </button>
                     </form>
                 </li>
