@@ -2,12 +2,18 @@
 
 @section('title', 'Main-User')
 
+@section('nombreUsuario')
+    {{ $nombreUsuario }}
+@endsection
 
 @section('content')
 
     <link rel="stylesheet" href="{{ asset('css/user/mainUser.css') }}">
 
     <div class="content">
+
+
+
         <div class="barinfo">
 
             <div class="content-search">
@@ -17,23 +23,38 @@
                 <div class="search" id="ctn-bars-search">
 
                     <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="width: 380px;">
-                        <form action="{{ route('searchAula') }}" method="GET">
+                        <form
+                            action="{{ route('mainUser', ['idUsuario' => $idUsuario, 'correoUsuario' => encrypt($correoUsuario)]) }}"
+                            method="GET">
                             @csrf
                             <div class="sectionSearch">
                                 <input class="searchinput" type="text" name="query" placeholder="Buscar aula">
+
+
                                 <button type="submit" style="float:right" class="bthSearch btn btn-primary">Button</button>
                             </div>
                         </form>
 
                         <div class="list-group list-group-flush border-bottom scrollarea">
                             @foreach ($aulas as $item)
-
-                            <div class=" mb-3 d-flex w-100 align-items-center justify-content-between">
-                                <strong class="mb-1">{{ $item->nombreAula }}</strong>
-                                <button class="btn btn-primary"> Enviar Solicitud</button>
-                            </div>
-
+                                <div class=" mb-3 d-flex w-100 align-items-center justify-content-between">
+                                    <strong class="mb-1">{{ $item->nombreAula }}</strong>
+                                    <button class="btn btn-primary"> Enviar Solicitud</button>
+                                </div>
                             @endforeach
+                        </div>
+                        <div class="pagination justify-content-center">
+                            <ul class="pagination" style="margin: 0">
+                                <li class="page-item {{ $aulas->previousPageUrl() ? '' : 'disabled' }}">
+                                    <a class="page-link" href="{{ $aulas->previousPageUrl() }}" tabindex="-1">Anterior</a>
+                                </li>
+                                @foreach ($aulas->getUrlRange(1, $aulas->lastPage()) as $page => $url)
+                                    <li class="page-item {{ $page == $aulas->currentPage() ? 'active' : '' }}"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+                                @endforeach
+                                <li class="page-item {{ $aulas->nextPageUrl() ? '' : 'disabled' }}">
+                                    <a class="page-link" href="{{ $aulas->nextPageUrl() }}">Siguiente</a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
@@ -102,5 +123,3 @@
 
     <script src="{{ asset('js/mainUser.js') }}"></script>
 @endsection
-
-

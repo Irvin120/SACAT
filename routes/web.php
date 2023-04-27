@@ -24,7 +24,6 @@ Route::get('/', function () {
 Route::get('/login-user',[SessionsController::class, 'create'])->name('login-user');
 
 // Ruta para procesar la información del formulario de login
-Route::post('/login-user', [SessionsController::class, 'loginUser'])->name('login-inicio');
 
 //ruta para el logout
 Route::post('/logout-user',[SessionsController::class, 'logoutUser'])->name('logout-user');
@@ -43,13 +42,9 @@ Route::get('/save-register', function () {
 // buscador de aulas del Usuario
 
 // Restraurar contraseña
-Route::get('/restaure-password', function () {
-    return view('loginUser/restore-password');
-});
+Route::get('/restaure-password', function () { return view('loginUser/restore-password'); });
 // Restraurar contraseña GUARDADA
-Route::get('/save-restaure', function () {
-    return view('loginUser/save-restore');
-});
+Route::get('/save-restaure', function () { return view('loginUser/save-restore'); });
 
 Route::get('actividadesUser', function () {
     return view('user.actividadesUser');
@@ -118,6 +113,8 @@ Route::post('mainAdmin/deleteActividad/{idActividad}', [AdminController::class, 
 
 
 // ----------------------------------------user-----------------------------
-Route::get('/user/mainUser/', [mainUserController::class, 'mainUser'])->name('mainUser');
-Route::get('/user/searchAula', [mainUserController::class, 'searchAula'])->name('searchAula');
+Route::post('/login-user', [SessionsController::class, 'loginUser'])->name('login-inicio');
 
+Route::get('/user/mainUser/{idUsuario}/{correoUsuario}', [mainUserController::class, 'mainUser'])->name('mainUser')->middleware('auth.user');
+
+Route::get('/user/searchAula', [mainUserController::class, 'searchAula'])->name('searchAula');
