@@ -29,14 +29,14 @@
                 @section('botones')
                 <li class="nav-item mx-3">
                     <a onclick="mostrarBotones(); cambiarBoton(this)" href="#"class="nav-link rounded" aria-current="page" id="miBoton" title="Elminar clases" >
-                        <i class="fa-solid fa-trash-can icon-header"></i>
+                        <i class="fa-solid fa-trash-can icon-header fa-xl"></i>
                     </a>
                 </li>
 
                 <li class="nav-item mx-3">
                     <a onclick="cambiarBoton(this); mostrarForm()" href="#" class="nav-link"
                         id="addButton" title="Crear aula "> 
-                        <i class="fa-solid fa-circle-plus icon-header"></i> 
+                        <i class="fa-solid fa-circle-plus icon-header fa-xl"></i> 
                     </a>
                 </li>
                 @show
@@ -46,8 +46,8 @@
                     <form action="{{ route('logout') }}" method="POST" style="display: inline;">
                         @csrf
                         <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Cuenta
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-regular fa-circle-user fa-xl"></i>
                             </button>
                                 <ul class="dropdown-menu">
                                 
