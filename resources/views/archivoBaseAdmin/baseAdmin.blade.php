@@ -50,9 +50,20 @@
                                 Cuenta
                             </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Cerrar secion</a></li>
-                                    <li><a class="dropdown-item" href="#">Cambiar contraseña</a></li>
-                                    <li><a class="dropdown-item" href="#">Cambiar correo</a></li>
+                                
+                                    <button type="submit" class="btnAdmin btn" onclick="return confirmLogout()" title="Cerrar Sesion">
+                                    <i class="iconAdmin fa-solid fa-right-from-bracket fa-lg" style="color: #000000;"></i> Cerrar Sesion
+                                    </button>
+                                
+                                    <button type="submit" class="btnAdmin t btn" onclick="" title="Cambiar Contraseña">
+                                    <!-- <i class="iconAdmin fa-solid fa-lock fa-lg" style="color: #000000;"></i>--> Cambiar Contraseña 
+                                    </button>
+                                    
+
+                                    <button type="submit" class="btnAdmin  btn" onclick="" title="Cambiar Correo">
+                                    <!-- <i class="iconAdmin fa-solid fa-at fa-lg" style="color: #000000;"></i> --> Cambiar Correo
+                                    </button>
+                                    
                                 </ul>
                             </div>
 
@@ -60,7 +71,7 @@
                             <!-- <button type="submit" class="nav-link btn-unstyled text-white" onclick="return confirmLogout()" title="Cerrar Sesion ">
                             <i class="fa-regular fa-circle-user "></i> -->
 
-                        </button>
+                        
                     </form>
                 </li>
             </ul>
