@@ -24,6 +24,10 @@ h2 {
 /*Buscador*/
 .search{
     display: inline-flex;
+    padding: 10px;
+    border: 5px solid #a7a7a7c4;
+    border-radius: 10px;
+    min-height: 390px;
 }
 /*input*/
 .input-search {
