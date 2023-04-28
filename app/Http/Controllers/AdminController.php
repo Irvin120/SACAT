@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\admin;
 use App\Models\Aula;
 use App\Models\Actividad;
+use App\Models\solicitud;
 
 
 use App\Models\usuario;
@@ -19,6 +20,7 @@ class AdminController extends Controller
     {
         $admin = Admin::find($idAdmin);
 
+
         $datos = aula::all();
         return view('admin.mainAdmin', compact('datos', 'admin'));
     }
@@ -30,8 +32,9 @@ class AdminController extends Controller
             $idAula = $request->route('idAula');
             $aula = Aula::findOrFail($idAula);
             $actividades = $aula->actividades;
+            $solicitudes = solicitud:: where('idAula', $idAula)->get();
 
-            return view('admin.panelactividades', compact('aula','actividades'));
+            return view('admin.panelactividades', compact('aula', 'actividades', 'solicitudes'));
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
             return abort(404, 'El ID de Aula proporcionado no es válido');
         }
@@ -85,11 +88,12 @@ class AdminController extends Controller
         return back();
     }
 
-    public function nuevaActividad(Request $request){
+    public function nuevaActividad(Request $request)
+    {
 
         $admin = Auth::guard('admin')->user();
 
-        if (!$admin){
+        if (!$admin) {
             return redirect()->route('login');
         }
 
@@ -103,11 +107,15 @@ class AdminController extends Controller
         return back();
     }
 
-    public function deleteActividad(Request $request, $idActividad){
+    public function deleteActividad(Request $request, $idActividad)
+    {
         $actividad = Actividad::where('idActividad', $idActividad);
         $actividad->delete();
 
         return redirect()->back();
     }
 
+
+
 }
+

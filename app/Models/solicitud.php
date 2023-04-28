@@ -12,4 +12,9 @@ class solicitud extends Model
     protected $table = 'solicitudes';
     public $timestamps = false;
 
+
+    public function usuario()
+    {
+        return $this->belongsTo(usuario::class, 'idUsuario');
+    }
 }
