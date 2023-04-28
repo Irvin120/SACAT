@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Aula;
 use App\Models\actividad;
+use App\Models\solicitud;
 use App\Models\usuario;
 
 
@@ -39,4 +40,22 @@ class mainUserController extends Controller
             abort(404);
         }
     }
+
+    public function enviarSolicitud(Request $request)
+    {
+        //obtenemos los valores del formulario
+        $idUsuario = $request->input('idUsuario');
+        $idAula = $request->input('idAula');
+
+        //creacion de un nuevo registro en la base de datos
+        $solicitud = new solicitud();
+        $solicitud->idUsuario = $idUsuario;
+        $solicitud->idAula = $idAula;
+        $solicitud->estado = 'pendiente';
+        $solicitud->save();
+
+        // Redirigimos al usuario a la misma página con un mensaje de éxito
+        return back()->with('success', 'Solicitud Enviada correctamente');
+    }
+
 }

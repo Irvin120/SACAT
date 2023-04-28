@@ -39,7 +39,14 @@
                             @foreach ($aulas as $item)
                                 <div class=" mb-3 d-flex w-100 align-items-center justify-content-between">
                                     <strong class="mb-1">{{ $item->nombreAula }}</strong>
-                                    <button class="btn btn-primary"> Enviar Solicitud</button>
+                                    <form action="{{ route('enviarSolicitud') }}" method="POST">
+                                        @csrf
+                                        @csrf
+                                        <input type="hidden" name="idUsuario" value="{{ $idUsuario }}">
+                                        <input type="hidden" name="idAula" value="{{ $item->idAula }}">
+                                        <button type="submit" class="btn btn-primary"> Enviar Solicitud</button>
+                                    </form>
+
                                 </div>
                             @endforeach
                         </div>
@@ -49,7 +56,8 @@
                                     <a class="page-link" href="{{ $aulas->previousPageUrl() }}" tabindex="-1">Anterior</a>
                                 </li>
                                 @foreach ($aulas->getUrlRange(1, $aulas->lastPage()) as $page => $url)
-                                    <li class="page-item {{ $page == $aulas->currentPage() ? 'active' : '' }}"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+                                    <li class="page-item {{ $page == $aulas->currentPage() ? 'active' : '' }}"><a
+                                            class="page-link" href="{{ $url }}">{{ $page }}</a></li>
                                 @endforeach
                                 <li class="page-item {{ $aulas->nextPageUrl() ? '' : 'disabled' }}">
                                     <a class="page-link" href="{{ $aulas->nextPageUrl() }}">Siguiente</a>
