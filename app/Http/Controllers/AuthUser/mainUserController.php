@@ -47,15 +47,22 @@ class mainUserController extends Controller
         $idUsuario = $request->input('idUsuario');
         $idAula = $request->input('idAula');
 
-        //creacion de un nuevo registro en la base de datos
-        $solicitud = new solicitud();
-        $solicitud->idUsuario = $idUsuario;
-        $solicitud->idAula = $idAula;
-        $solicitud->estado = 'pendiente';
-        $solicitud->save();
+        //verifico si ya existe una solicitu en la aula del usuario
+        $solicitudExistente = solicitud::where('idUsuario', $idUsuario)->where('idAula', $idAula)->first();
 
-        // Redirigimos al usuario a la misma página con un mensaje de éxito
-        return back()->with('success', 'Solicitud Enviada correctamente');
+        if ($solicitudExistente) {
+            return back()->with('error', 'Ya existe una solicitud pendiente para este aula.');
+        } else {
+
+            //creacion de un nuevo registro en la base de datos
+            $solicitud = new solicitud();
+            $solicitud->idUsuario = $idUsuario;
+            $solicitud->idAula = $idAula;
+            $solicitud->estado = 'pendiente';
+            $solicitud->save();
+
+            // Redirigimos al usuario a la misma página con un mensaje de éxito
+            return back()->with('success', 'Solicitud Enviada correctamente');
+        }
     }
-
 }

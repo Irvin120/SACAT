@@ -334,11 +334,16 @@
                                 <div class="SolicitudUser">
                                     <p class="NameUser">{{ $solicitud->usuario->nombreUsuario }} </p>
 
-                                    <button type="button" class="btnchek btn">
-                                        <i class="fa-regular fa-square-check fa-xl" style="color: #000000;"></i>
-                                    </button>
+                                    <form action="{{ route('aceptarSolicitud', $solicitud->idSolicitud) }}"
+                                        method="POST">
+                                        @csrf
+                                        <button type="submit" class="btnchek btn">
+                                            <i class="fa-regular fa-square-check fa-xl" style="color: #000000;"></i>
+                                        </button>
+                                    </form>
+                                    
 
-                                    <button type="button" class="btnx btn">
+                                    <button type="button" class="btnx btn" onclick="aceptarSpñ">
                                         <i class="fa-solid fa-circle-xmark fa-xl" style="color: #000000;"></i>
                                     </button>
 

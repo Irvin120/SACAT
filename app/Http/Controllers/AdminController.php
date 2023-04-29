@@ -28,11 +28,12 @@ class AdminController extends Controller
     public function createActividad(Request $request)
     {
         try {
-
             $idAula = $request->route('idAula');
             $aula = Aula::findOrFail($idAula);
             $actividades = $aula->actividades;
-            $solicitudes = solicitud:: where('idAula', $idAula)->get();
+            $solicitudes = solicitud:: where('idAula', $idAula)
+                                     ->where ('estado', 'pendiente')
+                                     ->get();
 
             return view('admin.panelactividades', compact('aula', 'actividades', 'solicitudes'));
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
@@ -115,7 +116,16 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-
+    public function aceptarSolicitud($idSolicitud){
+        try {
+            $solicitud = solicitud::findOrFail($idSolicitud);
+            $solicitud->estado = "aceptado";
+            $solicitud->save();
+            return back();
+        } catch (\Exception $e) {
+            return back()->with('error', 'No se pudo aceptar la solicitud: ' . $e->getMessage());
+        }
+    }
 
 }
 

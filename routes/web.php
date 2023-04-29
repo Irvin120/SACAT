@@ -120,3 +120,9 @@ Route::get('/user/mainUser/{idUsuario}/{correoUsuario}', [mainUserController::cl
 Route::get('/user/searchAula', [mainUserController::class, 'searchAula'])->name('searchAula');
 
 Route::post('/user/enviarSolicitud', [mainUserController::class, 'enviarSolicitud'])->name('enviarSolicitud');
+
+
+//aceptacion de solicitudes
+Route::post('/aceptar-solicitud/{idSolicitud}',[AdminController::class, 'aceptarSolicitud'])->name('aceptarSolicitud');
+//eliminar solicitud
+// Route::delete('/eliminar-solicitud/{id}', 'SolicitudController@eliminarSolicitud')->name('eliminarSolicitud');

@@ -12,8 +12,6 @@
 
     <div class="content">
 
-
-
         <div class="barinfo">
 
             <div class="content-search">
