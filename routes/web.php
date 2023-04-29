@@ -120,3 +120,5 @@ Route::post('/login-user', [SessionsController::class, 'loginUser'])->name('logi
 Route::get('/user/mainUser/{idUsuario}/{correoUsuario}', [mainUserController::class, 'mainUser'])->name('mainUser')->middleware('auth.user');
 
 Route::get('/user/searchAula', [mainUserController::class, 'searchAula'])->name('searchAula');
+
+Route::post('/user/enviarSolicitud', [mainUserController::class, 'enviarSolicitud'])->name('enviarSolicitud');

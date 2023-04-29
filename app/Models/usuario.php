@@ -21,4 +21,9 @@ class usuario extends Authenticatable
     protected $hidden = [
         'contraseñaUsuario',
     ];
+
+    public function solicitudes()
+    {
+        return $this->hasMany(solicitud::class, 'idUsuario');
+    }
 }
