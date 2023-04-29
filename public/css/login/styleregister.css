@@ -4,90 +4,198 @@
 *{
     margin: 0;
     padding: 0;
+    background: #0E87C2;
 }
 
 #form_login{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 50%;
-
-    margin: 5rem auto;
-
-    background-color: #019EFF;
-
-    display: flex;
- 
+    border-radius: 20px;
+  margin: 120px;
+  background: url("/img/registro.jpg");
+  background-position: center;
+  background-size: 800px 500px;
+  object-fit: cover;
+  margin-right: 100px;
+  height: 500px;
 }
 
-#conten_img{
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-width: 0px 0px 0px 0px;
-    border-color: black;
-    border-style: solid;
-    
-
-    padding: 1rem 1rem;
+#icon{
+    position: relative;
+    bottom: 30px;
+    width: 20px;
+    background-size: 100px;
 }
+.mb-2{
+    justify-content: center;
+    background-color: white;
+}
+.col-sm-7{
+    background-color: white;
+
+}
+.ms-0{
+    background-color: white;
+    justify-content: center;
+    float: right;
+    margin-right: 115px;
+}
+
+.ms-3{
+    width: 100px;
+}
+p{
+    text-align: center;
+    background-color: white;
+    font-size: 50px;
+}
+img, svg {
+    vertical-align: middle;
+    width: 30px;
+    position: absolute;
+    margin: 5px;
+}
+.row>* {
+    flex-shrink: 0;
+    width: 70%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    height: 50px;
+    border-radius: 20px;
+    margin-top: var(--bs-gutter-y);
+}
+
 
 #conten_form{
     border-width: 0px 0px 0px 2px;
     border-color: black;
     border-style: solid;
-
+    border-radius: 20px;
+    background-color: white;
     padding: 1rem 1rem 1rem 2rem;
+    float: left;
+    width: 500px;
+    height: 500px;
+    justify-content: center;
+    
+}
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: center;
 }
 
-/* .contenedor_ops{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 16px 16px 0px 16px;
-
-} */
 
 
-@media all and (max-width: 812px){
+
+@media all and (max-width: 1000px){
     #form_login{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    
-        width: 55%;
-
-        margin: 10rem auto;
-    
-        background-color: #019EFF;
-    
-        display: block;
+        border-radius: 20px;
+      margin: 120px;
+      background: url("/img/registro.jpg");
+      background-position: center;
+      background-size: 800px 500px;
+      object-fit: cover;
+      margin-right: 100px;
+      height: 500px;
     }
-
-    #conten_img{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-
-        border-color: black;
-        border-style: solid;
-        
-        border-radius: 0px 0px 2px 0px;
-    
-    
-        padding: 1rem 0rem;
-    }
-
     #conten_form{
-        border-width: 2px 0px 0px 0px;
+        border-width: 0px 0px 0px 2px;
         border-color: black;
         border-style: solid;
-    
-        padding: 1rem 1rem;
+        border-radius: 20px;
+        background-color: white;
+        padding: 1rem 1rem 1rem 2rem;
+        float: left;
+        width: 400px;
+        height: 500px;
+        justify-content: center;
+        
+    }
+    .row>* {
+        flex-shrink: 0;
+        width: 70%;
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x) * .5);
+        height: 40px;
+        border-radius: 20px;
+        margin-top: var(--bs-gutter-y);
+    }
+    .ms-3{
+        width: 80px;
+        float: left;
+    }
+    .ms-0{
+        background-color: white;
+        justify-content: center;
+        float: right;
+        margin-right: 85px;
     }
 
 
+}
+@media all and (max-width: 800px) {
+    #conten_form{
+        border-width: 0px 0px 0px 2px;
+        border-color: black;
+        border-style: solid;
+        border-radius: 20px;
+        background-color: white;
+        padding: 1rem 1rem 1rem 2rem;
+        float: left;
+        width: 300px;
+        height: 500px;
+        justify-content: center;
+        
+    }
+    .ms-3{
+        width: 80px;
+        float: right;
+    }
+    .ms-0{
+        background-color: white;
+        justify-content: center;
+       float: right;
+        margin-right: 85px;
+    }
+    .form-control {
+        width: 250px;
+    }
+    .mb-2{
+        justify-content: left;
+        background-color: white;
+    }
+}
+@media all and (max-width: 600px) {
+    #form_login {
+        border-radius: 20px;
+        margin: 120px; 
+        background: url(/img/registro.jpg);
+        background-position: center;
+        background-size: 0px 0px;
+        object-fit: cover; 
+        margin-right: 100px; 
+        height: 500px; 
+    }
+    #conten_form{
+        border-width: 0px 0px 0px 2px;
+        border-color: black;
+        border-style: solid;
+        border-radius: 20px;
+        background-color: white;
+        padding: 1rem 1rem 1rem 2rem;
+        float: left;
+        width: 400px;
+        height: 500px;
+        justify-content: center;
+        
+    }
+    .mb-2{
+        justify-content: center;
+        background-color: white;
+    }
+    .ms-3{
+        width: 80px;
+        float: left;
+    }
 }
