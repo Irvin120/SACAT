@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.contend-encabezado{
+    background-color: #E9E2E9;
+
+    width: 100%;
+    display: flex;
+
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.contend-logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+}
+.logo{
+    width: 40%;
+    margin-left: -2rem;
+}
+
+
+.informacion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    width: 80%;
+}
+.mi-info{
+    margin: 0;
+    margin-bottom: 0;
+    margin-left: 20%;
+
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
+
+
+
+
+.info-perfil{
+    display: flex;
+    align-items: center;
+   
+    width: 20%;
+    height: auto;
+
+    background-color: #0E87C2;
+
+    margin: .5rem;
+
+    border-radius: .5rem;
+}
+.name-user{
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+}
+.img-perfil{
+    width: 30%;
+    margin-right: .5rem;
+    
+}
+
+
+
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  background-color: #4A494A;
+  opacity: 90%;
+  z-index: -1;
+  display: flex;
+  align-items: flex-start;
+}
+
+
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.menu li a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  background-color: #4A494A;
+  
+}
+
+
+/* botones del menu */
+.home-button{
+    border: 0;
+    background-color: #dbdbdb;
+    width: 100%;
+    margin-top: 5rem;
+    margin-bottom: 120px;
+}
+.img-home{
+    width: 60%;
+    padding: 1 .5rem;
+}
+
+.home-account{
+    border: 0;
+    background-color: #dbdbdb;
+    width: 100%;
+    margin-top: 150px;
+}
+.img-account{
+    width: 70%;
+    padding: 0rem .5rem;
+}
+
+.logout-button{
+    border: 0;
+    background-color: #dbdbdb;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.img-logout{
+    width: 55%;
+    padding: .5rem;
+}
+
+.format-p{
+    margin: 0;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.content {
+  padding-left: 120px; /* El valor debe ser mayor al ancho del menú + el margen */
+}
+
+
