@@ -24,32 +24,36 @@
 
       <div class="mb-0 col-sm-0" id="form_login" >
 
-        <div class="" id="conten_img">
-          <i id="img_perfil" class="fa-solid fa-circle-user fa-8x"></i>
-        </div>       
+           
 
         <div class="col-sm-0" id="conten_form">
           <!-- nombre -->
+         <p>REGISTRO</p>
           <div class="mb-2 row">
-            <label for="validationDefault01" class="col-sm-5 form-label">NOMBRE</label>
+            
             <div class="col-sm-7 entradas" >
-              <input type="text" class="form-control" id="validationDefault01 inputName" placeholder="Hernesto " name= "nombreUsuario" value="" required>
+              <img src="img/usuario.jpg">
+              <input type="text" class="form-control" id="validationDefault01 inputName" placeholder="Nombrea "  name= "nombreUsuario" value="" required>
+           
             </div>
           </div>
 
           <!-- apellidos -->
           <div class="mb-2 row">
-            <label for="validationDefault01" class="col-sm-5 form-label">APELLIDO</label>
+            
             <div class="col-sm-7 entradas" >
-              <input type="text" class="form-control" id="validationDefault01 inputLastName" placeholder="Orduña Osirio" name="apellidosUsuario" value="" required>
+            <img src="img/usuario.jpg">
+              <input type="text" class="form-control" id="validationDefault01 inputLastName" placeholder="Apellidos" name="apellidosUsuario" value="" required>
+              
             </div>
           </div>
 
           <!-- matricula -->
           <div class="mb-2 row">
-            <label for="validationDefault01" class="col-sm-5 form-label">MATRICULA</label>
+            
             <div class="col-sm-7 entradas" >
-              <input type="number" class="form-control" id="validationDefault01 inputMatric" placeholder="99999999" name="matriculaUsuario" value="" required>
+            <img src="img/id.jpg">
+              <input type="number" class="form-control" id="validationDefault01 inputMatric" placeholder="Matricula" name="matriculaUsuario" value="" required>
             </div>
             @if ($errors->has('matriculaUsuario'))
               <div class="alert alert-danger">{{ $errors->first('matriculaUsuario', ':message') }}</div>
@@ -58,9 +62,10 @@
 
           <!-- correo electronico -->
           <div class="mb-2 row">
-            <label for="validationDefault01" class="col-sm-5 form-label">EMAIL</label>
+            
             <div class="col-sm-7 entradas" >
-              <input type="email" class="form-control" id="validationDefault01 inputUser" name="correoUsuario" placeholder="ejemplo@hotmail.com" value="" required>
+            <img src="img/gmail.jpg">
+              <input type="email" class="form-control" id="validationDefault01 inputUser" name="correoUsuario" placeholder="Email" value="" required>
             </div>
             @if ($errors->has('correoUsuario'))
               <div class="alert alert-danger">{{ $errors->first('correoUsuario', ':message') }}</div>
@@ -69,17 +74,19 @@
 
           <!-- contraseña -->
           <div class="mb-2  row">
-            <label for="validationDefaultPassword" class="col-sm-5 form-label">CONTRASEÑA</label>
+            
             <div class="col-sm-7  entradas">
-              <input type="password" class="form-control" id="validationDefaultPassword" placeholder="**********" name="contraseñaUsuario" value="" required>         
+            <img src="img/contraseña.jpg">
+              <input type="password" class="form-control" id="validationDefaultPassword" placeholder="Contraseña" name="contraseñaUsuario" value="" required>         
             </div>
           </div>
 
           <!-- confirmar contraseña -->
           <div class="mb-2  row">
-            <label for="validationDefaultPassword" class="col-sm-5 form-label">CONFIRMAR CONTRASEÑA</label>
+            
             <div class="col-sm-7  entradas">
-              <input type="password" class="form-control" id="validationDefaultPassword " placeholder="**********" value="" required>         
+            <img src="img/contraseña.jpg">
+              <input type="password" class="form-control" id="validationDefaultPassword " placeholder="Confirmar Contraseña" value="" required>         
             </div>
           </div>
 
