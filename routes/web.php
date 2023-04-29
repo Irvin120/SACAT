@@ -69,7 +69,9 @@ Route::get('/base-admin', function () {
     return view('archivoBaseAdmin/baseAdmin');
 });
 
-
+Route::get('/base', function () {
+    return view('archivoBaseAdmin/admin-base');
+});
 
 
 
