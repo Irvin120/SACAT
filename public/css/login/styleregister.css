@@ -12,10 +12,11 @@
   margin: 120px;
   background: url("/img/registro.jpg");
   background-position: center;
-  background-size: 800px 500px;
+  background-repeat: no-repeat;
+  background-size: 800px 450px;
   object-fit: cover;
-  margin-right: 100px;
-  height: 500px;
+  margin-left: 200px;
+  height: 450px;
 }
 
 #icon{
@@ -27,6 +28,7 @@
 .mb-2{
     justify-content: center;
     background-color: white;
+    margin-bottom: 0.0rem;
 }
 .col-sm-7{
     background-color: white;
@@ -36,16 +38,17 @@
     background-color: white;
     justify-content: center;
     float: right;
-    margin-right: 115px;
+    margin-right: 110px;
 }
 
 .ms-3{
     width: 100px;
+    height: 40px;
 }
 p{
     text-align: center;
     background-color: white;
-    font-size: 50px;
+    font-size: 30px;
 }
 img, svg {
     vertical-align: middle;
@@ -58,7 +61,7 @@ img, svg {
     width: 70%;
     max-width: 100%;
     padding-right: calc(var(--bs-gutter-x) * .5);
-    height: 50px;
+    height: 40px;
     border-radius: 20px;
     margin-top: var(--bs-gutter-y);
 }
@@ -73,7 +76,7 @@ img, svg {
     padding: 1rem 1rem 1rem 2rem;
     float: left;
     width: 500px;
-    height: 500px;
+    height: 450px;
     justify-content: center;
     
 }
@@ -112,6 +115,11 @@ button, input, optgroup, select, textarea {
         justify-content: center;
         
     }
+    p{
+        text-align: center;
+        background-color: white;
+        font-size: 40px;
+    }
     .row>* {
         flex-shrink: 0;
         width: 70%;
@@ -135,6 +143,17 @@ button, input, optgroup, select, textarea {
 
 }
 @media all and (max-width: 800px) {
+    #form_login{
+        border-radius: 20px;
+      margin: 140px;
+      background: url("/img/registro.jpg");
+      background-position: center;
+      background-size: 800px 500px;
+      object-fit: cover;
+      margin-left: 30px;
+      width: 600px;
+      height: 500px;
+    }
     #conten_form{
         border-width: 0px 0px 0px 2px;
         border-color: black;
@@ -143,7 +162,7 @@ button, input, optgroup, select, textarea {
         background-color: white;
         padding: 1rem 1rem 1rem 2rem;
         float: left;
-        width: 300px;
+        width: 330px;
         height: 500px;
         justify-content: center;
         
@@ -156,7 +175,7 @@ button, input, optgroup, select, textarea {
         background-color: white;
         justify-content: center;
        float: right;
-        margin-right: 85px;
+        margin-right: 65px;
     }
     .form-control {
         width: 250px;
@@ -172,9 +191,10 @@ button, input, optgroup, select, textarea {
         margin: 120px; 
         background: url(/img/registro.jpg);
         background-position: center;
-        background-size: 0px 0px;
+        background-size: 800px 500px;
         object-fit: cover; 
-        margin-right: 100px; 
+        margin-left: 20px;
+        width: 550px;
         height: 500px; 
     }
     #conten_form{
@@ -185,17 +205,33 @@ button, input, optgroup, select, textarea {
         background-color: white;
         padding: 1rem 1rem 1rem 2rem;
         float: left;
-        width: 400px;
+        width: 300px;
         height: 500px;
         justify-content: center;
         
     }
     .mb-2{
-        justify-content: center;
+       
         background-color: white;
     }
     .ms-3{
         width: 80px;
-        float: left;
+    }
+    .form-control {
+        display: block;
+        width: 240px;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border-radius: 0.25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     }
 }
