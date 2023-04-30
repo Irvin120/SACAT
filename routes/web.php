@@ -23,6 +23,11 @@ Route::get('/', function () {
 //vista de login
 Route::get('/login-user',[SessionsController::class, 'create'])->name('login-user');
 
+Route::get('/login-mr', function () {
+    return view('login/login-user');
+});
+
+
 // Ruta para procesar la información del formulario de login
 
 //ruta para el logout
