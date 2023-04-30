@@ -10,6 +10,7 @@ class solicitud extends Model
 {
     use HasFactory;
     protected $table = 'solicitudes';
+    protected $primaryKey = 'idSolicitud';
     public $timestamps = false;
 
 

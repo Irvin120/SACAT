@@ -12,9 +12,6 @@ function mostrarBotones() {
     }
 }
 
-
-
-
 function mostrarForm() {
     var form = document.getElementById("containerForm");
     if (form.style.display === "none") {
@@ -23,7 +20,6 @@ function mostrarForm() {
         form.style.display = "none";
     }
 }
-
 
 function cambiarBoton(miBoton) {
     if (miBoton.classList.contains("active")) {
@@ -37,7 +33,6 @@ function cambiarBoton(miBoton) {
         miBoton.style.transition = "background-color 0.5s ease-in-out";
     }
 }
-
 
 function addActividad() {
     var addActividadB = document.getElementById("#containerForm")
@@ -53,8 +48,6 @@ function cancelarFormulario() {
     document.getElementById("formularioAdd").reset(); // Reinicia el formulario
     mostrarForm();
 }
-
-
 
 function entradaArea(event) {
     var idAula = $(event.currentTarget).data('id');
@@ -73,8 +66,6 @@ function entradaArea(event) {
         }
     });
 }
-
-
 
 function confirmDelete() {
     if (confirm('¿Estás seguro de que deseas eliminar esta actividad?')) {
@@ -119,3 +110,6 @@ function validarFormularioActividad(){
 
     return true;
 }
+
+
+//----------------------------- Manejo de las solicitudes enviadas por el usuario--------------------------------
