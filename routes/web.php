@@ -127,4 +127,4 @@ Route::post('/user/enviarSolicitud', [mainUserController::class, 'enviarSolicitu
 //aceptacion de solicitudes
 Route::post('/aceptar-solicitud/{idSolicitud}',[AdminController::class, 'aceptarSolicitud'])->name('aceptarSolicitud');
 //eliminar solicitud
-// Route::delete('/eliminar-solicitud/{id}', 'SolicitudController@eliminarSolicitud')->name('eliminarSolicitud');
+Route::delete('/eliminar-solicitud/{idSolicitud}', [AdminController::class, 'eliminarSolicitud' ])->name('eliminarSolicitud');

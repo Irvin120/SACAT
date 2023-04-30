@@ -127,5 +127,15 @@ class AdminController extends Controller
         }
     }
 
+
+    public function eliminarSolicitud($idSolicitud){
+        try {
+            solicitud::destroy($idSolicitud);
+            return back();
+        } catch (\Exception $e) {
+            return back()->with('error', 'No se pudo aceptar la eliminación: ' . $e->getMessage());
+        }
+    }
+
 }
 

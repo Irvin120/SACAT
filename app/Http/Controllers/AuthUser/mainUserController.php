@@ -29,7 +29,15 @@ class mainUserController extends Controller
             $query = $request->input('query');
 
             // obtener las aulas que coinciden con la consulta
-            $aulas = Aula::where('nombreAula', 'like', '%' . $query . '%')->paginate(5);
+            $aulas = Aula::whereNotIn('idAula', function ($query) use ($idUsuario) {
+                $query->select('idAula')
+                      ->from('solicitudes')
+                      ->where('idUsuario', $idUsuario);
+            })
+            ->where(function($query) use ($request) {
+                $query->where('nombreAula', 'like', '%' . $request->input('query') . '%');
+            })
+            ->paginate(5);
 
             // obtener el nombre del usuario autenticado
             $nombreUsuario = Auth::guard('usuario')->user()->nombreUsuario;
