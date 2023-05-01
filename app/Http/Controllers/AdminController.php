@@ -127,7 +127,6 @@ class AdminController extends Controller
         }
     }
 
-
     public function eliminarSolicitud($idSolicitud){
         try {
             solicitud::destroy($idSolicitud);

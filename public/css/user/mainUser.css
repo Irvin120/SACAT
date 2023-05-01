@@ -196,7 +196,7 @@ ul {
     height: 180px;
     background-color: #019EFF;
     margin: 20px;
-    display: none;
+    /* display: none; */
 }
 .aula h5{
     color: white;

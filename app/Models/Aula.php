@@ -21,4 +21,8 @@ class Aula extends Model
         return $this->hasMany(Actividad::class, 'idAula');
     }
 
+    public function solicitudes(){
+        return $this->hasMany(Solicitud::class, 'idAula');
+    }
+
 }

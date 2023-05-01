@@ -13,26 +13,30 @@
             </h2>
         </div>
         <!--Formulario para crear una nueva aula-->
-        <form id="formularioAdd" method="POST" action="{{ route('createAula') }}" onsubmit="return validarFormularioCrearAula()">
+        <form id="formularioAdd" method="POST" action="{{ route('createAula') }}"
+            onsubmit="return validarFormularioCrearAula()">
             @csrf
             <div class="containerInput p-3">
 
                 <div class="input-group input-group-sm mb-3 my-4">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Nombre del Aula</span>
-                    <input id="nombreAula" name="nombreAula" type="text" class="form-control" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-sm" maxlength="50" placeholder="Laboratorio de Informática 1">
+                    <input id="nombreAula" name="nombreAula" type="text" class="form-control"
+                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="50"
+                        placeholder="Laboratorio de Informática 1">
                 </div>
 
                 <div class="input-group input-group-sm mb-3 my-4">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Asignatura</span>
-                    <input id="asignatura" name="asignatura" type="text" class="form-control" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-sm" maxlength="50" placeholder="Nombre de la materia">
+                    <input id="asignatura" name="asignatura" type="text" class="form-control"
+                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="50"
+                        placeholder="Nombre de la materia">
                 </div>
 
                 <div class="input-group input-group-sm mb-3 my-4">
                     <span class="input-group-text" id="inputGroup-sizing-sm">Grupo</span>
-                    <input id="grupo" name="grupo" type="text" class="form-control" aria-label="Sizing example input"
-                        aria-describedby="inputGroup-sizing-sm" maxlength="10" placeholder="1A-DGS">
+                    <input id="grupo" name="grupo" type="text" class="form-control"
+                        aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" maxlength="10"
+                        placeholder="1A-DGS">
                 </div>
 
                 <div class="contenButtonss d-grid gap-2 d-md-flex justify-content-md-center my-4">
@@ -55,12 +59,12 @@
     <div class="containerTarjetas ">
 
         @foreach ($datos as $aula)
-            <div class="tarjeta d-flex align-items-center justify-content-center" data-id="{{ $aula->idAula }}"
-                ondblclick="entradaArea(event)">
+            <div class="tarjeta d-flex align-items-center justify-content-center" data-id="{{ $aula->idAula }}" ondblclick="entradaArea(event)">
 
                 {{-- Botones de borrado de targeta --}}
                 <div id="botones" style="display:none;">
-                    <form action="{{ route('destroyAula', $aula->idAula) }}" method="POST"  onsubmit="return confirm('¿Está seguro que desea eliminar {{ $aula->nombreAula }}?');">
+                    <form action="{{ route('destroyAula', $aula->idAula) }}" method="POST"
+                        onsubmit="return confirm('¿Está seguro que desea eliminar {{ $aula->nombreAula }}?');">
                         @csrf
                         @method('DELETE')
                         <button type="submit"
@@ -73,7 +77,8 @@
                 <form id="EditNombreAula" action="{{ route('updateAula', $aula->idAula) }}" method="POST">
                     @csrf
                     @method('PUT') <strong> <input class="text-center" type="text" name="nombreAula"
-                            value="{{ $aula->nombreAula }}" onchange="if(window.confirm('¿Está seguro de que desea cambiar el nombre del aula {{ $aula->nombreAula }} y guardar los cambios?')){this.form.submit();}else{this.value='{{ $aula->nombreAula }}';}"></strong>
+                            value="{{ $aula->nombreAula }}"
+                            onchange="if(window.confirm('¿Está seguro de que desea cambiar el nombre del aula {{ $aula->nombreAula }} y guardar los cambios?')){this.form.submit();}else{this.value='{{ $aula->nombreAula }}';}"></strong>
                     <i class="fa-solid fa-pencil icon-header"></i>
                     <br>
                     <br>

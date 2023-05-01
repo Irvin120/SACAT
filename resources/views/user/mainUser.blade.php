@@ -82,14 +82,9 @@
         </div>
 
 
-        <div id="ventana-emergente-confirmacion">
-            <h2>Enviar solicitud a aula</h2>
-            <p>Se ha enciado tu solicitud a <br><span>"Expresión Original y Escrita"</span></p>
-            <div class="botones-container">
-                <button id="boton-volver">Volver</button>
-            </div>
-        </div>
 
+
+        {{--------------------------------Aulas en las tarjetas-------------------------}}
 
         <div class="content-aulas">
             <div class="no-hay">
@@ -99,31 +94,23 @@
 
 
         <div class="aulas">
-            <div class="aula">
-                <h5>Aula A</h5>
-            </div>
-            <div class="aula">
-                <h5>Aula B</h5>
-            </div>
-            <div class="aula">
-                <h5>Aula C</h5>
-            </div>
-            <div class="aula">
-                <h5>Aula D</h5>
-            </div>
-            <div class="aula">
-                <h5>Aula A</h5>
-            </div>
-            <div class="aula">
-                <h5>Aula B</h5>
-            </div>
-            <div class="aula">
-                <h5>Aula C</h5>
-            </div>
-            <div class="aula">
-                <h5>Aula D</h5>
+            @foreach ($aulasPermitidas as $aulaPermitida)
+                <div class="aula" data-id="{{ $aulaPermitida->idAula }}" ondblclick="entradaAreaUser(event)">
+                    <h5>{{ $aulaPermitida->nombreAula }}</h5>
+                </div>
+            @endforeach
+
+
+        </div>
+
+        <div id="ventana-emergente-confirmacion">
+            <h2>Enviar solicitud a aula</h2>
+            <p>Se ha enciado tu solicitud a <br><span>"Expresión Original y Escrita"</span></p>
+            <div class="botones-container">
+                <button id="boton-volver">Volver</button>
             </div>
         </div>
+
 
     </div>
 

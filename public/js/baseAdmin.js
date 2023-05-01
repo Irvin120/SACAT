@@ -51,7 +51,7 @@ function cancelarFormulario() {
 
 function entradaArea(event) {
     var idAula = $(event.currentTarget).data('id');
-    console.log(idAula);
+    
     $.ajax({
         url: '/mainAdmin/createActividad/' + idAula,
         type: 'GET',

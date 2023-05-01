@@ -51,14 +51,6 @@ Route::get('/restaure-password', function () { return view('loginUser/restore-pa
 // Restraurar contraseña GUARDADA
 Route::get('/save-restaure', function () { return view('loginUser/save-restore'); });
 
-Route::get('actividadesUser', function () {
-    return view('user.actividadesUser');
-});
-Route::get('checklisUser', function () {
-    return view('user.checklisUser');
-});
-
-
 
 
 
@@ -70,12 +62,9 @@ Route::get('checklisUser', function () {
 //------------------------------------------------Ruta del panel principal del administardor--------------------
 
 // base admin
-Route::get('/base-admin', function () {
-    return view('archivoBaseAdmin/baseAdmin');
-});
+Route::get('/base-admin', function () { return view('archivoBaseAdmin/baseAdmin'); });
 
-Route::get('/base', function () {
-    return view('archivoBaseAdmin/admin-base');
+Route::get('/base', function () { return view('archivoBaseAdmin/admin-base');
 });
 
 
@@ -99,9 +88,7 @@ Route::get('/logincre',[AccesoController::class, 'createAdmin'])->name('loginPos
 Route::post('/logout', [AccesoController::class, 'logout'])->name('logout');
 
 
-Route::get('mainAdmin/{idAdmin}', [AdminController::class, 'index'])
-    ->name('mainAdmin')
-    ->middleware(adminMiddleware::class);
+Route::get('mainAdmin/{idAdmin}', [AdminController::class, 'index']) ->name('mainAdmin') ->middleware(adminMiddleware::class);
 
 //Creacion de una nuea aula
 Route::post('mainAdmin/crAu', [AdminController::class, 'store'])->name('createAula');
@@ -133,3 +120,12 @@ Route::post('/user/enviarSolicitud', [mainUserController::class, 'enviarSolicitu
 Route::post('/aceptar-solicitud/{idSolicitud}',[AdminController::class, 'aceptarSolicitud'])->name('aceptarSolicitud');
 //eliminar solicitud
 Route::delete('/eliminar-solicitud/{idSolicitud}', [AdminController::class, 'eliminarSolicitud' ])->name('eliminarSolicitud');
+
+
+
+// acceso a el aula
+Route::get('user/aula/{idAula}', [mainUserController::class, 'entradaAulaUser'])->name('entradaAulaUser');
+
+Route::get('checklisUser', function () { return view('user.checklisUser'); });
+
+
