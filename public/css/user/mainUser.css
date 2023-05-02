@@ -177,6 +177,7 @@ ul {
 
 .no-hay{
     opacity: 20%;
+    
 }
 
 /*------------targetas aulas---------------------------*/
@@ -192,11 +193,10 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 250px;
-    height: 180px;
+    width: 200px;
+    height: 150px;
     background-color: #019EFF;
-    margin: 20px;
-    /* display: none; */
+    margin: 10px;
 }
 .aula h5{
     color: white;

@@ -7,7 +7,6 @@
 @endsection
 
 @section('content')
-
     <link rel="stylesheet" href="{{ asset('css/user/mainUser.css') }}">
 
     <div class="content">
@@ -17,7 +16,16 @@
             <div class="content-search">
                 <div class="tittleAulas">
                     <h2 class="text-start f">Aulas Disponibles</h2>
+                {{--------------------------------Aulas en las tarjetas-------------------------}}
+                    <div class="aulas">
+                        @foreach ($aulasPermitidas as $aulaPermitida)
+                            <div class="aula" data-id="{{ $aulaPermitida->idAula }}" ondblclick="entradaAreaUser(event)">
+                                <h5>{{ $aulaPermitida->nombreAula }}</h5>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
+                {{-------------------------------- Buscador-------------------------}}
                 <div class="search" id="ctn-bars-search">
 
                     <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="width: 380px;">
@@ -29,7 +37,7 @@
                                 <input class="searchinput" type="text" name="query" placeholder="Buscar aula">
 
 
-                                <button type="submit" style="float:right" class="bthSearch btn btn-primary">Button</button>
+                                <button type="submit" style="float:right" class="bthSearch btn btn-primary">Buscar</button>
                             </div>
                         </form>
 
@@ -42,7 +50,7 @@
                                         @csrf
                                         <input type="hidden" name="idUsuario" value="{{ $idUsuario }}">
                                         <input type="hidden" name="idAula" value="{{ $item->idAula }}">
-                                        <button type="submit" class="btn btn-primary"> Enviar Solicitud</button>
+                                        <button id="enviar-solicitud" onclick="return enviarSolicitud()" type="submit" class="btn btn-primary"> Enviar Solicitud</button>
                                     </form>
 
                                 </div>
@@ -82,6 +90,7 @@
         </div>
 
 
+<<<<<<< HEAD
 
 
         {{-- ------------------------------Aulas en las tarjetas----------------------- --}}
@@ -105,6 +114,8 @@
 
         </div>
 
+=======
+>>>>>>> d093e0afcd2f09198893d39f183381b192b639de
         <div id="ventana-emergente-confirmacion">
             <h2>Enviar solicitud a aula</h2>
             <p>Se ha enciado tu solicitud a <br><span>"Expresión Original y Escrita"</span></p>

@@ -69,6 +69,7 @@ function entradaArea(event) {
 
 function confirmDelete() {
     if (confirm('¿Estás seguro de que deseas eliminar esta actividad?')) {
+        alert('Actividad eliminada correctamente.');
         return true;
     } else {
         return false;
@@ -110,6 +111,24 @@ function validarFormularioActividad(){
 
     return true;
 }
+///-----------------------aceptar usuario
 
+function aceptarSolicitudUsuario() {
+    if (confirm('¿Estás seguro de que deseas aceptar al Usuario?')) {
+        alert('Solicitud Aceptada.');
+        return true;
+    } else {
+        return false;
+        
+    }
+}
+function eliminarSolicitudUsuario() {
+    if (confirm('¿Estás seguro de que deseas eliminar al Usuario?')) {
+        alert('Solicitud Eliminada.');
+        return true;
+    } else {
+        return false;
+    }
+}
 
 //----------------------------- Manejo de las solicitudes enviadas por el usuario--------------------------------
