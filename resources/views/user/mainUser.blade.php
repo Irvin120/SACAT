@@ -84,7 +84,7 @@
 
 
 
-        {{--------------------------------Aulas en las tarjetas-------------------------}}
+        {{-- ------------------------------Aulas en las tarjetas----------------------- --}}
 
         <div class="content-aulas">
             <div class="no-hay">
@@ -95,7 +95,9 @@
 
         <div class="aulas">
             @foreach ($aulasPermitidas as $aulaPermitida)
-                <div class="aula" data-id="{{ $aulaPermitida->idAula }}" ondblclick="entradaAreaUser(event)">
+            <div class="aula" data-id-usuario="{{ $idUsuario }}" data-id="{{ $aulaPermitida->idAula }}" data-correo-usuario-encryp="{{$correoUsuarioEncryp}}"
+                ondblclick="entradaAreaUser(event, $(this).data('id-usuario'), $(this).data('correo-usuario-encryp'))">
+
                     <h5>{{ $aulaPermitida->nombreAula }}</h5>
                 </div>
             @endforeach
