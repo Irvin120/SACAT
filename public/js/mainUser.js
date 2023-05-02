@@ -30,6 +30,13 @@ function entradaAreaUser(event) {
 
 
     })
+}
 
-
+function enviarSolicitud() {
+    if (confirm('¿Estás seguro que quieres enviar la solicitud?')) {
+        alert('Solicitud Enviada')
+        return true;
+    } else {
+        return false;
+    }
 }

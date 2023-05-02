@@ -56,7 +56,6 @@
                             </div>
                         @endforeach
 
-
                         <!-- Boton para abrir ventana para crear una actividad -->
                         <div class="contendButton">
                             <button type="button" class="btnCrear btn btn-primary" data-bs-toggle="modal"
@@ -337,7 +336,7 @@
                                     <form action="{{ route('aceptarSolicitud', $solicitud->idSolicitud) }}"
                                         method="POST">
                                         @csrf
-                                        <button type="submit" class="btnchek btn">
+                                        <button type="submit" onclick="return aceptarSolicitudUsuario()" class="btnchek btn">
                                             <i class="fa-regular fa-square-check fa-xl" style="color: #000000;"></i>
                                         </button>
                                     </form>
@@ -346,7 +345,7 @@
                                     <form action="{{ route ('eliminarSolicitud', $solicitud->idSolicitud) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btnx btn">
+                                        <button type="submit" onclick="return eliminarSolicitudUsuario() " class="btnx btn">
                                             <i class="fa-solid fa-circle-xmark fa-xl" style="color: #000000;"></i>
                                         </button>
                                     </form>
