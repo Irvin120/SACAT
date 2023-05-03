@@ -2,166 +2,971 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
 }
 
-html{
-    font-size: 16px;
-}
-
+/* fondo de pantalla */
 body{
+    background-image: url('/img/bkg.png');
+    background-size: cover; /* Ajusta la imagen para cubrir todo el div */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que se repita la imagen */
+}
+
+/* fondo de informacion */
+#contend-queEs{
+    background-image: url('/img/libros.jpg');
+    background-size: cover; /* Ajusta la imagen para cubrir todo el div */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que se repita la imagen */
+}
+
+
+/* ------------------------------------- Estilos para pantallas de 463px o menos ----------------------------------*/
+@media (max-width: 463px) {
+
+/* contenedor */
+.content{
     width: 100%;
-    height: 100vh;
-    font-family: sans-serif;
 }
 
-header{
-    height: 100%;
-    height: 64px;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    max-width: 1440px;
-    margin: 0 auto;
-}
 
-header img{
-    width: auto;
-    height: 75%;
-    margin-left: 1rem;
-}
-
-main{
-    margin: 0 auto;
-    width: 100%;
-    height: calc(100vh - 64px);
-    background-color: #0E87C2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-main .div-container{
+/* Informacion sobre que es */
+.contend-queEs{
     width: 80%;
-    height: 80%;
-    background-color: #fff;   
+
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    margin-top: 2rem;
 }
 
-.div-container{
+.info-sacat{
     display: flex;
+    align-content: center;
     align-items: center;
+    justify-content: center;
+    
 }
 
-
-.div-container .container-text{
-    background-image: linear-gradient(to top, rgba(207, 217, 223, 0.48) 0%, rgba(226, 235, 240, 0.84) 100%), url(img/libros.jpg);
-    width: 70%;
-    height: 100%;
-    background-size: cover;
-    background-position:  bottom center;
-    padding: 2.5rem;
-}
-
-
-.container-text h2{
-    font-size: 24px;
-    font-weight: bold;
-    color: #000;
+h1{
     text-align: center;
-    margin-bottom: 4rem;
+    padding-top: 1rem !important;
+    margin-bottom: 2rem !important;
+    font-size: 22px !important;
+}
+p{
+    font-size: 10px !important;
+    margin: 0 !important;
+    padding: 0rem 1rem !important;
+    font-weight: bold !important;
 }
 
-.container-text p{
-    font-size: 16px;
-    color: #000;
-    margin-bottom: .5rem;
+.parrafo2{
+    padding-bottom: 2rem !important;
 }
 
 
-.div-container .form-user{
-    width: 30%;
-    height: 100%;
-    background-color: #fff;
+/* login */
+.coten-login{  
+    background: rgb(255, 255, 255); 
+    width: 80%;
+
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+
+.circulo-icon{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.form-user .form-img{
-    width: 100%;
-    height: 30%;
-    display: flex;
-    flex-direction: column;
+    align-content: center;
     align-items: center;
     justify-content: center;
+    
 }
-
-.form-img .icon-user div{
-    width: 7rem;
-    height: 7rem;
+.circulo{
     background-color: #66CC44;
+
+    width: 124px;
+    height: 124px;
     border-radius: 50%;
+
     display: flex;
+    align-content: center;
     align-items: center;
     justify-content: center;
-}
 
-.form-user .icon-user img{
-    width: 60%;
-    height: auto;
-    max-width: 100px;
-}
-
-.form-user .icon-user h4{
-    font-weight: 400;
-    color: #000;
-    font-size: 20px;
-}
-
-.form-user .form-container {
-    width: 100%;
-    height: 45%;
-}
-
-.form-container form{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-form .input-icon{
-    width: 90%;
-    height: auto;
-    margin: .5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #000;
-    border-radius: 1rem;
-}
-
-input{
-    border: none;
-    padding: .5rem;
-}
-
-.input-correo:focus{
-    outline: none;
-}
-
-.input-contraseña:focus{
-    outline: none;
-}
-
-.btn-acceder{
     margin-top: 1rem;
 }
 
+
+.text-p{
+    margin: 0;
+    margin-top: .5rem;
+    text-align: center;
+    
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* inputs de correo y contraseña */
+.contend-input{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    
+    margin: 0rem 2rem;
+
+    border: solid 1px black;
+    border-radius: 30px;
+}
+
+/* .invalid-feedback{
+    margin-top: auto;
+    position: absolute;
+    display: none;
+    
+} */
+
+
+.icon-input{
+    padding: 1.5rem 1rem;
+}
+
+.input-login{
+    border: none !important;
+    padding: 0rem 0rem;
+    margin-right: 1rem;
+}
+
+.input-login:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* botones de ingresar y registro */
 .btn{
     background: #0E87C2 !important;
     border-radius: 35px !important;
     border: 0 !important;
+
+    padding: .5rem;
+
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+
+    font-size: 16px;
+}
+
+.btn-register {
+    margin-bottom: 4rem;
+}
+
+
+}
+
+/* ------------------------------------- Estilos para pantallas de 463px a 577px ----------------------------------*/
+@media (min-width: 463px) and (max-width: 577px) {
+
+/* contenedor */
+.content{
+    width: 100%;
+}
+
+
+/* Informacion sobre que es */
+.contend-queEs{
+    width: 80%;
+
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 2rem;
+}
+
+.info-sacat{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+h1{
+    text-align: center;
+    padding-top: 1rem !important;
+    margin-bottom: 2rem !important;
+    font-size: 22px !important;
+}
+p{
+    font-size: 10px !important;
+    margin: 0 !important;
+    padding: 0rem 1rem !important;
+    font-weight: bold !important;
+}
+
+.parrafo2{
+    padding-bottom: 2rem;
+}
+
+
+/* login */
+.coten-login{  
+    background: rgb(255, 255, 255); 
+    width: 80%;
+
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 2rem;
+}
+
+
+.circulo-icon{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+.circulo{
+    background-color: #66CC44;
+
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1rem;
+}
+
+
+.text-p{
+    margin: 0;
+    margin-top: .5rem;
+    text-align: center;
+    
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* inputs de correo y contraseña */
+.contend-input{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    
+    margin: 0rem 2rem;
+
+    border: solid 1px black;
+    border-radius: 30px;
+}
+
+/* .invalid-feedback{
+    margin-top: auto;
+    position: absolute;
+    display: none;
+    
+} */
+
+
+.icon-input{
+    padding: 1.5rem 1rem;
+}
+
+.input-login{
+    border: none !important;
+    padding: 0rem 0rem;
+    margin-right: 1rem;
+}
+
+.input-login:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* botones de ingresar y registro */
+.btn{
+    background: #0E87C2 !important;
+    border-radius: 35px !important;
+    border: 0 !important;
+
+    padding: .5rem;
+
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+
+    font-size: 16px;
+}
+
+.btn-register {
+    margin-bottom: 4rem;
+}
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 577px y 768px -------------------------------*/
+@media (min-width: 577px) and (max-width: 768px) {
+
+/* contenedor */
+.content{
+    width: 100%;
+}
+
+
+/* Informacion sobre que es */
+.contend-queEs{
+    width: 80%;
+
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-top: 2rem;
+}
+
+.info-sacat{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+h1{
+    text-align: center;
+    margin-top: 1rem !important;
+    margin-bottom: 2rem !important;
+    font-size: 22px !important;
+}
+p{
+    font-size: 10px !important;
+    margin: 0 !important;
+    padding: 0rem 1rem !important;
+}
+
+.parrafo2{
+    padding-bottom: 2rem !important;
+}
+
+
+/* login */
+.coten-login{  
+    background: rgb(255, 255, 255); 
+    width: 80%;
+
+    margin-left: 3rem;
+    margin-right: 3rem;
+    margin-bottom: 2rem;
+}
+
+
+.circulo-icon{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+.circulo{
+    background-color: #66CC44;
+
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1rem;
+}
+
+
+.text-p{
+    margin: 0;
+    margin-top: .5rem;
+    text-align: center;
+    
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* inputs de correo y contraseña */
+.contend-input{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    
+    margin: 0rem 2rem;
+
+    border: solid 1px black;
+    border-radius: 30px;
+}
+
+/* .invalid-feedback{
+    margin-top: auto;
+    position: absolute;
+    display: none;
+    
+} */
+
+
+.icon-input{
+    padding: 1.5rem 1rem;
+}
+
+.input-login{
+    border: none !important;
+    padding: 0rem 0rem;
+    margin-right: 1rem;
+}
+
+.input-login:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* botones de ingresar y registro */
+.btn{
+    background: #0E87C2 !important;
+    border-radius: 35px !important;
+    border: 0 !important;
+
+    padding: .5rem;
+
+    margin-top: 1rem;
+
+    margin-bottom: 2rem;
+
+    font-size: 16px;
+}
+
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 768px y 992px -------------------------------*/
+@media (min-width: 768px) and (max-width: 992px) {
+
+/* contenedor */
+.content{
+    display: flex;
+    width: 100%;
+}
+
+
+/* Informacion sobre que es */
+.contend-queEs{
+    width: 55%;
+
+    margin-left: 3rem;
+    margin-top: 2rem;
+}
+
+.info-sacat{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+h1{
+    text-align: center;
+    margin-top: 1rem !important;
+    margin-bottom: 2rem !important;
+    font-size: 22px !important;
+}
+p{
+    font-size: 10px !important;
+    margin: 1rem 3rem !important;
+}
+
+
+/* login */
+.coten-login{  
+    background: rgb(255, 255, 255); 
+    width: 45%;
+    margin-right: 3rem;
+    margin-top: 2rem;
+}
+
+
+.circulo-icon{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+.circulo{
+    background-color: #66CC44;
+
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1rem;
+}
+
+.text-p{
+    margin: 0;
+    margin-top: .5rem;
+    text-align: center;
+    
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* inputs de correo y contraseña */
+.contend-input{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    
+    margin: 0rem 2rem;
+
+    border: solid 1px black;
+    border-radius: 30px;
+}
+
+/* .invalid-feedback{
+    margin-top: auto;
+    position: absolute;
+    display: none;
+    
+} */
+
+
+.icon-input{
+    padding: 1.5rem 1rem;
+}
+
+.input-login{
+    border: none !important;
+    padding: 0rem 0rem;
+    margin-right: 1rem;
+}
+
+.input-login:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* botones de ingresar y registro */
+.btn{
+    background: #0E87C2 !important;
+    border-radius: 35px !important;
+    border: 0 !important;
+
+    padding: .5rem;
+
+    font-size: 16px;
+}
+
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 992px y 1200px -------------------------------*/
+@media (min-width: 992px) and (max-width: 1200px) {
+
+/* contenedor */
+.content{
+    display: flex;
+    width: 100%;
+}
+
+
+/* Informacion sobre que es */
+.contend-queEs{
+    width: 65%;
+
+    margin-left: 3rem;
+    margin-top: 2rem;
+}
+
+.info-sacat{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+h1{
+    text-align: center;
+    margin-top: 1rem !important;
+    margin-bottom: 3rem !important;
+    font-size: 24px !important; 
+}
+p{
+    margin: 1rem 3rem !important;
+    font-size: 14px !important;
+}
+
+
+/* login */
+.coten-login{  
+    background: rgb(255, 255, 255); 
+    width: 35%;
+    margin-right: 3rem;
+    margin-top: 2rem;
+}
+
+
+.circulo-icon{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+.circulo{
+    background-color: #66CC44;
+
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1rem;
+}
+
+.text-p{
+    margin: 0;
+    margin-top: .5rem;
+    text-align: center;
+    
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* inputs de correo y contraseña */
+.contend-input{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    
+    margin: 0rem 2rem;
+
+    border: solid 1px black;
+    border-radius: 30px;
+}
+
+/* .invalid-feedback{
+    margin-top: auto;
+    position: absolute;
+    display: none;
+    
+} */
+
+
+.icon-input{
+    padding: 1.5rem 1rem;
+}
+
+.input-login{
+    border: none !important;
+    padding: 0rem 0rem;
+    margin-right: 1rem;
+}
+
+.input-login:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* botones de ingresar y registro */
+.btn{
+    background: #0E87C2 !important;
+    border-radius: 35px !important;
+    border: 0 !important;
+
+    padding: .5rem;
+
+    font-size: 16px;
+}
+
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 1200px y 1400px -------------------------------*/
+@media (min-width: 1200px) and (max-width: 1400px) {
+
+/* contenedor */
+.content{
+    display: flex;
+    width: 100%;
+}
+
+
+/* Informacion sobre que es */
+.contend-queEs{
+    width: 65%;
+
+    margin-left: 3rem;
+    margin-top: 2rem;
+}
+
+.info-sacat{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+h1{
+    text-align: center;
+    margin-top: 1rem !important;
+    margin-bottom: 3rem !important;
+}
+p{
+    margin: 1rem 3rem !important;
+}
+
+
+/* login */
+.coten-login{  
+    background: rgb(255, 255, 255); 
+    width: 35%;
+    margin-right: 3rem;
+    margin-top: 2rem;
+}
+
+
+.circulo-icon{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+.circulo{
+    background-color: #66CC44;
+
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1rem;
+}
+
+.text-p{
+    margin: 0;
+    margin-top: .5rem;
+    text-align: center;
+    
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* inputs de correo y contraseña */
+.contend-input{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    
+    margin: 0rem 2rem;
+
+    border: solid 1px black;
+    border-radius: 30px;
+}
+
+/* .invalid-feedback{
+    margin-top: auto;
+    position: absolute;
+    display: none;
+    
+} */
+
+
+.icon-input{
+    padding: 1.5rem 1rem;
+}
+
+.input-login{
+    border: none !important;
+    padding: 0rem 0rem;
+    margin-right: 1rem;
+}
+
+.input-login:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* botones de ingresar y registro */
+.btn{
+    background: #0E87C2 !important;
+    border-radius: 35px !important;
+    border: 0 !important;
+
+    padding: .5rem;
+
+    font-size: 16px;
+}    
+
+
+}
+
+/* --------------------------------------- Estilos para pantallas de 1400px o más -------------------------------*/
+@media (min-width: 1400px) {
+
+/* contenedor */
+.content{
+    display: flex;
+    width: 100%;
+}
+
+
+/* Informacion sobre que es */
+.contend-queEs{
+    width: 65%;
+
+    margin-left: 3rem;
+    margin-top: 2rem;
+}
+
+.info-sacat{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+h1{
+    text-align: center;
+    margin-top: 1rem !important;
+    margin-bottom: 3rem !important;
+}
+p{
+    margin: 1rem 3rem !important;
+}
+
+
+/* login */
+.coten-login{  
+    background: white; 
+    width: 35%;
+    margin-right: 3rem;
+    margin-top: 2rem;
+}
+
+
+.circulo-icon{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+.circulo{
+    background-color: #66CC44;
+
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1rem;
+}
+
+.text-p{
+    margin: 0;
+    margin-top: .5rem;
+    text-align: center;
+    
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* inputs de correo y contraseña */
+.contend-input{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    
+    margin: 0rem 2rem;
+
+    border: solid 1px black;
+    border-radius: 30px;
+}
+
+/* .invalid-feedback{
+    margin-top: auto;
+    position: absolute;
+    display: none;
+    
+} */
+
+
+.icon-input{
+    padding: 1.5rem 1rem;
+}
+
+.input-login{
+    border: none !important;
+    padding: 0rem 0rem;
+    margin-right: 1rem;
+}
+
+.input-login:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* botones de ingresar y registro */
+.btn{
+    background: #0E87C2 !important;
+    border-radius: 35px !important;
+    border: 0 !important;
+
+    padding: .5rem;
+
+    font-size: 16px;
+}
+
+
 }
