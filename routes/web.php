@@ -130,6 +130,6 @@ Route::post('/user/enviarSolicitud', [mainUserController::class, 'enviarSolicitu
 // acceso a el aula
 Route::get('user/aula/{idAula}/{idUsuario}/{correoUsuarioEncryp}', [mainUserController::class, 'entradaAulaUser'])->name('entradaAulaUser')->middleware('auth.user');
 
-Route::get('checklisUser', function () { return view('user.checklisUser'); });
+Route::get('user/aula/checklisUser/{idUsuario}', [mainUserController::class, 'entradaActividadUser']);
 
 

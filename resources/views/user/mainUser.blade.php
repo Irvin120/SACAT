@@ -16,19 +16,31 @@
             <div class="content-search">
                 <div class="tittleAulas">
                     <h2 class="text-start f">Aulas Disponibles</h2>
-                {{--------------------------------Aulas en las tarjetas-------------------------}}
+
+
+                    {{-- -------------------------------------------Aulas permitidas en las tarjetas----------------------- --}}
                     <div class="aulas">
+
                         @foreach ($aulasPermitidas as $aulaPermitida)
-                            <div class="aula" data-id="{{ $aulaPermitida->idAula }}" ondblclick="entradaAreaUser(event)">
+                            <div class="aula"
+                                data-id-usuario="{{ $idUsuario }}"
+                                data-id="{{ $aulaPermitida->idAula }}"
+                                data-correo-usuario-encryp="{{ $correoUsuarioEncryp }}"
+                                ondblclick="entradaAreaUser(event, $(this).data('id-usuario'), $(this).data('correo-usuario-encryp'))">
+
                                 <h5>{{ $aulaPermitida->nombreAula }}</h5>
                             </div>
                         @endforeach
                     </div>
+
                 </div>
-                {{-------------------------------- Buscador-------------------------}}
+
+
+                {{-- ---------------------------------------------- Buscador------------------------------------- --}}
                 <div class="search" id="ctn-bars-search">
 
-                    <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="width: 380px;">
+                    <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary"
+                        style="width: 380px;">
                         <form
                             action="{{ route('mainUser', ['idUsuario' => $idUsuario, 'correoUsuario' => encrypt($correoUsuario)]) }}"
                             method="GET">
@@ -50,7 +62,8 @@
                                         @csrf
                                         <input type="hidden" name="idUsuario" value="{{ $idUsuario }}">
                                         <input type="hidden" name="idAula" value="{{ $item->idAula }}">
-                                        <button id="enviar-solicitud" onclick="return enviarSolicitud()" type="submit" class="btn btn-primary"> Enviar Solicitud</button>
+                                        <button id="enviar-solicitud" onclick="return enviarSolicitud()" type="submit"
+                                            class="btn btn-primary"> Enviar Solicitud</button>
                                     </form>
 
                                 </div>
@@ -74,8 +87,10 @@
 
 
                 </div>
+
             </div>
 
+            {{-- -------------------------------------------------Alerta verificacion de envio---------------- --}}
             <div id="ventana-emergente">
                 <h2>Enviar solicitud a aula</h2>
                 <p>Expresión Original y Escrita</p>
@@ -87,35 +102,11 @@
                     <button id="boton-enviar">Enviar</button>
                 </div>
             </div>
-        </div>
-
-
-<<<<<<< HEAD
-
-
-        {{-- ------------------------------Aulas en las tarjetas----------------------- --}}
-
-        <div class="content-aulas">
-            <div class="no-hay">
-                <h3>NO HAY AULAS</h3>
-            </div>
-        </div>
-
-
-        <div class="aulas">
-            @foreach ($aulasPermitidas as $aulaPermitida)
-            <div class="aula" data-id-usuario="{{ $idUsuario }}" data-id="{{ $aulaPermitida->idAula }}" data-correo-usuario-encryp="{{$correoUsuarioEncryp}}"
-                ondblclick="entradaAreaUser(event, $(this).data('id-usuario'), $(this).data('correo-usuario-encryp'))">
-
-                    <h5>{{ $aulaPermitida->nombreAula }}</h5>
-                </div>
-            @endforeach
 
 
         </div>
 
-=======
->>>>>>> d093e0afcd2f09198893d39f183381b192b639de
+        {{-- -------------------------------------------------Alerta verificacion de envio---------------- --}}
         <div id="ventana-emergente-confirmacion">
             <h2>Enviar solicitud a aula</h2>
             <p>Se ha enciado tu solicitud a <br><span>"Expresión Original y Escrita"</span></p>
@@ -127,5 +118,5 @@
 
     </div>
 
-    <script src="{{ asset('js/mainUser.js') }}"></script>
+
 @endsection

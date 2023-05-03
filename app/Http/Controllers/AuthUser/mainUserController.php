@@ -104,4 +104,10 @@ class mainUserController extends Controller
             return back()->with('message', 'No se pudo autenticar al usuario');
         }
     }
+
+    public function entradaActividadUser($idUsuario){
+
+        return view('user.checklisUser');
+    }
+
 }
