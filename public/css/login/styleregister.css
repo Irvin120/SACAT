@@ -8,15 +8,15 @@
 }
 
 #form_login{
-    border-radius: 20px;
+border-radius: 20px;
   margin: 120px;
   background: url("/img/registro.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: 800px 450px;
+  background-size: 800px auto;
   object-fit: cover;
   margin-left: 200px;
-  height: 450px;
+  height: 425px;
 }
 
 #icon{
@@ -35,10 +35,10 @@
 
 }
 .ms-0{
+    display: flex;
     background-color: white;
     justify-content: center;
     float: right;
-    margin-right: 110px;
 }
 
 .ms-3{
@@ -68,6 +68,9 @@ img, svg {
 
 
 #conten_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border-width: 0px 0px 0px 2px;
     border-color: black;
     border-style: solid;
@@ -76,7 +79,7 @@ img, svg {
     padding: 1rem 1rem 1rem 2rem;
     float: left;
     width: 500px;
-    height: 450px;
+    height: auto;
     justify-content: center;
     
 }

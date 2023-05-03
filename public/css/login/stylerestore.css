@@ -10,15 +10,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 50%;
-
     margin: 10rem auto;
-
     background-color: #019EFF;
-
-    display: flex;
- 
 }
 
 #conten_img{
