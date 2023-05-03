@@ -19,13 +19,11 @@
   </head> 
   <body>
 
-    <form method="POST"  action="{{ route('register.store') }}">
+    <form method="POST" class="formulario" action="{{ route('register.store') }}">
     @csrf
 
-      <div class="mb-0 col-sm-0" id="form_login" >
-
-           
-
+      <div class="mb-0 col-sm-0" id="form_login" class="info">
+        <!-- datos -->
         <div class="col-sm-0" id="conten_form">
           <!-- nombre -->
          <p>REGISTRO</p>
