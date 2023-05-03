@@ -1,25 +1,11 @@
-// var inputSearch = document.getElementById('inputSearch');
-// var boxSearch = document.getElementById('box-search');
-
-// inputSearch.addEventListener('input', function() {
-//     if (this.value.trim().length > 0) {
-//       boxSearch.style.display = 'block';
-//     } else {
-//       boxSearch.style.display = 'none';
-//     }
-//   });
-
-
-function entradaAreaUser(event) {
+function entradaAreaUser(event, idUsuario, correoUsuarioEncryp) {
     var idAula = $(event.currentTarget).data('id');
-    console.log(idAula);
-
     $.ajax({
-        url: '/user/aula/' + idAula,
+        url: '/user/aula/' + idAula + '/' + idUsuario + '/' + correoUsuarioEncryp,
         type: 'GET',
         dataTyPe: 'html',
         success: function (response) {
-            window.location.href = '/user/aula/' + idAula;
+            window.location.href = '/user/aula/' + idAula + '/' + idUsuario + '/' + correoUsuarioEncryp;
         },
 
         error: function (xhr, status, error) {

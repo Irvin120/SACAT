@@ -17,6 +17,8 @@ class mainUserController extends Controller
 
     public function mainUser(Request $request, $idUsuario, $correoUsuario)
     {
+        $correoUsuarioEncryp = $correoUsuario;
+
         // desencriptar el correo electrónico
         $correoUsuario = decrypt($correoUsuario);
 
@@ -51,7 +53,7 @@ class mainUserController extends Controller
             $nombreUsuario = Auth::guard('usuario')->user()->nombreUsuario;
 
             // pasar las variables a la vista
-            return view('user.mainUser', compact('nombreUsuario', 'aulas', 'idUsuario', 'correoUsuario', 'aulasPermitidas'));
+            return view('user.mainUser', compact('nombreUsuario', 'aulas', 'idUsuario', 'correoUsuario', 'aulasPermitidas', 'correoUsuarioEncryp'));
         } else {
             abort(404);
         }
@@ -82,21 +84,24 @@ class mainUserController extends Controller
         }
     }
 
-    public function entradaAulaUser(Request $request)
+    public function entradaAulaUser($idAula, $idUsuario, $correoUsuarioEncryp)
     {
-    
-
         try {
-            $idAula = $request->route('idAula');
-            $aula = Aula::findOrFail($idAula);
-            $actividades = $aula->actividades;
-            $solicitudes = solicitud::where('idAula', $idAula)
-                ->where('estado', 'aceptado')
-                ->get();
+            $correoUsuario = decrypt($correoUsuarioEncryp);
+        } catch (\Exception $e) {
+            // manejar el error como desees, por ejemplo:
+            return back()->with('message', 'Ha ocurrido un error ');
+        }
 
-            return view('user.actividadesUser', compact('aula', 'actividades', 'solicitudes'));
-        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
-            return abort(404, 'El ID de Aula proporcionado no es válido');
+        // obtener el usuario autenticado
+        $user = Usuario::find($idUsuario);
+        $aula = Aula::find($idAula);
+        $actividades = $aula->actividades;
+
+        if ($user && $user->correoUsuario === $correoUsuario) {
+            return view('user.actividadesUser',compact('user', 'actividades'));
+        } else {
+            return back()->with('message', 'No se pudo autenticar al usuario');
         }
     }
 }

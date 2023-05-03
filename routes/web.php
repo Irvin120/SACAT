@@ -105,6 +105,13 @@ Route::get('mainAdmin/createActividad/{idAula}', [AdminController::class, 'creat
 Route::post('mainAdmin/createActividad/', [AdminController::class, 'nuevaActividad'])->name('nuevaActividad');
 Route::post('mainAdmin/deleteActividad/{idActividad}', [AdminController::class, 'deleteActividad'])->name('deleteActividad');
 
+//aceptacion de solicitudes
+Route::post('/aceptar-solicitud/{idSolicitud}',[AdminController::class, 'aceptarSolicitud'])->name('aceptarSolicitud');
+//eliminar solicitud
+Route::delete('/eliminar-solicitud/{idSolicitud}', [AdminController::class, 'eliminarSolicitud' ])->name('eliminarSolicitud');
+
+
+
 
 // ----------------------------------------user-----------------------------
 Route::post('/login-user', [SessionsController::class, 'loginUser'])->name('login-inicio');
@@ -115,16 +122,13 @@ Route::get('/user/searchAula', [mainUserController::class, 'searchAula'])->name(
 
 Route::post('/user/enviarSolicitud', [mainUserController::class, 'enviarSolicitud'])->name('enviarSolicitud');
 
+Route::post('/user/enviarSolicitud', [mainUserController::class, 'enviarSolicitud'])->name('enviarSolicitud')->middleware('auth.user');
 
-//aceptacion de solicitudes
-Route::post('/aceptar-solicitud/{idSolicitud}',[AdminController::class, 'aceptarSolicitud'])->name('aceptarSolicitud');
-//eliminar solicitud
-Route::delete('/eliminar-solicitud/{idSolicitud}', [AdminController::class, 'eliminarSolicitud' ])->name('eliminarSolicitud');
 
 
 
 // acceso a el aula
-Route::get('user/aula/{idAula}', [mainUserController::class, 'entradaAulaUser'])->name('entradaAulaUser');
+Route::get('user/aula/{idAula}/{idUsuario}/{correoUsuarioEncryp}', [mainUserController::class, 'entradaAulaUser'])->name('entradaAulaUser')->middleware('auth.user');
 
 Route::get('checklisUser', function () { return view('user.checklisUser'); });
 

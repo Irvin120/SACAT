@@ -90,6 +90,32 @@
         </div>
 
 
+<<<<<<< HEAD
+
+
+        {{-- ------------------------------Aulas en las tarjetas----------------------- --}}
+
+        <div class="content-aulas">
+            <div class="no-hay">
+                <h3>NO HAY AULAS</h3>
+            </div>
+        </div>
+
+
+        <div class="aulas">
+            @foreach ($aulasPermitidas as $aulaPermitida)
+            <div class="aula" data-id-usuario="{{ $idUsuario }}" data-id="{{ $aulaPermitida->idAula }}" data-correo-usuario-encryp="{{$correoUsuarioEncryp}}"
+                ondblclick="entradaAreaUser(event, $(this).data('id-usuario'), $(this).data('correo-usuario-encryp'))">
+
+                    <h5>{{ $aulaPermitida->nombreAula }}</h5>
+                </div>
+            @endforeach
+
+
+        </div>
+
+=======
+>>>>>>> d093e0afcd2f09198893d39f183381b192b639de
         <div id="ventana-emergente-confirmacion">
             <h2>Enviar solicitud a aula</h2>
             <p>Se ha enciado tu solicitud a <br><span>"Expresión Original y Escrita"</span></p>

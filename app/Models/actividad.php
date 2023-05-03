@@ -13,7 +13,7 @@ class actividad extends Model
 
     public function aula()
     {
-        return $this->belongsTo('App\Models\Aula', 'idAula');
+        return $this->belongsTo(Aula::class, 'idAula');
     }
 
 }
