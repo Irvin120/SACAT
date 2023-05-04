@@ -23,10 +23,15 @@ Route::get('/', function () {
 //vista de login
 Route::get('/login-user',[SessionsController::class, 'create'])->name('login-user');
 
+// login user
 Route::get('/login-mr', function () {
     return view('login/login-user');
 });
 
+// login admin
+Route::get('/login-ad', function () {
+    return view('login/login-admin');
+});
 
 // Ruta para procesar la información del formulario de login
 
@@ -65,19 +70,6 @@ Route::get('/save-restaure', function () { return view('loginUser/save-restore')
 Route::get('/base-admin', function () { return view('archivoBaseAdmin/baseAdmin'); });
 
 Route::get('/base', function () { return view('archivoBaseAdmin/admin-base');
-});
-
-
-
-
-// Panel admin
-Route::get('/panel-admin', function () {
-    return view('archivoBaseAdmin/baseAdmin');
-});
-
-// Panel de admin para actividaes
-Route::get('/panel-admin-activid', function () {
-    return view('admin/panelactividades');
 });
 
 
