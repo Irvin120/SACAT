@@ -6,6 +6,16 @@ h2 {
     padding: 0;
     margin: 0;
 }
+.contentittleAulas{
+    width: 70%;
+}
+
+.search{
+    width: 30%;
+}
+.contenAuBu{
+    display: flex;
+}
 
 .tittleAulas h2{
     font-size: 2vh;
@@ -49,6 +59,14 @@ h2 {
     width: 5vw;
     border-radius: 0px 2px 2px 0px;
 }
+
+
+.titilo-text-start{
+    background: white;
+    text-align: center;
+    margin: 0;
+}
+
 /*lista de busqueda*/
 #box-search{
     position: fixed;
@@ -178,13 +196,15 @@ ul {
 
 .no-hay{
     opacity: 20%;
-    
+
 }
 
 /*------------targetas aulas---------------------------*/
 
 .aulas{
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 90%;
     margin: 0 auto;
     flex-wrap: wrap;

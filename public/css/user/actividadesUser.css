@@ -19,8 +19,10 @@
 .actividades{
     display: flex;
     align-items: center;
-    background-color:#019EFF;
-    height: 100px;
+    background-color: #019EFF;
+    height: 42px;
+    margin: 0 30px;
+    border-radius: 10px;
 }
 
 .actividades a {

@@ -27,7 +27,6 @@
                     </div>
                 </div>
             @endforeach
-
         </div>
         <div class="botones-container">
             <button id="boton-volver">Volver</button>

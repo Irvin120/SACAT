@@ -13,34 +13,37 @@
 
         <div class="barinfo">
 
-            <div class="content-search">
-                <div class="tittleAulas">
-                    <h2 class="text-start f">Aulas Disponibles</h2>
 
 
-                    {{-- -------------------------------------------Aulas permitidas en las tarjetas----------------------- --}}
-                    <div class="aulas">
+            <div class="contenAuBu">
+                <div class="contentittleAulas">
+                    <h2 class="titilo-text-start f">Aulas Disponibles</h2>
+                    <div class=" content-search " >
+                        <div class="tittleAulas">
 
-                        @foreach ($aulasPermitidas as $aulaPermitida)
-                            <div class="aula"
-                                data-id-usuario="{{ $idUsuario }}"
-                                data-id="{{ $aulaPermitida->idAula }}"
-                                data-correo-usuario-encryp="{{ $correoUsuarioEncryp }}"
-                                ondblclick="entradaAreaUser(event, $(this).data('id-usuario'), $(this).data('correo-usuario-encryp'))">
 
-                                <h5>{{ $aulaPermitida->nombreAula }}</h5>
+                            {{-- -------------------------------------------Aulas permitidas en las tarjetas----------------------- --}}
+                            <div class="aulas">
+
+                                @foreach ($aulasPermitidas as $aulaPermitida)
+                                    <div class="aula" data-id-usuario="{{ $idUsuario }}"
+                                        data-id="{{ $aulaPermitida->idAula }}"
+                                        data-correo-usuario-encryp="{{ $correoUsuarioEncryp }}"
+                                        ondblclick="entradaAreaUser(event, $(this).data('id-usuario'), $(this).data('correo-usuario-encryp'))">
+
+                                        <h5>{{ $aulaPermitida->nombreAula }}</h5>
+                                    </div>
+                                @endforeach
                             </div>
-                        @endforeach
+
+                        </div>
                     </div>
-
                 </div>
-
 
                 {{-- ---------------------------------------------- Buscador------------------------------------- --}}
                 <div class="search" id="ctn-bars-search">
 
-                    <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary"
-                        style="width: 380px;">
+                    <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="width: 100%;">
                         <form
                             action="{{ route('mainUser', ['idUsuario' => $idUsuario, 'correoUsuario' => encrypt($correoUsuario)]) }}"
                             method="GET">
@@ -89,20 +92,20 @@
 
                 </div>
 
+                {{-- -------------------------------------------------Alerta verificacion de envio---------------- --}}
+                <div id="ventana-emergente">
+                    <h2>Enviar solicitud a aula</h2>
+                    <p>Expresión Original y Escrita</p>
+                    <div class="input-container">
+                        <input type="text" class="ingreso-id" placeholder="Ingrese ID">
+                    </div>
+                    <div class="botones-container">
+                        <button id="boton-cancelar">Cancelar</button>
+                        <button id="boton-enviar">Enviar</button>
+                    </div>
+                </div>
             </div>
 
-            {{-- -------------------------------------------------Alerta verificacion de envio---------------- --}}
-            <div id="ventana-emergente">
-                <h2>Enviar solicitud a aula</h2>
-                <p>Expresión Original y Escrita</p>
-                <div class="input-container">
-                    <input type="text" class="ingreso-id" placeholder="Ingrese ID">
-                </div>
-                <div class="botones-container">
-                    <button id="boton-cancelar">Cancelar</button>
-                    <button id="boton-enviar">Enviar</button>
-                </div>
-            </div>
 
 
         </div>

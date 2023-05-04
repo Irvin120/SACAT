@@ -115,6 +115,7 @@ class mainUserController extends Controller
         }
 
         $actividad = Actividad::find($idActividad);
-        return view('user.checklisUser', compact('actividad'));
+        $usuario = usuario:: find($idUsuario);
+        return view('user.checklisUser', compact('actividad', 'usuario'));
     }
 }

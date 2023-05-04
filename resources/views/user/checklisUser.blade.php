@@ -2,7 +2,12 @@
 
 @section('title', 'Checklist-User')
 
+@section('nombreUsuario')
+    {{ $usuario->nombreUsuario }}
+@endsection
+
 @section('content')
+
 <link rel="stylesheet" href=" {{ asset('css/user/checklisUser.css')}}">
 
 <div class="content">
