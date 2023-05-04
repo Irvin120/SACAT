@@ -27,23 +27,7 @@ function enviarSolicitud() {
     }
 }
 
-function entradaActividadUser(event, idUsuario) {
-    var idAula = $(event.currentTarget).data('id');
-    $.ajax({
-        url: '/user/aula/checklisUser/' + idUsuario,
-        type: 'GET',
-        dataTyPe: 'html',
-        success: function (response) {
-            window.location.href = '/user/aula/checklisUser/' + idUsuario
-        },
-
-        error: function (xhr, status, error) {
-            // Mostrar un mensaje de error en la página
-            var errorMessage = xhr.status + ': ' + xhr.statusText;
-            $('#mensajeError').text('Se ha producido un error al recuperar las actividades: ' + errorMessage);
-        }
-
-
-    })
-
+function entradaActividadUser(event, idActividad, nombreActividad, idUsuario, correoUsuarioEncryp) {
+    event.preventDefault();
+    window.location.href = '/user/aula/checklisUser/' + idActividad + '/' + nombreActividad + '/' + idUsuario + '/' + correoUsuarioEncryp ;
 }
