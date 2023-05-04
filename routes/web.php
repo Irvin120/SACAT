@@ -66,11 +66,6 @@ Route::get('/save-restaure', function () { return view('loginUser/save-restore')
 
 //------------------------------------------------Ruta del panel principal del administardor--------------------
 
-// base admin
-Route::get('/base-admin', function () { return view('archivoBaseAdmin/baseAdmin'); });
-
-Route::get('/base', function () { return view('archivoBaseAdmin/admin-base');
-});
 
 
 // login
@@ -122,6 +117,4 @@ Route::post('/user/enviarSolicitud', [mainUserController::class, 'enviarSolicitu
 // acceso a el aula
 Route::get('user/aula/{idAula}/{idUsuario}/{correoUsuarioEncryp}', [mainUserController::class, 'entradaAulaUser'])->name('entradaAulaUser')->middleware('auth.user');
 
-Route::get('user/aula/checklisUser/{idUsuario}', [mainUserController::class, 'entradaActividadUser']);
-
-
+Route::get('user/aula/checklisUser/{idActividad}/{nombreActividad}/{idUsuario}/{correoUsuarioEncryp}', [mainUserController::class, 'entradaActividadUser']);

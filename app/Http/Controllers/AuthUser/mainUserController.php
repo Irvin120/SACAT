@@ -99,15 +99,22 @@ class mainUserController extends Controller
         $actividades = $aula->actividades;
 
         if ($user && $user->correoUsuario === $correoUsuario) {
-            return view('user.actividadesUser',compact('user', 'actividades'));
+            return view('user.actividadesUser', compact('user', 'actividades', 'correoUsuarioEncryp'));
         } else {
             return back()->with('message', 'No se pudo autenticar al usuario');
         }
     }
 
-    public function entradaActividadUser($idUsuario){
+    public function entradaActividadUser($idActividad, $nombreActividad, $idUsuario, $correoUsuarioEncryp)
+    {
+        try {
+            $correoUsuario = decrypt($correoUsuarioEncryp);
+        } catch (\Exception $e) {
+            // manejar el error como desees, por ejemplo:
+            return back()->with('message', 'Ha ocurrido un error ');
+        }
 
-        return view('user.checklisUser');
+        $actividad = Actividad::find($idActividad);
+        return view('user.checklisUser', compact('actividad'));
     }
-
 }

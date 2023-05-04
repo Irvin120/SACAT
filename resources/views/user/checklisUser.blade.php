@@ -7,8 +7,8 @@
 
 <div class="content">
     <div class="content-semana">
-        <h3>Semana de Videos 3</h3>
-        <p>Favor de realizar el checklist correspondiente a esta semana</p>
+        <h3>{{ ucfirst($actividad->nombreActividad) }}</h3>
+        <p>{{ Str::ucfirst($actividad->resumen) }}</p>
     </div>
     <div class="content-ckeck">
         <div class="actividades">
