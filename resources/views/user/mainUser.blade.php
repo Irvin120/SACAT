@@ -69,6 +69,7 @@
                                 </div>
                             @endforeach
                         </div>
+                        <!--paginador-->
                         <div class="pagination justify-content-center">
                             <ul class="pagination" style="margin: 0">
                                 <li class="page-item {{ $aulas->previousPageUrl() ? '' : 'disabled' }}">
