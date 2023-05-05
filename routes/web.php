@@ -118,3 +118,6 @@ Route::post('/user/enviarSolicitud', [mainUserController::class, 'enviarSolicitu
 Route::get('user/aula/{idAula}/{idUsuario}/{correoUsuarioEncryp}', [mainUserController::class, 'entradaAulaUser'])->name('entradaAulaUser')->middleware('auth.user');
 
 Route::get('user/aula/checklisUser/{idActividad}/{nombreActividad}/{idUsuario}/{correoUsuarioEncryp}', [mainUserController::class, 'entradaActividadUser']);
+
+
+Route::post('/registrar-actividad', [mainUserController::class, 'registrarActividad'])->name('registrarActividad')->middleware('auth.user');

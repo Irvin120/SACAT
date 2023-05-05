@@ -9,6 +9,9 @@ use App\Models\Aula;
 use App\Models\actividad;
 use App\Models\solicitud;
 use App\Models\usuario;
+use DateTime;
+use App\Models\RegistroActividad;
+
 
 
 class mainUserController extends Controller
@@ -111,11 +114,53 @@ class mainUserController extends Controller
             $correoUsuario = decrypt($correoUsuarioEncryp);
         } catch (\Exception $e) {
             // manejar el error como desees, por ejemplo:
-            return back()->with('message', 'Ha ocurrido un error ');
+            return back()->with('message', 'Ha ocurrido un error');
         }
 
-        $actividad = Actividad::find($idActividad);
-        $usuario = usuario:: find($idUsuario);
-        return view('user.checklisUser', compact('actividad', 'usuario'));
+        $usuario = Usuario::find($idUsuario);
+
+        if ($usuario && ($usuario->correoUsuario == $correoUsuario)) {
+            $actividad = Actividad::find($idActividad);
+
+            $fechaInicio = new DateTime($actividad->fechaInicio); // fecha de inicio definida por el admin
+            $fechaFin = new DateTime($actividad->fechaFin); // fecha de finalización definida por el admin
+            $intervalo = $fechaInicio->diff($fechaFin);
+            $numDias = $intervalo->days + 1; // agregamos 1 para incluir el último día
+
+            $dias = array();
+            for ($i = 0; $i < $numDias; $i++) {
+                $dias[] = $fechaInicio->format('Y-m-d');
+                $fechaInicio->modify('+1 day');
+            }
+
+
+
+            return view('user.checklisUser', compact('actividad', 'usuario', 'dias'));
+        } else {
+            // hacer algo si el usuario no existe o el correo no coincide
+            return back()->with('error', 'El usuario no existe o el correo no coincide');
+        }
     }
+
+
+    public function registrarActividad(Request $request) {
+        $idActividad = $request->input('idActividad');
+        $idUsuario = $request->input('idUsuario');
+        $dias = $request->input('dias');
+        $resumen = $request->input('resumen');
+
+        foreach ($dias as $dia) {
+            $registroActividad = new RegistroActividad;
+            $registroActividad->idActividad = $idActividad;
+            $registroActividad->idUsuario = $idUsuario;
+            $registroActividad->fechaRegistroActividad = $dia;
+            $registroActividad->resumenRegistroActividad = $resumen;
+            $registroActividad->estadoActividad = 0;
+            $registroActividad->save();
+        }
+
+        return back()->with('success', 'Actividad registrada con éxito.');
+    }
+
+
 }

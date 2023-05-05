@@ -177,12 +177,20 @@
                                 <!-- lista de actividades -->
 
                                 <!-- Actividad 1 -->
+
+                                {{-- @foreach ($collection as $item) --}}
+
                                 <div class="actividaxRevisar">
                                     <i class="iconActividaxRevisar fa-solid fa-calendar fa-2xl"
                                         style="color: #000000;"></i>
                                     <button id="button-revisar" class="btnActividadxRevisar btn text-start">Actividad 1 -
                                         Resumen semana 1</button>
                                 </div>
+
+                                {{-- @endforeach --}}
+
+
+
 
                             </div>
 
