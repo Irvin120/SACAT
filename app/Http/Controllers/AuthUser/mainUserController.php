@@ -143,24 +143,36 @@ class mainUserController extends Controller
     }
 
 
+
     public function registrarActividad(Request $request) {
         $idActividad = $request->input('idActividad');
         $idUsuario = $request->input('idUsuario');
         $dias = $request->input('dias');
-        $resumen = $request->input('resumen');
+        $resumenes = $request->input('resumenes');
 
         foreach ($dias as $dia) {
             $registroActividad = new RegistroActividad;
             $registroActividad->idActividad = $idActividad;
             $registroActividad->idUsuario = $idUsuario;
             $registroActividad->fechaRegistroActividad = $dia;
-            $registroActividad->resumenRegistroActividad = $resumen;
-            $registroActividad->estadoActividad = 0;
-            $registroActividad->save();
+
+            // Consulta para validar si ya existe un registro para el mismo usuario y actividad en la misma fecha
+            $existeRegistro = RegistroActividad::where('idActividad', $idActividad)
+                                                ->where('idUsuario', $idUsuario)
+                                                ->whereDate('fechaRegistroActividad', $dia)
+                                                ->exists();
+
+            // Si no existe un registro para esa fecha, se guarda el resumen y se inserta el registro
+            if (!$existeRegistro) {
+                $registroActividad->resumenRegistroActividad = isset($resumenes[$dia]) ? $resumenes[$dia] : null;
+                $registroActividad->estadoActividad = 0;
+                $registroActividad->save();
+            }
         }
 
         return back()->with('success', 'Actividad registrada con éxito.');
     }
+
 
 
 }
