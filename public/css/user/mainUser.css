@@ -29,10 +29,11 @@ h2 {
     display: flex;
     justify-content: space-between;
     background-color: #ffffff;
+    width: 100%;
 }
-
 /*Buscador*/
 .search{
+
     display: flex;
     flex-direction: column;
     padding: 10px;
@@ -203,9 +204,7 @@ ul {
 
 .aulas{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     flex-wrap: wrap;
 }
@@ -258,4 +257,18 @@ ul {
 .barinfo{
     background: gray;
     margin-top: 10px;
+}
+
+@media (max-width: 768px){
+    .content-search{
+        display: flex;
+        flex-direction: column;
+    }
+    .tittleAulas {
+        order: 2;
+      }
+  
+    .search{
+        order: 1;
+    }
 }

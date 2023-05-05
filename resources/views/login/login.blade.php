@@ -112,7 +112,7 @@
 
     
 
-    <script src="validacion.js"></script>
+    <script src="{{ asset('js/validacion.js') }}"></script>
     
     
     
