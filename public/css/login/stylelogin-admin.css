@@ -1,0 +1,674 @@
+/* # --> id */
+/* . --> class */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+/* fondo de pantalla */
+body{
+    background-image: url('/img/bkg.png');
+    background-size: cover; /* Ajusta la imagen para cubrir todo el div */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que se repita la imagen */
+}
+
+
+
+/* ------------------------------------- Estilos para pantallas de 463px o menos ----------------------------------*/
+@media (max-width: 463px) {
+
+/* contenedor */
+.content{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+/* login */
+.coten-login{  
+    background: rgb(255, 255, 255); 
+    width: 90%;
+    margin-top: 1rem;
+    margin-bottom: 11rem;
+    border-radius: 20px;
+}
+
+
+.circulo-icon{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+.circulo{
+    background-color: #66CC44;
+
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1rem;
+}
+
+.text-p{
+    margin: 0;
+    margin-top: .5rem;
+    text-align: center;
+    
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* inputs de correo y contraseña */
+.contend-input{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    
+    margin: 0rem 2rem;
+
+    border: solid 1px black;
+    border-radius: 30px;
+}
+
+.icon-input{
+    padding: 1.5rem 1rem;
+}
+
+.input-login{
+    border: none !important;
+    padding: 0rem 0rem;
+    margin-right: 1rem;
+}
+
+.input-login:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* botones de ingresar y registro */
+.btn{
+    background: #0E87C2 !important;
+    border-radius: 35px !important;
+    border: 0 !important;
+
+    padding: .5rem;
+
+    font-size: 16px;
+}    
+
+}
+
+/* ------------------------------------- Estilos para pantallas de 463px a 577px ----------------------------------*/
+@media (min-width: 463px) and (max-width: 577px) {
+
+/* contenedor */
+.content{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+/* login */
+.coten-login{  
+    background: rgb(255, 255, 255); 
+    width: 80%;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    border-radius: 20px;
+}
+
+
+.circulo-icon{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+.circulo{
+    background-color: #66CC44;
+
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1rem;
+}
+
+.text-p{
+    margin: 0;
+    margin-top: .5rem;
+    text-align: center;
+    
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* inputs de correo y contraseña */
+.contend-input{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    
+    margin: 0rem 2rem;
+
+    border: solid 1px black;
+    border-radius: 30px;
+}
+
+.icon-input{
+    padding: 1.5rem 1rem;
+}
+
+.input-login{
+    border: none !important;
+    padding: 0rem 0rem;
+    margin-right: 1rem;
+}
+
+.input-login:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* botones de ingresar y registro */
+.btn{
+    background: #0E87C2 !important;
+    border-radius: 35px !important;
+    border: 0 !important;
+
+    padding: .5rem;
+
+    font-size: 16px;
+}    
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 577px y 768px -------------------------------*/
+@media (min-width: 577px) and (max-width: 768px) {
+
+/* contenedor */
+.content{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+/* login */
+.coten-login{  
+    background: rgb(255, 255, 255); 
+    width: 70%;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    border-radius: 20px;
+}
+
+
+.circulo-icon{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+.circulo{
+    background-color: #66CC44;
+
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1rem;
+}
+
+.text-p{
+    margin: 0;
+    margin-top: .5rem;
+    text-align: center;
+    
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* inputs de correo y contraseña */
+.contend-input{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    
+    margin: 0rem 2rem;
+
+    border: solid 1px black;
+    border-radius: 30px;
+}
+
+.icon-input{
+    padding: 1.5rem 1rem;
+}
+
+.input-login{
+    border: none !important;
+    padding: 0rem 0rem;
+    margin-right: 1rem;
+}
+
+.input-login:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* botones de ingresar y registro */
+.btn{
+    background: #0E87C2 !important;
+    border-radius: 35px !important;
+    border: 0 !important;
+
+    padding: .5rem;
+
+    font-size: 16px;
+}    
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 768px y 992px -------------------------------*/
+@media (min-width: 768px) and (max-width: 992px) {
+
+/* contenedor */
+.content{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+/* login */
+.coten-login{  
+    background: rgb(255, 255, 255); 
+    width: 60%;
+    margin-top: 2rem;
+    border-radius: 20px;
+}
+
+
+.circulo-icon{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+.circulo{
+    background-color: #66CC44;
+
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1rem;
+}
+
+.text-p{
+    margin: 0;
+    margin-top: .5rem;
+    text-align: center;
+    
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* inputs de correo y contraseña */
+.contend-input{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    
+    margin: 0rem 2rem;
+
+    border: solid 1px black;
+    border-radius: 30px;
+}
+
+.icon-input{
+    padding: 1.5rem 1rem;
+}
+
+.input-login{
+    border: none !important;
+    padding: 0rem 0rem;
+    margin-right: 1rem;
+}
+
+.input-login:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* botones de ingresar y registro */
+.btn{
+    background: #0E87C2 !important;
+    border-radius: 35px !important;
+    border: 0 !important;
+
+    padding: .5rem;
+
+    font-size: 16px;
+}    
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 992px y 1200px -------------------------------*/
+@media (min-width: 992px) and (max-width: 1200px) {
+
+/* contenedor */
+.content{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+/* login */
+.coten-login{  
+    background: rgb(255, 255, 255); 
+    width: 50%;
+    margin-top: 2rem;
+    border-radius: 20px;
+}
+
+
+.circulo-icon{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+.circulo{
+    background-color: #66CC44;
+
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1rem;
+}
+
+.text-p{
+    margin: 0;
+    margin-top: .5rem;
+    text-align: center;
+    
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* inputs de correo y contraseña */
+.contend-input{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    
+    margin: 0rem 2rem;
+
+    border: solid 1px black;
+    border-radius: 30px;
+}
+
+.icon-input{
+    padding: 1.5rem 1rem;
+}
+
+.input-login{
+    border: none !important;
+    padding: 0rem 0rem;
+    margin-right: 1rem;
+}
+
+.input-login:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* botones de ingresar y registro */
+.btn{
+    background: #0E87C2 !important;
+    border-radius: 35px !important;
+    border: 0 !important;
+
+    padding: .5rem;
+
+    font-size: 16px;
+}    
+
+}
+
+
+/* -------------------------------------- Estilos para pantallas de 1200px y 1400px -------------------------------*/
+@media (min-width: 1200px) and (max-width: 1400px) {
+
+/* contenedor */
+.content{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+/* login */
+.coten-login{  
+    background: rgb(255, 255, 255); 
+    width: 50%;
+    margin-top: 2rem;
+    border-radius: 20px;
+}
+
+
+.circulo-icon{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+.circulo{
+    background-color: #66CC44;
+
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1rem;
+}
+
+.text-p{
+    margin: 0;
+    margin-top: .5rem;
+    text-align: center;
+    
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* inputs de correo y contraseña */
+.contend-input{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    
+    margin: 0rem 2rem;
+
+    border: solid 1px black;
+    border-radius: 30px;
+}
+
+.icon-input{
+    padding: 1.5rem 1rem;
+}
+
+.input-login{
+    border: none !important;
+    padding: 0rem 0rem;
+    margin-right: 1rem;
+}
+
+.input-login:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* botones de ingresar y registro */
+.btn{
+    background: #0E87C2 !important;
+    border-radius: 35px !important;
+    border: 0 !important;
+
+    padding: .5rem;
+
+    font-size: 16px;
+}    
+
+}
+
+/* --------------------------------------- Estilos para pantallas de 1400px o más -------------------------------*/
+@media (min-width: 1400px) {
+
+/* contenedor */
+.content{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+/* login */
+.coten-login{  
+    background: rgb(255, 255, 255); 
+    width: 50%;
+    margin-top: 2rem;
+    border-radius: 20px;
+}
+
+
+.circulo-icon{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    
+}
+.circulo{
+    background-color: #66CC44;
+
+    width: 124px;
+    height: 124px;
+    border-radius: 50%;
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 1rem;
+}
+
+.text-p{
+    margin: 0;
+    margin-top: .5rem;
+    text-align: center;
+    
+    font-size: 16px;
+    color: #000;
+    font-weight: bold;
+}
+
+/* inputs de correo y contraseña */
+.contend-input{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    
+    margin: 0rem 2rem;
+
+    border: solid 1px black;
+    border-radius: 30px;
+}
+
+.icon-input{
+    padding: 1.5rem 1rem;
+}
+
+.input-login{
+    border: none !important;
+    padding: 0rem 0rem;
+    margin-right: 1rem;
+}
+
+.input-login:focus{
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+/* botones de ingresar y registro */
+.btn{
+    background: #0E87C2 !important;
+    border-radius: 35px !important;
+    border: 0 !important;
+
+    padding: .5rem;
+
+    font-size: 16px;
+}    
+
+}

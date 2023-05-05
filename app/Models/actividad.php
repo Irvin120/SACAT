@@ -9,6 +9,7 @@ class actividad extends Model
 {
     use HasFactory;
     protected $table = 'actividad';
+    protected $primaryKey = 'idActividad';
     public $timestamps = false;
 
     public function aula()

@@ -23,10 +23,15 @@ Route::get('/', function () {
 //vista de login
 Route::get('/login-user',[SessionsController::class, 'create'])->name('login-user');
 
+// login user
 Route::get('/login-mr', function () {
     return view('login/login-user');
 });
 
+// login admin
+Route::get('/login-ad', function () {
+    return view('login/login-admin');
+});
 
 // Ruta para procesar la información del formulario de login
 
@@ -61,24 +66,6 @@ Route::get('/save-restaure', function () { return view('loginUser/save-restore')
 
 //------------------------------------------------Ruta del panel principal del administardor--------------------
 
-// base admin
-Route::get('/base-admin', function () { return view('archivoBaseAdmin/baseAdmin'); });
-
-Route::get('/base', function () { return view('archivoBaseAdmin/admin-base');
-});
-
-
-
-
-// Panel admin
-Route::get('/panel-admin', function () {
-    return view('archivoBaseAdmin/baseAdmin');
-});
-
-// Panel de admin para actividaes
-Route::get('/panel-admin-activid', function () {
-    return view('admin/panelactividades');
-});
 
 
 // login
@@ -130,6 +117,4 @@ Route::post('/user/enviarSolicitud', [mainUserController::class, 'enviarSolicitu
 // acceso a el aula
 Route::get('user/aula/{idAula}/{idUsuario}/{correoUsuarioEncryp}', [mainUserController::class, 'entradaAulaUser'])->name('entradaAulaUser')->middleware('auth.user');
 
-Route::get('user/aula/checklisUser/{idUsuario}', [mainUserController::class, 'entradaActividadUser']);
-
-
+Route::get('user/aula/checklisUser/{idActividad}/{nombreActividad}/{idUsuario}/{correoUsuarioEncryp}', [mainUserController::class, 'entradaActividadUser']);

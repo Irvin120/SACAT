@@ -1,118 +1,143 @@
 <!doctype html>
-<html lang="es">
-
-<head>
-    <!-- Required meta tags -->
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
+    <title>login</title>
+    
     <!-- Estilos CSS-->
-    <link rel="stylesheet" href="{{ asset('css/login/stylelogin.css') }}">
-
-    <!-- icons -->
+    <link rel="stylesheet" href="{{ asset('css/login/styleslogin-user.css') }}">
+    <!-- iconos -->
     <script src="https://kit.fontawesome.com/2400098b91.js" crossorigin="anonymous"></script>
-
-    <title>Inicio de secion</title>
-
-</head>
-
+    <!-- bootstrapt -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  </head>
 <body>
 
-    <form method="POST" action="{{ route('login-inicio') }}">
-        @csrf
+    <div class="content">
 
-        <div class="mb-0 col-sm-0" id="form_login">
+        <div class="contend-queEs" id="contend-queEs">
+            <div clas="info-sacat">
+                <h1>¿Que es SACAT?</h1>
 
-            <div class="" id="conten_img">
-                <i id="img_perfil" class="fa-solid fa-circle-user fa-8x"></i>
+                <p class="parrafo1">
+                SACAT es un software de gestión de actividades académicas diseñado para ayudar a estudiantes y profesores a organizar 
+                y administrar actividades relacionadas con la educación. Con SACAT, los estudiantes pueden crear sus tareas de manera 
+                efectiva y establecer plazos. Los profesores pueden utilizarlo para crear y asignar tareas a los estudiantes, mantener
+                un seguimiento de su progreso y calificar sus tareas de manera eficiente. 
+                </p>
+
+                <p class="parrafo2">
+                Además de ofrecer herramientas de análisis y generación de informes para que los profesores puedan evaluar el rendimiento 
+                de los estudiantes y mejorar la eficiencia del proceso educativo. Con una interfaz intuitiva y fácil de usar, SACAT es 
+                una solución integral para cualquier institución educativa que busque mejorar la gestión de sus actividades académicas.
+                </p>
             </div>
+        </div>
 
-            <div class="col-sm-0" id="conten_form">
-                <!-- usuario -->
-                <div class="mb-2 row">
-                    <label for="validationDefault01" class="col-sm-5 form-label">CORREO</label>
-                    <div class="col-sm-7 entradas">
-                        <input type="email" class="form-control" id=" validationDefault01 inputUser"
-                        name="correoUsuario" placeholder="Ingresa correo electronico" required>
-                        @error('correoUsuario')
+        
+        <div class="coten-login">
+            <div class="circulo-icon">
+                <div class="circulo">
+                    <i class="icon-login fa-solid fa-user fa-6x" style="color: #282828;"></i>
+                </div>
+            </div>
+            
+            <p class="text-p" >Iniciar sesion</p>
+
+
+            <form class="g-3 needs-validation" novalidate method="POST" action="{{ route('login-inicio') }}">
+              @csrf
+            <div id="form_login">
+
+              <!-- correo electronico -->
+                <div>
+                  <label for="validationCustom01" class="form-label"></label>
+                  
+                  <div class="contend-input entradas">
+                    <i class="icon-input fa-solid fa-envelope fa-xl" style="color: #000000;"></i>
+                    <input type="email" class="input-login form-control" id="validationCustom01 inputUser" 
+                    name="correoUsuario" placeholder="email" required>
+                  </div>
+
+                  @error('correoUsuario')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
-                        @enderror
-                    </div>
+                  @enderror
+                  
+                  <div class="invalid-feedback">
+                    Por favor introduce tu correo
+                  </div>
+                
                 </div>
 
-                <!-- contraseña -->
-                <div class="mb-2  row">
-                    <label for="validationDefaultPassword" class="col-sm-5 form-label">CONTRASEÑA</label>
-                    <div class="col-sm-7  entradas">
-                        <input type="password" class="form-control" id="validationDefaultPassword"
-                                name="contraseñaUsuario" placeholder="Ingresa contraseña" required>
-                        @error('contraseñaUsuario')
+              <!-- contraseña -->
+                <div class="">
+                  <label for="validationCustom02" class="form-label"></label>
+                  
+                  <div class="contend-input">
+                    <i class="icon-input fa-solid fa-lock fa-xl" style="color: #000000;"></i>
+                    <input type="password" class="input-login form-control" id="validationCustom02" 
+                    name="contraseñaUsuario" placeholder="contraseña" required>
+                  </div>
+                  
+                  @error('contraseñaUsuario')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
-                        @enderror
-                    </div>
+                  @enderror    
+
+                  <div class="invalid-feedback">
+                    Por favor introduce tu contraseña
+                  </div>
+
                 </div>
 
-                <!-- botones aceptar y cancelar -->
-                <div class="ms-0 contenedor_ops">
-                    <button class="btn btn-primary col-sm-4 ms-3 mb-1" type="submit">Aceptar</button>
-                    <button class="btn btn-primary col-sm-4 ms-3 mb-1" type="reset">Cancelar</button>
+              <!-- link de recuperar contraseña -->
+                <div>
+                  <p class="text-p mt-3"><a href="#" class="link-underline-light">¿Has olvidado tu contraseña?</a></p>
                 </div>
+
+              <!-- boton de acceder -->
+                <div class="d-grid gap-2 col-7 mt-4 mx-auto">
+                  <button class="btn-acced btn btn-primary" type="submit">ACCEDER</button>
+                </div>
+
+
+              <!-- boton de registrarse -->
+                <div class="d-grid gap-2 col-7 mt-4 mb-5 mx-auto">
+                  <button class="btn-register btn btn-primary" type="button"><a href="{{ route('register.create') }}" class="btn btn-primary col-sm-4 ms-6 mb-1 ">Registrarme</a></button>
+                </div>
+
             </div>
+              @if($errors->any())
+                <div class="alert alert-danger mt-3">
+                    <ul>
+                        @foreach($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+              @endif
 
+
+             </form>
+            
         </div>
-        @if($errors->any())
-        <div class="alert alert-danger mt-3">
-            <ul>
-                @foreach($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
 
-    </form>
-
-    <!-- otras opciones -->
-    <div class="contenedor_ops">
-        <a class="btn btn-primary col-sm-4 ms-6 mb-1 ">Olvide mi contraseña</a>
     </div>
-    <div class="contenedor_ops">
-        <a href="{{ route('register.create') }}" class="btn btn-primary col-sm-4 ms-6 mb-1 ">Registrarme</a>
-    </div>
+    
+    <!-- php artisan serve --host=0.0.0.0 -->
 
+    <!-- git add .
+    git commit -m "name"
+    git push -->
 
-
-
-
-
-
-
-
-
-
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
-    </script>
+    <script src="validacion.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js" integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js" integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ" crossorigin="anonymous"></script>
 </body>
-
 </html>
-
