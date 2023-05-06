@@ -134,8 +134,18 @@ class mainUserController extends Controller
             }
 
 
+            $registro = registroActividad:: where('idUsuario', $idUsuario)
+            ->where('idActividad', $idActividad)
+            ->whereDate('fechaRegistroActividad', '>=', $actividad->fechaInicio)
+            ->whereDate('fechaRegistroActividad', '<=', $actividad->fechaFin)
+            ->first();
 
-            return view('user.checklisUser', compact('actividad', 'usuario', 'dias'));
+            $registrosUsuario = RegistroActividad::where('idActividad', $idActividad)
+            ->where('idUsuario', $idUsuario)
+            ->whereIn('fechaRegistroActividad', $dias)
+            ->get();
+
+        return view('user.checklisUser', compact('actividad', 'usuario', 'dias', 'registrosUsuario'));
         } else {
             // hacer algo si el usuario no existe o el correo no coincide
             return back()->with('error', 'El usuario no existe o el correo no coincide');

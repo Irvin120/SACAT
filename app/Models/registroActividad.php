@@ -9,7 +9,7 @@ class registroActividad extends Model
 {
     use HasFactory;
 
-    protected $table = 'registroActividad';
+    protected $table = 'registroactividad';
     protected $primaryKey = 'idRegistroActividad';
     public $timestamps = false;
 

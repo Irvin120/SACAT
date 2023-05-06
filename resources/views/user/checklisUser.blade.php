@@ -30,6 +30,8 @@
         <div class="row mb-4">
             <div class="col-md-12">
                 <h5 class="font-weight-bold">Días</h5>
+                {{-- {{ dd($dias) }} --}}
+
 
                 <form method="post" action="{{ route('registrarActividad') }}">
                     @csrf
@@ -38,14 +40,24 @@
                     @foreach ($dias as $dia)
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" name="dias[]" value="{{ $dia }}"
-                                id="{{ $dia }}">
+                                id="{{ $dia }}" @if ($registrosUsuario->contains('fechaRegistroActividad', $dia)) checked @endif>
                             <label class="form-check-label" for="{{ $dia }}">
                                 {{ date('d/m/Y', strtotime($dia)) }} -
                                 {{ \Carbon\Carbon::parse($dia)->locale('es')->dayName }}
                             </label>
-                            <input type="text" name="resumenes[{{ $dia }}]" placeholder="Resumen del día">
+                            @if ($registrosUsuario->contains('fechaRegistroActividad', $dia))
+                                <input type="hidden" name="resumenes[{{ $dia }}]"
+                                    value="{{ $registrosUsuario->where('fechaRegistroActividad', $dia)->first()->resumen }}">
+                                <input type="text"
+                                    value="{{ $registrosUsuario->where('fechaRegistroActividad', $dia)->first()->resumen }}"
+                                    readonly>
+                            @else
+                                <input type="text" name="resumenes[{{ $dia }}]" placeholder="Resumen del día"
+                                    @if (old('dias.' . $dia)) required @endif>
+                            @endif
                         </div>
                     @endforeach
+
                     <button type="submit" class="btn btn-primary mt-4">Enviar</button>
                 </form>
 
