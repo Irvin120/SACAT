@@ -47,25 +47,25 @@
                         @csrf
                         <div class="dropdown">
                             <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-regular fa-circle-user fa-xl"></i>
+                                <i class="fa-regular fa-circle-user fa-xl"></i>
                             </button>
-                                <ul class="dropdown-menu">
+                                <ul class="dropdown-menu ul-lg">
                                 
                                     <button type="submit" class="btnAdmin btn" onclick="return confirmLogout()" title="Cerrar Sesion">
                                     <i class="iconAdmin fa-solid fa-right-from-bracket fa-lg" style="color: #000000;"></i> Cerrar Sesion
                                     </button>
                                 
-                                    <button type="submit" class="btnAdmin t btn" onclick="" title="Cambiar Contraseña">
-                                    <!-- <i class="iconAdmin fa-solid fa-lock fa-lg" style="color: #000000;"></i>--> Cambiar Contraseña 
+                                    <button type="submit" class="btnAdmin btn" onclick="" title="Cambiar Contraseña">
+                                    <i class="iconAdmin fa-solid fa-lock fa-lg" style="color: #000000;"></i> Cambiar Contra
                                     </button>
                                     
 
-                                    <button type="submit" class="btnAdmin  btn" onclick="" title="Cambiar Correo">
-                                    <!-- <i class="iconAdmin fa-solid fa-at fa-lg" style="color: #000000;"></i> --> Cambiar Correo
+                                    <button type="submit" class="btnAdmin btn" onclick="" title="Cambiar Correo">
+                                    <i class="iconAdmin fa-solid fa-at fa-lg" style="color: #000000;"></i> Cambiar Correo
                                     </button>
                                     
                                 </ul>
-                            </div>
+                        </div>
 
 
                             <!-- <button type="submit" class="nav-link btn-unstyled text-white" onclick="return confirmLogout()" title="Cerrar Sesion ">

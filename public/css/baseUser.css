@@ -54,3 +54,9 @@ header span{
     padding: 0px !important;
     margin: 0 20px !important;
 }
+
+.btnAdmin{
+    width: 100%;
+    font-size: 14px;
+    color: #000000;
+}
