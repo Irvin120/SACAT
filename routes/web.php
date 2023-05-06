@@ -74,13 +74,14 @@ Route::post('/login',[AccesoController::class, 'login'])->name('loginPost');
 Route::get('/logincre',[AccesoController::class, 'createAdmin'])->name('loginPostd');
 Route::post('/logout', [AccesoController::class, 'logout'])->name('logout');
 
-// cambiar contraseña
+
+// cambiar contraseña admin
 Route::get('/cambiar-password', function () { return view('login/cambiar-password'); });
 
-// cambiar nombre
+// cambiar nombre admin
 Route::get('/cambiar-nombre', function () { return view('login/cambiar-nombre'); });
 
-// cambiar correo
+// cambiar correo admin
 Route::get('/cambiar-correo', function () { return view('login/cambiar-correo'); });
 
 
@@ -121,6 +122,14 @@ Route::post('/user/enviarSolicitud', [mainUserController::class, 'enviarSolicitu
 Route::post('/user/enviarSolicitud', [mainUserController::class, 'enviarSolicitud'])->name('enviarSolicitud')->middleware('auth.user');
 
 
+// cambiar contraseña user
+Route::get('/cambiar-password-user', function () { return view('loginUser/cambiar-password'); });
+
+// cambiar nombre user
+Route::get('/cambiar-nombre-user', function () { return view('loginUser/cambiar-nombre'); });
+
+// cambiar correo user
+Route::get('/cambiar-correo-user', function () { return view('loginUser/cambiar-correo'); });
 
 
 // acceso a el aula

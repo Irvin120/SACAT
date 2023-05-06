@@ -47,7 +47,7 @@
                         @csrf
                         <div class="dropdown">
                             <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-regular fa-circle-user fa-xl"></i>
+                                <i class="fa-regular fa-circle-user fa-xl"></i>
                             </button>
                                 <ul class="dropdown-menu ul-lg">
                                 
@@ -65,7 +65,7 @@
                                     </button>
                                     
                                 </ul>
-                            </div>
+                        </div>
 
 
                             <!-- <button type="submit" class="nav-link btn-unstyled text-white" onclick="return confirmLogout()" title="Cerrar Sesion ">
