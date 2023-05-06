@@ -43,25 +43,34 @@
 
                 <!-- boton de perfil de usuario -->
                 <li class="nav-item mx-3">
-                    <form action="{{ route('logout') }}" method="POST" style="display: inline;">
-                        @csrf
+                    
                         <div class="dropdown">
                             <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa-regular fa-circle-user fa-xl"></i>
                             </button>
                                 <ul class="dropdown-menu ul-lg">
                                 
+                                <!-- boton de cerrar sesion  -->
+                                <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                    @csrf
                                     <button type="submit" class="btnAdmin btn" onclick="return confirmLogout()" title="Cerrar Sesion">
                                     <i class="iconAdmin fa-solid fa-right-from-bracket fa-lg" style="color: #000000;"></i> Cerrar Sesion
                                     </button>
-                                
-                                    <button type="submit" class="btnAdmin btn" onclick="" title="Cambiar Contraseña">
+                                </form>
+
+                                <!-- boton de cambiar contraseña -->
+                                    <button type="submit" class="btnAdmin btn" onclick="window.location.href='/cambiar-password'" title="Cambiar Contraseña">
                                     <i class="iconAdmin fa-solid fa-lock fa-lg" style="color: #000000;"></i> Cambiar Contra
                                     </button>
-                                    
-
-                                    <button type="submit" class="btnAdmin btn" onclick="" title="Cambiar Correo">
+                                   
+                                <!-- boton de cambiar correo  -->
+                                    <button type="submit" class="btnAdmin btn" onclick="window.location.href='/cambiar-correo'" title="Cambiar Correo">
                                     <i class="iconAdmin fa-solid fa-at fa-lg" style="color: #000000;"></i> Cambiar Correo
+                                    </button>
+
+                                <!-- boton de cambiar nombre de usuario -->
+                                    <button type="submit" class="btnAdmin btn" onclick="window.location.href='/cambiar-nombre'" title="Cambiar Nombre">
+                                    <i class="iconAdmin fa-solid fa-signature fa-lg" style="color: #000000;"></i> Cambiar Name
                                     </button>
                                     
                                 </ul>
@@ -72,7 +81,7 @@
                             <i class="fa-regular fa-circle-user "></i> -->
 
                         
-                    </form>
+                    
                 </li>
             </ul>
         </header>

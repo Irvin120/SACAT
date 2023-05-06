@@ -24,19 +24,6 @@
             <a href="/" class="d-flex align-items-center mb-md-0 me-md-auto text-dark text-decoration-none mx-5">
                 <span class="fs-1 mx-2"> <strong> SACAT</strong></span>
             </a>
-            <form action="{{ route('logout-user') }}" method="POST" style="display: inline;">
-                @csrf
-
-            </form>
-
-            <form action="{{ route('logout-user') }}" method="POST" style="display: inline;">
-                @csrf
-                <button style="background-color: #1B59F8;" type="submit" class="nav-link btn-unstyled ">
-                  <ul class="nav nav-pills">
-                    <li class="nav-item mx-3"><a href="#" class="nav-link"> <i class="fa-regular fa-circle-user icon-header fa-3x"></i> </a></li>
-                  </ul>
-                </button>
-            </form> 
 
             <div class="dropdown">
                 <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -44,17 +31,25 @@
                 </button>
                     <ul class="dropdown-menu ul-lg">
                     
-                        <button type="submit" class="btnAdmin btn" onclick="" title="Cerrar Sesion">
-                        <i class="iconAdmin fa-solid fa-right-from-bracket fa-lg" style="color: #000000;"></i> Cerrar Sesion
-                        </button>
+                        <form action="{{ route('logout-user') }}" method="POST" style="display: inline;">
+                            @csrf
+                            <button type="submit" class="btnAdmin btn" onclick="return confirmLogout()" title="Cerrar Sesion">
+                                    <i class="iconAdmin fa-solid fa-right-from-bracket fa-lg" style="color: #000000;"></i> Cerrar Sesion
+                            </button>
+                        </form> 
                     
-                        <button type="submit" class="btnAdmin btn" onclick="" title="Cambiar Contraseña">
+                        <button type="submit" class="btnAdmin btn" onclick="window.location.href='/cambiar-password-user'" title="Cambiar Contraseña">
                         <i class="iconAdmin fa-solid fa-lock fa-lg" style="color: #000000;"></i> Cambiar Contra
                         </button>
                         
 
-                        <button type="submit" class="btnAdmin btn" onclick="" title="Cambiar Correo">
+                        <button type="submit" class="btnAdmin btn" onclick="window.location.href='/cambiar-correo-user'" title="Cambiar Correo">
                         <i class="iconAdmin fa-solid fa-at fa-lg" style="color: #000000;"></i> Cambiar Correo
+                        </button>
+
+                        <!-- boton de cambiar nombre de usuario -->
+                        <button type="submit" class="btnAdmin btn" onclick="window.location.href='/cambiar-nombre-user'" title="Cambiar Nombre">
+                            <i class="iconAdmin fa-solid fa-signature fa-lg" style="color: #000000;"></i> Cambiar Name
                         </button>
                         
                     </ul>

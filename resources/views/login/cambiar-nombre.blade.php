@@ -76,7 +76,7 @@
 
 
                 <div class="d-grid gap-2 col-7 mt-4 mb-4 mx-auto">
-                  <button class="btn-register btn btn-primary" type="button">CANCELAR</button>
+                <button class="btn-register btn btn-primary" type="button" onclick="history.back()">VOLVER</button>
                 </div>
 
               </form>

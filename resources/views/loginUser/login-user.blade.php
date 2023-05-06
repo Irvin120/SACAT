@@ -107,7 +107,7 @@
 
               <!-- boton de registrarse -->
                 <div class="d-grid gap-2 col-7 mt-4 mb-5 mx-auto">
-                  <button class="btn-register btn btn-primary" type="button"><a href="{{ route('register.create') }}" class="btn btn-primary col-sm-4 ms-6 mb-1 ">Registrarme</a></button>
+                  <button class="btn-register btn btn-primary" type="button"><a href="{{ route('register.create') }}" class="btn-regist btn btn-primary p-0">REGISTRARME</a></button>
                 </div>
 
             </div>

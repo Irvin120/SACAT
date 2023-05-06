@@ -31,3 +31,11 @@ function entradaActividadUser(event, idActividad, nombreActividad, idUsuario, co
     event.preventDefault();
     window.location.href = '/user/aula/checklisUser/' + idActividad + '/' + nombreActividad + '/' + idUsuario + '/' + correoUsuarioEncryp ;
 }
+
+function confirmLogout() {
+    if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
+        return true;
+    } else {
+        return false;
+    }
+}
