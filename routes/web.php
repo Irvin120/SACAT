@@ -74,6 +74,15 @@ Route::post('/login',[AccesoController::class, 'login'])->name('loginPost');
 Route::get('/logincre',[AccesoController::class, 'createAdmin'])->name('loginPostd');
 Route::post('/logout', [AccesoController::class, 'logout'])->name('logout');
 
+// cambiar contraseña
+Route::get('/cambiar-password', function () { return view('login/cambiar-password'); });
+
+// cambiar nombre
+Route::get('/cambiar-nombre', function () { return view('login/cambiar-nombre'); });
+
+// cambiar correo
+Route::get('/cambiar-correo', function () { return view('login/cambiar-correo'); });
+
 
 Route::get('mainAdmin/{idAdmin}', [AdminController::class, 'index']) ->name('mainAdmin') ->middleware(adminMiddleware::class);
 
