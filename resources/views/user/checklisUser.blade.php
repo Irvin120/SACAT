@@ -35,37 +35,86 @@
 
                 <form method="post" action="{{ route('registrarActividad') }}">
                     @csrf
+
+
+
                     <input type="hidden" name="idActividad" value="{{ $actividad->idActividad }}">
                     <input type="hidden" name="idUsuario" value="{{ $usuario->idUsuario }}">
-                    @foreach ($dias as $dia)
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="dias[]" value="{{ $dia }}"
-                                id="{{ $dia }}" @if ($registrosUsuario->contains('fechaRegistroActividad', $dia)) checked @endif>
-                            <label class="form-check-label" for="{{ $dia }}">
-                                {{ date('d/m/Y', strtotime($dia)) }} -
-                                {{ \Carbon\Carbon::parse($dia)->locale('es')->dayName }}
-                            </label>
-                            @if ($registrosUsuario->contains('fechaRegistroActividad', $dia))
-                                <input type="hidden" name="resumenes[{{ $dia }}]"
-                                    value="{{ $registrosUsuario->where('fechaRegistroActividad', $dia)->first()->resumen }}">
-                                <input type="text"
-                                    value="{{ $registrosUsuario->where('fechaRegistroActividad', $dia)->first()->resumen }}"
-                                    readonly>
-                            @else
-                                <input type="text" name="resumenes[{{ $dia }}]" placeholder="Resumen del día"
-                                    @if (old('dias.' . $dia)) required @endif>
-                            @endif
-                        </div>
-                    @endforeach
 
-                    <button type="submit" class="btn btn-primary mt-4">Enviar</button>
+                   
+                        @foreach ($dias as $dia)
+                            <form method="post" action="{{ route('registrarActividad') }}">
+                                @csrf
+                                <input type="hidden" name="idActividad" value="{{ $actividad->idActividad }}">
+                                <input type="hidden" name="idUsuario" value="{{ $usuario->idUsuario }}">
+
+
+
+                                <div class="form-check">
+                                    @if (!$registrosUsuario->contains('fechaRegistroActividad', $dia))
+                                        <input class="form-check-input resumen-checkbox" type="checkbox" required
+                                            name="dias[]" value="{{ $dia }}" id="{{ $dia }}">
+                                    @endif
+
+                                    <label class="form-check-label" for="{{ $dia }}">
+                                        {{ date('d/m/Y', strtotime($dia)) }} -
+                                        {{ \Carbon\Carbon::parse($dia)->locale('es')->dayName }}
+                                    </label>
+                                    @if ($registrosUsuario->contains('fechaRegistroActividad', $dia))
+                                        <input type="hidden" name="resumenes[{{ $dia }}]"
+                                            value="{{ $registrosUsuario->where('fechaRegistroActividad', $dia)->first()->resumenRegistroActividad }}">
+                                        <input type="text"
+                                            value="{{ $registrosUsuario->where('fechaRegistroActividad', $dia)->first()->resumenRegistroActividad }}"readonly>
+                                    @else
+                                        <input type="text" name="resumenes[{{ $dia }}]"
+                                            placeholder="Resumen del día" class="resumen-input">
+                                    @endif
+                                </div>
+
+                                <button type="submit" class="btn btn-primary mt-4">Enviar</button>
+                            </form>
+                        @endforeach
+
+
                 </form>
+
+
+
+
+
 
 
             </div>
         </div>
 
     </div>
+
+    <script>
+        $(document).ready(function() {
+            // Selecciona todos los checkboxes que tienen la clase 'resumen-checkbox'
+            $('.resumen-checkbox').change(function() {
+                // Obtiene el input de resumen correspondiente
+                var input = $(this).parent().find('.resumen-input');
+                if (this.checked) {
+                    input.attr('required', true);
+                } else {
+                    input.removeAttr('required');
+                }
+            });
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll('.resumen-input').forEach(function(input) {
+            input.addEventListener('input', function() {
+                var checkbox = this.closest('.form-check').querySelector('.form-check-input');
+                if (this.value.trim() !== '') {
+                    checkbox.checked = true;
+                }
+            });
+        });
+    </script>
+
 
 
 
