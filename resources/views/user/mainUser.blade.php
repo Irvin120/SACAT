@@ -13,14 +13,11 @@
 
         <div class="barinfo">
 
-
-
             <div class="contenAuBu">
                 <div class="contentittleAulas">
                     <h2 class="titilo-text-start f">Aulas Disponibles</h2>
-                    <div class=" content-search " >
+                    <div class=" content-aula" >
                         <div class="tittleAulas">
-
 
                             {{-- -------------------------------------------Aulas permitidas en las tarjetas----------------------- --}}
                             <div class="aulas">
@@ -30,8 +27,8 @@
                                         data-id="{{ $aulaPermitida->idAula }}"
                                         data-correo-usuario-encryp="{{ $correoUsuarioEncryp }}"
                                         ondblclick="entradaAreaUser(event, $(this).data('id-usuario'), $(this).data('correo-usuario-encryp'))">
-
-                                        <h5>{{ $aulaPermitida->nombreAula }}</h5>
+                                        <img src="{{ asset ('img/aula.png' )}}" alt="" style="width: 10vh; height: 10vh; margin: 3vh;" >
+                                        <h5 style="font-size: 3vh">{{ $aulaPermitida->nombreAula }}</h5>
                                     </div>
                                 @endforeach
                             </div>
@@ -43,14 +40,13 @@
                 {{-- ---------------------------------------------- Buscador------------------------------------- --}}
                 <div class="search" id="ctn-bars-search">
 
-                    <div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="width: 100%;">
-                        <form
+                    <div class="container-search d-flex flex-column align-items-stretch" style="width: 100%;">
+                        <form class="search-form "
                             action="{{ route('mainUser', ['idUsuario' => $idUsuario, 'correoUsuario' => encrypt($correoUsuario)]) }}"
                             method="GET">
                             @csrf
                             <div class="sectionSearch">
                                 <input class="searchinput" type="text" name="query" placeholder="Buscar aula">
-
 
                                 <button type="submit" style="float:right" class="bthSearch btn btn-primary">Buscar</button>
                             </div>
@@ -93,7 +89,7 @@
                 </div>
 
                 {{-- -------------------------------------------------Alerta verificacion de envio---------------- --}}
-                <div id="ventana-emergente">
+                <!--div id="ventana-emergente">
                     <h2>Enviar solicitud a aula</h2>
                     <p>Expresión Original y Escrita</p>
                     <div class="input-container">
@@ -103,14 +99,14 @@
                         <button id="boton-cancelar">Cancelar</button>
                         <button id="boton-enviar">Enviar</button>
                     </div>
-                </div>
+                </div-->
             </div>
 
 
 
         </div>
 
-        {{-- -------------------------------------------------Alerta verificacion de envio---------------- --}}
+        <!--{{-- -------------------------------------------------Alerta verificacion de envio---------------- --}}
         <div id="ventana-emergente-confirmacion">
             <h2>Enviar solicitud a aula</h2>
             <p>Se ha enciado tu solicitud a <br><span>"Expresión Original y Escrita"</span></p>
@@ -118,7 +114,7 @@
                 <button id="boton-volver">Volver</button>
             </div>
         </div>
-
+        -->
 
     </div>
 
