@@ -132,7 +132,7 @@ class mainUserController extends Controller
                 $dias[] = $fechaInicio->format('Y-m-d');
                 $fechaInicio->modify('+1 day');
             }
-
+ 
 
             $registro = registroActividad:: where('idUsuario', $idUsuario)
             ->where('idActividad', $idActividad)

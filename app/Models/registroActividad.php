@@ -13,4 +13,11 @@ class registroActividad extends Model
     protected $primaryKey = 'idRegistroActividad';
     public $timestamps = false;
 
+
+
+    public function usuario()
+    {
+        return $this->belongsTo(Usuario::class, 'idUsuario', 'idUsuario');
+    }
+
 }

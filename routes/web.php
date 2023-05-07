@@ -99,6 +99,8 @@ Route::get('/panel-admin-activid', function () { return view('admin/panelactivid
 
 Route::get('mainAdmin/createActividad/{idAula}', [AdminController::class, 'createActividad'])->name('agregarActividad');
 
+Route::get('mainAdmin/revision/actividad/{idActividad}', [AdminController::class, 'revisionActividad'])->name('revisionActividad');
+
 Route::post('mainAdmin/createActividad/', [AdminController::class, 'nuevaActividad'])->name('nuevaActividad');
 Route::post('mainAdmin/deleteActividad/{idActividad}', [AdminController::class, 'deleteActividad'])->name('deleteActividad');
 

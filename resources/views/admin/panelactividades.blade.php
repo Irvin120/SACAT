@@ -178,139 +178,23 @@
 
                                 <!-- Actividad 1 -->
 
-                                {{-- @foreach ($collection as $item) --}}
-
-                                <div class="actividaxRevisar">
-                                    <i class="iconActividaxRevisar fa-solid fa-calendar fa-2xl"
-                                        style="color: #000000;"></i>
-                                    <button id="button-revisar" class="btnActividadxRevisar btn text-start">Actividad 1 -
-                                        Resumen semana 1</button>
-                                </div>
-
-                                {{-- @endforeach --}}
-
-
-
-
+                                @foreach ($actividades as $actividad)
+                                    <form action="{{ route('revisionActividad', $actividad->idActividad) }}">
+                                        <div class="actividaxRevisar">
+                                            <i class="iconActividaxRevisar fa-solid fa-calendar fa-2xl"
+                                                style="color: #000000;"></i>
+                                            <button id="button-revisar" class="btnActividadxRevisar btn text-start">
+                                                {{ $actividad->nombreActividad }} </button>
+                                        </div>
+                                    </form>
+                                @endforeach
                             </div>
-
-                            <!-- 2. Vista de detalles de la actividad (Lista de alumnos y cumplimiento diario por semana) -->
-                            <div id="info-actividades" class="contenedor-actividades">
-                                <h3 class="titleVistas text-center">Detalles de la actividad</h3>
-
-                                <div class="contendTableCalender">
-
-                                    <div class="encabezadoSemana">
-                                        <div class="titleSem">
-                                            <p class="nameSem">semana:</p>
-                                        </div>
-
-                                        <div class="diasDeSem">
-                                            <p class="diaSem">Lun</p>
-                                            <p class="diaSem">Mar</p>
-                                            <p class="diaSem">Mie</p>
-                                            <p class="diaSem">Juv</p>
-                                            <p class="diaSem">Vie</p>
-                                            <p class="diaSem">Sab</p>
-                                            <p class="diaSem">Dom</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="listAlumnos">
-
-                                        <div class="alumnoActivSem">
-                                            <div class="conteNameAlumno">
-                                                <p class="nameAlumno">Juan Perez Cruz</p>
-                                            </div>
-
-                                            <div class="resultadosDia">
-                                                <p class="cumplimientoDia">Si</p>
-                                                <p class="cumplimientoDia">Si</p>
-                                                <p class="cumplimientoDia">Si</p>
-                                                <p class="cumplimientoDia">Si</p>
-                                                <p class="cumplimientoDia">Si</p>
-                                                <p class="cumplimientoDia">Si</p>
-                                                <p class="cumplimientoDia">Si</p>
-                                            </div>
-
-                                            <div class="notaSema">
-                                                <button id="button-ver-notas" class="btnVerNotas btn">Ver notas</button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="d-grid gap-2 col-4 mx-auto">
-                                    <button id="button-volver-lista"
-                                        class="btnVolver btn btn-primary activo">volver</button>
-                                </div>
-                            </div>
-
-                            <!-- 3. Vista de notas de la actividad por usuario -->
-                            <div id="ver-notas" class="contenedor-actividades">
-                                <h3 class="titleVistas text-center">Notas de videos</h3>
-
-
-                                <div class="contendTableCalender">
-
-                                    <div class="encabezadoSemana">
-                                        <div class="titleSemNotas">
-                                            <p class="nameSem">semana:</p>
-                                        </div>
-
-                                        <div class="diasDeSemNotas">
-                                            <p class="diaSem">Lun</p>
-                                            <p class="diaSem">Mar</p>
-                                            <p class="diaSem">Mie</p>
-                                            <p class="diaSem">Juv</p>
-                                            <p class="diaSem">Vie</p>
-                                            <p class="diaSem">Sab</p>
-                                            <p class="diaSem">Dom</p>
-                                        </div>
-                                    </div>
-
-                                    <div class="listAlumnos">
-
-                                        <div class="alumnoActivSem">
-                                            <div class="conteNameAlumnoNotas">
-                                                <p class="nameAlumno">Juan Perez Cruz</p>
-                                            </div>
-
-                                            <div class="resultadosDiaNotas">
-                                                <p class="notasDia">Hoy aprendi sobre....</p>
-                                                <p class="notasDia">Hoy aprendi sobre....</p>
-                                                <p class="notasDia">Hoy aprendi sobre....</p>
-                                                <p class="notasDia">Hoy aprendi sobre....</p>
-                                                <p class="notasDia">Hoy aprendi sobre....</p>
-                                                <p class="notasDia">Hoy aprendi sobre....</p>
-                                                <p class="notasDia">Hoy aprendi sobre....</p>
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-
-
-
-                                <div class="d-grid gap-2 col-4 mx-auto">
-                                    <button id="button-volver-info" class="btnVolver btn btn-primary">volver</button>
-                                </div>
-
-                            </div>
-
                         </div>
-
-
                     </div>
                 </div>
+
             </div>
         </div>
-
-
 
 
 
@@ -344,16 +228,19 @@
                                     <form action="{{ route('aceptarSolicitud', $solicitud->idSolicitud) }}"
                                         method="POST">
                                         @csrf
-                                        <button type="submit" onclick="return aceptarSolicitudUsuario()" class="btnchek btn">
+                                        <button type="submit" onclick="return aceptarSolicitudUsuario()"
+                                            class="btnchek btn">
                                             <i class="fa-regular fa-square-check fa-xl" style="color: #000000;"></i>
                                         </button>
                                     </form>
 
 
-                                    <form action="{{ route ('eliminarSolicitud', $solicitud->idSolicitud) }}" method="POST">
+                                    <form action="{{ route('eliminarSolicitud', $solicitud->idSolicitud) }}"
+                                        method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" onclick="return eliminarSolicitudUsuario() " class="btnx btn">
+                                        <button type="submit" onclick="return eliminarSolicitudUsuario() "
+                                            class="btnx btn">
                                             <i class="fa-solid fa-circle-xmark fa-xl" style="color: #000000;"></i>
                                         </button>
                                     </form>
