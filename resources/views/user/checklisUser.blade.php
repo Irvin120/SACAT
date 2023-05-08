@@ -86,6 +86,11 @@
             </div>
         </div>
 
+        <div class="d-grid gap-2 col-6 mx-auto mt-4 mb-4">
+            <button id="boton-volver" onclick="history.back()" class="btn-volver btn btn-primary"
+                type="button">VOLVER</button>
+        </div>
+
     </div>
 
     <script>
@@ -114,24 +119,24 @@
         });
     </script>
 
-<script>
-    // Espera a que se cargue completamente la página
-    window.onload = function() {
-        // Obtiene el elemento que contiene el mensaje de error
-        var errorDiv = document.getElementById('error-message');
+    <script>
+        // Espera a que se cargue completamente la página
+        window.onload = function() {
+            // Obtiene el elemento que contiene el mensaje de error
+            var errorDiv = document.getElementById('error-message');
 
-        // Si el mensaje de error existe
-        if (errorDiv) {
-            // Muestra el mensaje de error
-            errorDiv.style.display = 'block';
-            // Espera 2 segundos
-            setTimeout(function() {
-                // Oculta el mensaje de error
-                errorDiv.style.display = 'none';
-            }, 2000); // 2000 milisegundos = 2 segundos
+            // Si el mensaje de error existe
+            if (errorDiv) {
+                // Muestra el mensaje de error
+                errorDiv.style.display = 'block';
+                // Espera 2 segundos
+                setTimeout(function() {
+                    // Oculta el mensaje de error
+                    errorDiv.style.display = 'none';
+                }, 2000); // 2000 milisegundos = 2 segundos
+            }
         }
-    }
-</script>
+    </script>
 
 
 
