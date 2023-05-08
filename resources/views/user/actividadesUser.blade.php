@@ -13,23 +13,37 @@
 
 
     {{-- -------------------------------------------------Contenedor de tarjetas------------------- --}}
+    
+    <!-- contenedor general -->
     <div class="content">
-        <div class="content-activades">
-            @foreach ($actividades as $actividad)
-                <div class="actividades" data-id-actividad="{{ $actividad->idActividad }}"
-                    data-nombre-actividad="{{ $actividad->nombreActividad }}"
-                    data-id-usuario="{{ $user->idUsuario}}"
-                    data-correo-usuario-encryp="{{ $correoUsuarioEncryp}}"
-                    onclick="entradaActividadUser(event, $(this).data('id-actividad'), $(this).data('nombre-actividad'), $(this).data('id-usuario'), $(this).data('correo-usuario-encryp'))">
-                    <div>
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                        <span>Actividades: {{ $actividad->nombreActividad }}</span>
+
+    <!-- contenedor de lista de actividades -->
+
+        <div class="content-info">
+        
+            <div class="content-activades">
+                @foreach ($actividades as $actividad)
+                    <div class="actividades" data-id-actividad="{{ $actividad->idActividad }}"
+                        data-nombre-actividad="{{ $actividad->nombreActividad }}"
+                        data-id-usuario="{{ $user->idUsuario}}"
+                        data-correo-usuario-encryp="{{ $correoUsuarioEncryp}}"
+                        onclick="entradaActividadUser(event, $(this).data('id-actividad'), $(this).data('nombre-actividad'), $(this).data('id-usuario'), $(this).data('correo-usuario-encryp'))">
+                        
+                        <!-- actividad -->
+                        <button class="actividad">
+                            <i class="icon-activid fa-solid fa-note-sticky fa-xl" style="color: #fff;"></i>
+                            <span class="name-activid">Actividades: {{ $actividad->nombreActividad }}</span>
+                        </button>
+
                     </div>
-                </div>
-            @endforeach
-        </div>
-        <div class="botones-container">
-            <button id="boton-volver">Volver</button>
+                @endforeach
+            </div>
+
+            <!-- boton de regreso -->
+            <div class="d-grid gap-2 col-6 mx-auto mt-4 mb-4">
+                <button id="boton-volver" onclick="history.back()" class="btn-volver btn btn-primary" type="button">VOLVER</button>
+            </div>
+
         </div>
     </div>
 

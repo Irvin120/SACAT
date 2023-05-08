@@ -1,52 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .content{
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 75vh;
-    flex-direction: column;
 }
 
 .content-activades{
-    display: flex;
-    flex-direction: column;
-    background-color:#1B59F8;
-    width: 80%;
-    height: 80%;
-    justify-content: space-around;
-    margin: 20px;
+    margin-top: 3rem;
+    background-color: #3C84AB;
+    padding: 2rem 2rem 1rem 2rem;
+    border-radius: 20px;
 }
 
-.actividades{
+.icon-activid{
+    padding: .5rem 0rem .5rem 2rem;
+}
+
+.name-activid{
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+
+    padding: .5rem 2rem;
+}
+
+.actividad{
     display: flex;
+    text-align: start;
     align-items: center;
+
+    width: 44rem;
+
     background-color: #019EFF;
-    height: 42px;
-    margin: 0 30px;
-    border-radius: 10px;
+    margin-bottom: 1rem;
 }
 
-.actividades a {
-    text-decoration: none;
-    font-size: 3vh;
-    color: black;
-    margin-left: 20px;
+.actividad:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
 }
 
-.actividades a li{
-    font-size: .0px;
-    color: black;
-}
-.actividades a span{
-    margin-left: 20px;
-}
-.botones-container{
-    margin: 20px;
-}
-.botones-container button{
-    background-color: #019EFF;
-    border-radius: 15px;
-    margin: 0 60px;
-    padding: 10px 20px;
-    font-size: 3vh;
+.boton-volver{
+    background-color: #3C84AB !important;
 }
 
+
+ 
