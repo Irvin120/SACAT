@@ -33,6 +33,9 @@
                 {{-- {{ dd($dias) }} --}}
 
 
+                <div id="error-message" style="display:none">{{ session('error') }}</div>
+
+
                 <form method="post" action="{{ route('registrarActividad') }}">
                     @csrf
 
@@ -41,47 +44,43 @@
                     <input type="hidden" name="idActividad" value="{{ $actividad->idActividad }}">
                     <input type="hidden" name="idUsuario" value="{{ $usuario->idUsuario }}">
 
-                   
-                        @foreach ($dias as $dia)
-                            <form method="post" action="{{ route('registrarActividad') }}">
-                                @csrf
-                                <input type="hidden" name="idActividad" value="{{ $actividad->idActividad }}">
-                                <input type="hidden" name="idUsuario" value="{{ $usuario->idUsuario }}">
+
+                    @foreach ($dias as $dia)
+                        <form method="post" action="{{ route('registrarActividad') }}">
+                            @csrf
+                            <input type="hidden" name="idActividad" value="{{ $actividad->idActividad }}">
+                            <input type="hidden" name="idUsuario" value="{{ $usuario->idUsuario }}">
 
 
 
-                                <div class="form-check">
-                                    @if (!$registrosUsuario->contains('fechaRegistroActividad', $dia))
-                                        <input class="form-check-input resumen-checkbox" type="checkbox" required
-                                            name="dias[]" value="{{ $dia }}" id="{{ $dia }}">
-                                    @endif
+                            <div class="form-check">
+                                @if (!$registrosUsuario->contains('fechaRegistroActividad', $dia))
+                                    <input class="form-check-input resumen-checkbox" type="checkbox" required name="dias[]"
+                                        value="{{ $dia }}" id="{{ $dia }}">
+                                @endif
 
-                                    <label class="form-check-label" for="{{ $dia }}">
-                                        {{ date('d/m/Y', strtotime($dia)) }} -
-                                        {{ \Carbon\Carbon::parse($dia)->locale('es')->dayName }}
-                                    </label>
-                                    @if ($registrosUsuario->contains('fechaRegistroActividad', $dia))
-                                        <input type="hidden" name="resumenes[{{ $dia }}]"
-                                            value="{{ $registrosUsuario->where('fechaRegistroActividad', $dia)->first()->resumenRegistroActividad }}">
-                                        <input type="text"
-                                            value="{{ $registrosUsuario->where('fechaRegistroActividad', $dia)->first()->resumenRegistroActividad }}"readonly>
-                                    @else
-                                        <input type="text" name="resumenes[{{ $dia }}]"
-                                            placeholder="Resumen del día" class="resumen-input">
-                                    @endif
-                                </div>
+                                <label class="form-check-label" for="{{ $dia }}">
+                                    {{ date('d/m/Y', strtotime($dia)) }} -
+                                    {{ \Carbon\Carbon::parse($dia)->locale('es')->dayName }}
+                                </label>
+                                @if ($registrosUsuario->contains('fechaRegistroActividad', $dia))
+                                    <input type="hidden" name="resumenes[{{ $dia }}]"
+                                        value="{{ $registrosUsuario->where('fechaRegistroActividad', $dia)->first()->resumenRegistroActividad }}">
+                                    <input type="text"
+                                        value="{{ $registrosUsuario->where('fechaRegistroActividad', $dia)->first()->resumenRegistroActividad }}"readonly>
+                                @else
+                                    <input type="text" name="resumenes[{{ $dia }}]"
+                                        placeholder="Resumen del día" class="resumen-input">
+                                @endif
+                            </div>
 
-                                <button type="submit" class="btn btn-primary mt-4">Enviar</button>
-                            </form>
-                        @endforeach
+
+                            <button type="submit" class="btn btn-primary mt-4">Enviar</button>
+                        </form>
+                    @endforeach
 
 
                 </form>
-
-
-
-
-
 
 
             </div>
@@ -114,6 +113,25 @@
             });
         });
     </script>
+
+<script>
+    // Espera a que se cargue completamente la página
+    window.onload = function() {
+        // Obtiene el elemento que contiene el mensaje de error
+        var errorDiv = document.getElementById('error-message');
+
+        // Si el mensaje de error existe
+        if (errorDiv) {
+            // Muestra el mensaje de error
+            errorDiv.style.display = 'block';
+            // Espera 2 segundos
+            setTimeout(function() {
+                // Oculta el mensaje de error
+                errorDiv.style.display = 'none';
+            }, 2000); // 2000 milisegundos = 2 segundos
+        }
+    }
+</script>
 
 
 
