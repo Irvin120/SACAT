@@ -1,13 +1,103 @@
-/* # --> id */
-/* . --> class */
-
 *{
     margin: 0;
     padding: 0;
-    background: #0E87C2;
 }
 
-#form_login{
+body{
+    background: #0E87C2;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.formulario{
+    width: 40%;
+    background-color: #fff;
+    border-radius: 15px;
+    min-height: 60vh;
+    max-height: auto;
+    position: relative;
+    z-index: 1;
+}
+.imagen img{
+    object-fit: cover;
+    margin-left: -300px;
+
+    max-height: 70vh;
+    border-radius: 15px;
+}
+.alert-container {
+    margin: auto;
+    width: 80%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+}
+.entradas{
+    display: flex;
+    margin: 5px;
+    min-width:10vh;
+    min-height: 5vh;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: 0;
+}
+.entradas input {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+p{
+    text-align: center;
+    font-size: 30px;
+}
+.icon{
+    /*vertical-align: middle;
+    position: absolute;*/
+
+    width: 30px;
+    margin: 5px;
+}
+
+button, input{
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: center;
+}
+
+@media all and (max-width: 900px) {
+    .formulario{
+        width: 80%;
+    }
+    .imagen img{
+        display: none;
+    }
+    .entradas{
+        width: 90%;
+    }
+}
+
+@media all and (max-width: 600px) {
+
+    .formulario{
+        width: 90%;
+    }
+    .imagen img{
+        display: none;
+    }
+    .entradas{
+        width: 80%;
+    }
+}
+
+/*#form_login{
 border-radius: 20px;
   margin: 120px;
   background: url("/img/registro.jpg");
@@ -16,8 +106,9 @@ border-radius: 20px;
   background-size: 800px auto;
   object-fit: cover;
   margin-left: 200px;
-  height: 425px;
-}
+  min-height: 68vh;
+}*/
+/*
 
 #icon{
     position: relative;
@@ -44,18 +135,10 @@ border-radius: 20px;
 .ms-3{
     width: 100px;
     height: 40px;
-}
-p{
-    text-align: center;
-    background-color: white;
-    font-size: 30px;
-}
-img, svg {
-    vertical-align: middle;
-    width: 30px;
-    position: absolute;
-    margin: 5px;
-}
+}*/
+
+
+/*
 .row>* {
     flex-shrink: 0;
     width: 70%;
@@ -82,17 +165,9 @@ img, svg {
     height: auto;
     justify-content: center;
     
-}
-button, input, optgroup, select, textarea {
-    margin: 0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
-    text-align: center;
-}
+}*/
 
-
-
+/*
 
 @media all and (max-width: 1000px){
     #form_login{
@@ -237,4 +312,4 @@ button, input, optgroup, select, textarea {
         border-radius: 0.25rem;
         transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     }
-}
+}*/
