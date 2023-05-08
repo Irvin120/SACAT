@@ -102,7 +102,12 @@ class mainUserController extends Controller
         $actividades = $aula->actividades;
 
         if ($user && $user->correoUsuario === $correoUsuario) {
-            return view('user.actividadesUser', compact('user', 'actividades', 'correoUsuarioEncryp'));
+            if ($actividades->isEmpty()) {
+                $mensaje = "No hay actividades";
+                return view('user.actividadesUser', compact('user', 'actividades', 'correoUsuarioEncryp', 'mensaje'));
+            } else {
+                return view('user.actividadesUser', compact('user', 'actividades', 'correoUsuarioEncryp'));
+            }
         } else {
             return back()->with('message', 'No se pudo autenticar al usuario');
         }
@@ -132,20 +137,20 @@ class mainUserController extends Controller
                 $dias[] = $fechaInicio->format('Y-m-d');
                 $fechaInicio->modify('+1 day');
             }
- 
 
-            $registro = registroActividad:: where('idUsuario', $idUsuario)
-            ->where('idActividad', $idActividad)
-            ->whereDate('fechaRegistroActividad', '>=', $actividad->fechaInicio)
-            ->whereDate('fechaRegistroActividad', '<=', $actividad->fechaFin)
-            ->first();
+
+            $registro = registroActividad::where('idUsuario', $idUsuario)
+                ->where('idActividad', $idActividad)
+                ->whereDate('fechaRegistroActividad', '>=', $actividad->fechaInicio)
+                ->whereDate('fechaRegistroActividad', '<=', $actividad->fechaFin)
+                ->first();
 
             $registrosUsuario = RegistroActividad::where('idActividad', $idActividad)
-            ->where('idUsuario', $idUsuario)
-            ->whereIn('fechaRegistroActividad', $dias)
-            ->get();
+                ->where('idUsuario', $idUsuario)
+                ->whereIn('fechaRegistroActividad', $dias)
+                ->get();
 
-        return view('user.checklisUser', compact('actividad', 'usuario', 'dias', 'registrosUsuario'));
+            return view('user.checklisUser', compact('actividad', 'usuario', 'dias', 'registrosUsuario'));
         } else {
             // hacer algo si el usuario no existe o el correo no coincide
             return back()->with('error', 'El usuario no existe o el correo no coincide');
@@ -154,35 +159,66 @@ class mainUserController extends Controller
 
 
 
-    public function registrarActividad(Request $request) {
-        $idActividad = $request->input('idActividad');
-        $idUsuario = $request->input('idUsuario');
-        $dias = $request->input('dias');
-        $resumenes = $request->input('resumenes');
+    // public function registrarActividad(Request $request) {
+    //     $idActividad = $request->input('idActividad');
+    //     $idUsuario = $request->input('idUsuario');
+    //     $dias = $request->input('dias');
+    //     $resumenes = $request->input('resumenes');
 
-        foreach ($dias as $dia) {
-            $registroActividad = new RegistroActividad;
-            $registroActividad->idActividad = $idActividad;
-            $registroActividad->idUsuario = $idUsuario;
-            $registroActividad->fechaRegistroActividad = $dia;
+    //     foreach ($dias as $dia) {
+    //         $registroActividad = new RegistroActividad;
+    //         $registroActividad->idActividad = $idActividad;
+    //         $registroActividad->idUsuario = $idUsuario;
+    //         $registroActividad->fechaRegistroActividad = $dia;
 
-            // Consulta para validar si ya existe un registro para el mismo usuario y actividad en la misma fecha
-            $existeRegistro = RegistroActividad::where('idActividad', $idActividad)
-                                                ->where('idUsuario', $idUsuario)
-                                                ->whereDate('fechaRegistroActividad', $dia)
-                                                ->exists();
+    //         // Consulta para validar si ya existe un registro para el mismo usuario y actividad en la misma fecha
+    //         $existeRegistro = RegistroActividad::where('idActividad', $idActividad)
+    //                                             ->where('idUsuario', $idUsuario)
+    //                                             ->whereDate('fechaRegistroActividad', $dia)
+    //                                             ->exists();
 
-            // Si no existe un registro para esa fecha, se guarda el resumen y se inserta el registro
-            if (!$existeRegistro) {
-                $registroActividad->resumenRegistroActividad = isset($resumenes[$dia]) ? $resumenes[$dia] : null;
-                $registroActividad->estadoActividad = 0;
-                $registroActividad->save();
+    //         // Si no existe un registro para esa fecha, se guarda el resumen y se inserta el registro
+    //         if (!$existeRegistro) {
+    //             $registroActividad->resumenRegistroActividad = isset($resumenes[$dia]) ? $resumenes[$dia] : null;
+    //             $registroActividad->estadoActividad = 0;
+    //             $registroActividad->save();
+    //         }
+    //     }
+
+    //     return back()->with('success', 'Actividad registrada con éxito.');
+    // }
+
+    public function registrarActividad(Request $request)
+    {
+        try {
+            $idActividad = $request->input('idActividad');
+            $idUsuario = $request->input('idUsuario');
+            $dias = $request->input('dias');
+            $resumenes = $request->input('resumenes');
+
+            foreach ($dias as $dia) {
+                $registroActividad = new RegistroActividad;
+                $registroActividad->idActividad = $idActividad;
+                $registroActividad->idUsuario = $idUsuario;
+                $registroActividad->fechaRegistroActividad = $dia;
+
+                // Consulta para validar si ya existe un registro para el mismo usuario y actividad en la misma fecha
+                $existeRegistro = RegistroActividad::where('idActividad', $idActividad)
+                    ->where('idUsuario', $idUsuario)
+                    ->whereDate('fechaRegistroActividad', $dia)
+                    ->exists();
+
+                // Si no existe un registro para esa fecha, se guarda el resumen y se inserta el registro
+                if (!$existeRegistro) {
+                    $registroActividad->resumenRegistroActividad = isset($resumenes[$dia]) ? $resumenes[$dia] : null;
+                    $registroActividad->estadoActividad = 0;
+                    $registroActividad->save();
+                }
             }
+
+            return back()->with('success', 'Actividad registrada con éxito.');
+        } catch (\Throwable $e) {
+            return back()->with('error', 'El formulario ya fue enviado');
         }
-
-        return back()->with('success', 'Actividad registrada con éxito.');
     }
-
-
-
 }

@@ -18,6 +18,26 @@ function entradaAreaUser(event, idUsuario, correoUsuarioEncryp) {
     })
 }
 
+function entradaHomeUser(event, idUsuario, correoUsuarioEncryp) {
+    var idAula = $(event.currentTarget).data('id');
+    $.ajax({
+        url: '/user/mainUser/' + idUsuario + '/' + correoUsuarioEncryp,
+        type: 'GET',
+        dataTyPe: 'html',
+        success: function (response) {
+            window.location.href = '/user/mainUser/' + idUsuario + '/' + correoUsuarioEncryp;
+        },
+
+        error: function (xhr, status, error) {
+            // Mostrar un mensaje de error en la página
+            var errorMessage = xhr.status + ': ' + xhr.statusText;
+            $('#mensajeError').text('Se ha producido un error al recuperar el home: ' + errorMessage);
+        }
+
+
+    })
+}
+
 function enviarSolicitud() {
     if (confirm('¿Estás seguro que quieres enviar la solicitud?')) {
         alert('Solicitud Enviada')
