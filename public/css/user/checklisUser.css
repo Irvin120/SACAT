@@ -33,6 +33,7 @@
     width: auto;
 
     background-color: #1B59F8;
+    border-radius: 15px;
 
     margin: 1rem 12rem;
     padding: .5rem 2rem;
@@ -65,16 +66,24 @@
 
 
 .conten-check{
-    margin: 2rem 2rem;
+    margin: 3rem 2rem 2rem 4rem;
 }
 
 
 .conten-conten{
     width: 100%;
+    display: flex;
 }
 
 .conten-actions{
-    width: 50%;
+    width: 60%;
+    padding-bottom: 5rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.contend-calender{
+    width: 40%;
     padding-bottom: 5rem;
     margin-top: 2rem;
     text-align: center;
@@ -86,16 +95,39 @@
     padding: .5rem;
     font-size: 20px;
     font-weight: bold;
+    margin-left: 3rem;
+    margin-right: 1rem;
+
+    border-radius: 15px;
 }
 
+.text-calender{
+    background-color: #019EFF;
+    color: white;
+    padding: .5rem;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-right: 3rem;
+
+    border-radius: 15px;
+}
 
 /* checkboxs */
 input[type="checkbox"] {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
+    border: 2px solid #1B59F8;
+    margin-left: .5rem;
+    margin-bottom: 1rem;
     /* Otros estilos de los checkboxes */
 }
-  
+
+.form-check .form-check-input {
+    float: left;
+    margin-left: 0;
+}
+
 input[type="checkbox"]:checked {
 background-color: green;
 /* Otros estilos para el estado checked */
@@ -104,13 +136,20 @@ background-color: green;
 .form-check{
     display: flex;
     justify-content: start;
+    align-items: center;
+
+    background-color: #6acbff;
+
+    width: 100%;
+
+    padding: 0;
 }
 
 .fecha{
     text-align: start;
-    margin-left: 1rem;
     font-size: 18px;
     font-weight: bold;
+    padding: .5rem;
 }
 
 .conten-inputs{
@@ -121,14 +160,45 @@ background-color: green;
 }
 .resumen-input{
     width: 100%;
-    height: 100px;
-    border: 1px solid black;
+    height: 120px;
+    border: 2px solid #019EFF;
     border-radius: 10px;
     padding: 1rem;
     
 }
 
+table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  caption {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  th, td {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  th {
+    background-color: #1B59F8;
+    color: white;
+    font-weight: bold;
+  }
+  
+  td {
+    background-color: #3C84AB;
+  }
+  
+  td:hover {
+    background-color:#6acbff;
+    color: white;
+  }
+  
 
-.btn-enviar{
-    margin-left: 2rem;
-}
+

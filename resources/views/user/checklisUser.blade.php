@@ -61,12 +61,7 @@
 
 
                             <div class="form-check">
-                                @if (!$registrosUsuario->contains('fechaRegistroActividad', $dia))
-                                    <!-- cuadro de checkbox     -->
-                                    <input class="form-check-input resumen-checkbox" type="checkbox" required name="dias[]"
-                                    value="{{ $dia }}" id="{{ $dia }}">
-                                @endif
-
+                                
                                 <!-- fecha con nombre de dia -->
                                 <label class="fecha form-check-label" for="{{ $dia }}">
                                     {{ date('d/m/Y', strtotime($dia)) }} -
@@ -89,22 +84,40 @@
                                     <textarea type="text" name="resumenes[{{ $dia }}]" placeholder="Resumen del día" class="resumen-input" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                                 @endif
 
+                                <div class="checks">
 
-                                <button type="submit" class="btn-enviar btn btn-primary">Enviar</button>
+                                    @if (!$registrosUsuario->contains('fechaRegistroActividad', $dia))
+                                        <!-- cuadro de checkbox     -->
+                                        <input class="form-check-input resumen-checkbox" type="checkbox" required name="dias[]"
+                                        value="{{ $dia }}" id="{{ $dia }}">
+                                    @endif
+
+                                    <button type="submit" class="btn-enviar btn btn-primary">Enviar</button>
+                                
+                                </div>
                             </div>
                         </form>
                     @endforeach
 
 
                 </form>
-        </div>
+            </div>
+
+            <div class="contend-calender">
+                <h5 class="text-calender font-weight-bold ">Calendario</h5>
+
+                <div id="calendario" class="calendario"></div>
+
+            </div>
+
+        
+
+    </div>
 
         <div class="d-grid gap-2 col-6 mx-auto mt-4 mb-4">
             <button id="boton-volver" onclick="history.back()" class="btn-volver btn btn-primary"
                 type="button">VOLVER</button>
         </div>
-
-    </div>
 
     <script>
         $(document).ready(function() {
@@ -151,6 +164,7 @@
         }
     </script>
 
+    <script src="{{ asset('js/calendario.js') }}"></script>
 
 
 
