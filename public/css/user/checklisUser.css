@@ -3,47 +3,9 @@
     padding: 0;
 }
 
+/* contenedor principal */
 .content{
     margin: 0rem;
-}
-
-.conten-info{
-    background-color: #3C84AB;
-    
-    text-align: center;
-    padding: 1rem 0rem;
-}
-
-.titulo{
-    color: white;
-    margin: 0;
-}
-
-.resumen{
-    color: white;
-    margin: 0;
-    font-size: 16px;
-}
-
-.fecha-activ{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: auto;
-
-    background-color: #1B59F8;
-    border-radius: 15px;
-
-    margin: 1rem 12rem;
-    padding: .5rem 2rem;
-}
-
-.text-f{
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    padding-right: 2rem;
 }
 
 .text-p{
@@ -53,134 +15,12 @@
     padding-right: 1rem;
 }
 
-.text-inicio{
-    font-size: 20px;
-    color: white;
-}
 
-.text-fin{
-    font-size: 20px;
-    color: white;
-    margin-left: 1rem;
-}
-
-
-.conten-check{
-    margin: 3rem 2rem 2rem 4rem;
-}
-
-
-.conten-conten{
-    width: 100%;
-    display: flex;
-}
-
-.conten-actions{
-    width: 60%;
-    padding-bottom: 5rem;
-    margin-top: 2rem;
-    text-align: center;
-}
-
-.contend-calender{
-    width: 40%;
-    padding-bottom: 5rem;
-    margin-top: 2rem;
-    text-align: center;
-}
-
-.text-dias{
-    background-color: #019EFF;
-    color: white;
-    padding: .5rem;
-    font-size: 20px;
-    font-weight: bold;
-    margin-left: 3rem;
-    margin-right: 1rem;
-
-    border-radius: 15px;
-}
-
-.text-calender{
-    background-color: #019EFF;
-    color: white;
-    padding: .5rem;
-    font-size: 20px;
-    font-weight: bold;
-    margin-left: 1rem;
-    margin-right: 3rem;
-
-    border-radius: 15px;
-}
-
-/* checkboxs */
-input[type="checkbox"] {
-    width: 32px;
-    height: 32px;
-    border: 2px solid #1B59F8;
-    margin-left: .5rem;
-    margin-bottom: 1rem;
-    /* Otros estilos de los checkboxes */
-}
-
-.form-check .form-check-input {
-    float: left;
-    margin-left: 0;
-}
-
-input[type="checkbox"]:checked {
-background-color: green;
-/* Otros estilos para el estado checked */
-}
-
-.form-check{
-    display: flex;
-    justify-content: start;
-    align-items: center;
-
-    background-color: #6acbff;
-
-    width: 100%;
-
-    padding: 0;
-}
-
-.fecha{
-    text-align: start;
-    font-size: 18px;
-    font-weight: bold;
-    padding: .5rem;
-}
-
-.conten-inputs{
-    display: flex;
-    align-items: center;
-    margin-top: 1rem;
-
-}
-
-.resumen-input{
-    width: 100%;
-    height: 120px;
-    border: 6px solid #019EFF;
-    border-radius: 10px;
-    padding: 1rem;
-    
-}
-
-.resumen-input-save{
-    width: 85%;
-    height: 120px;
-    border: 6px solid #01ff7c;
-    border-radius: 10px;
-    padding: 1rem;
-    margin-right: 1rem;
-}
-
+/* estilo del calendario */
 table {
     border-collapse: collapse;
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
     margin: 0 auto;
   }
   
@@ -209,6 +49,1254 @@ table {
     background-color:#6acbff;
     color: white;
   }
+
   
+/* ------------------------------------- Estilos para pantallas de 463px o menos ----------------------------------*/
+@media (max-width: 463px) {
 
 
+/* encabezado de informacion */
+.conten-info{
+    background-color: #3C84AB;
+    
+    text-align: center;
+    padding: 1rem 0rem;
+}
+
+.titulo{
+    color: white;
+    margin: 0;
+}
+
+.resumen{
+    color: white;
+    margin: 0;
+    font-size: 16px;
+}
+
+
+/* fecha de inicio y fin */
+.fecha-activ{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: auto;
+
+    background-color: #1B59F8;
+    border-radius: 15px;
+
+    margin: 1rem 1rem;
+    padding: .5rem 2rem;
+}
+
+.text-f{
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    padding-right: 1rem;
+}
+
+.text-inicio{
+    font-size: 14px;
+    color: white;
+}
+
+.text-fin{
+    font-size: 14px;
+    color: white;
+}
+.text-p{
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+}
+
+
+/* contenedor de contendio */
+.conten-conten{
+    width: 100%;
+}
+
+/* Contenedor de chekins */
+.conten-actions{
+    width: 100%;
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.text-dias{
+    background-color: #019EFF;
+    color: white;
+    padding: .5rem;
+    font-size: 18px !important;
+    font-weight: bold;
+    margin-left: 2rem;
+    margin-right: 2rem;
+
+    border-radius: 15px;
+}
+
+
+/* contenedor de cada chekin */
+.conten-check{
+    margin: 1rem 2rem 1rem 2rem;
+}
+
+/* fecha de cada chekin */
+.form-check{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #6acbff;
+
+    width: 100%;
+
+    padding: 0;
+}
+.fecha{
+    text-align: start;
+    font-size: 16px;
+    font-weight: bold;
+    padding: .2rem;
+}
+
+/* input de texto resumen */
+.conten-inputs{
+    align-items: center;
+    margin-top: 1rem;
+
+}
+.resumen-input{
+    width: 100%;
+    height: 120px;
+    border: 6px solid #ff4901;
+    border-radius: 10px;
+    padding: 1rem;
+    
+}
+.resumen-input-save{
+    width: 100%;
+    height: 120px;
+    border: 6px solid #01ff7c;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-right: 1rem;
+}
+
+
+/* checkboxs */
+input[type="checkbox"] {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #1B59F8;
+    margin-left: .5rem;
+    margin-bottom: 1rem;
+    /* Otros estilos de los checkboxes */
+}
+
+.form-check .form-check-input {
+    float: left;
+    margin-left: 0;
+}
+
+input[type="checkbox"]:checked {
+background-color: green;
+/* Otros estilos para el estado checked */
+}
+
+
+/* contenedor de calendario */
+.contend-calender{
+    width: 100%;
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.text-calender{
+    background-color: #019EFF;
+    color: white;
+    padding: .5rem;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 15px;
+}
+
+
+
+
+}
+
+/* ------------------------------------- Estilos para pantallas de 463px a 577px ----------------------------------*/
+@media (min-width: 463px) and (max-width: 577px) {
+
+/* encabezado de informacion */
+.conten-info{
+    background-color: #3C84AB;
+    
+    text-align: center;
+    padding: 1rem 0rem;
+}
+
+.titulo{
+    color: white;
+    margin: 0;
+}
+
+.resumen{
+    color: white;
+    margin: 0;
+    font-size: 16px;
+}
+
+
+/* fecha de inicio y fin */
+.fecha-activ{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: auto;
+
+    background-color: #1B59F8;
+    border-radius: 15px;
+
+    margin: 1rem 1rem;
+    padding: .5rem 2rem;
+}
+
+.text-f{
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    padding-right: 1rem;
+}
+
+.text-inicio{
+    font-size: 14px;
+    color: white;
+}
+
+.text-fin{
+    font-size: 14px;
+    color: white;
+    margin-left: 1rem;
+}
+.text-p{
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    padding-right: 1rem;
+}
+
+
+/* contenedor de contendio */
+.conten-conten{
+    width: 100%;
+}
+
+/* Contenedor de chekins */
+.conten-actions{
+    width: 100%;
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.text-dias{
+    background-color: #019EFF;
+    color: white;
+    padding: .5rem;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 3rem;
+    margin-right: 3rem;
+
+    border-radius: 15px;
+}
+
+
+/* contenedor de cada chekin */
+.conten-check{
+    margin: 3rem 4rem 2rem 4rem;
+}
+
+/* fecha de cada chekin */
+.form-check{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    background-color: #6acbff;
+
+    width: 100%;
+
+    padding: 0;
+}
+.fecha{
+    text-align: start;
+    font-size: 18px;
+    font-weight: bold;
+    padding: .5rem;
+}
+
+/* input de texto resumen */
+.conten-inputs{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+
+}
+.resumen-input{
+    width: 100%;
+    height: 120px;
+    border: 6px solid #ff4901;
+    border-radius: 10px;
+    padding: 1rem;
+    
+}
+.resumen-input-save{
+    width: 85%;
+    height: 120px;
+    border: 6px solid #01ff7c;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-right: 1rem;
+}
+
+
+/* checkboxs */
+input[type="checkbox"] {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #1B59F8;
+    margin-left: .5rem;
+    margin-bottom: 1rem;
+    /* Otros estilos de los checkboxes */
+}
+
+.form-check .form-check-input {
+    float: left;
+    margin-left: 0;
+}
+
+input[type="checkbox"]:checked {
+background-color: green;
+/* Otros estilos para el estado checked */
+}
+
+
+/* contenedor de calendario */
+.contend-calender{
+    width: 100%;
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.text-calender{
+    background-color: #019EFF;
+    color: white;
+    padding: .5rem;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-right: 3rem;
+    border-radius: 15px;
+}
+
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 577px y 768px -------------------------------*/
+@media (min-width: 577px) and (max-width: 768px) {
+
+/* encabezado de informacion */
+.conten-info{
+    background-color: #3C84AB;
+    
+    text-align: center;
+    padding: 1rem 0rem;
+}
+
+.titulo{
+    color: white;
+    margin: 0;
+}
+
+.resumen{
+    color: white;
+    margin: 0;
+    font-size: 16px;
+}
+
+
+/* fecha de inicio y fin */
+.fecha-activ{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: auto;
+
+    background-color: #1B59F8;
+    border-radius: 15px;
+
+    margin: 1rem 2rem;
+    padding: .5rem 2rem;
+}
+
+.text-f{
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    padding-right: 2rem;
+}
+
+.text-inicio{
+    font-size: 16px;
+    color: white;
+}
+
+.text-fin{
+    font-size: 16px;
+    color: white;
+    margin-left: 1rem;
+}
+.text-p{
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    padding-right: 1rem;
+}
+
+
+/* contenedor de contendio */
+.conten-conten{
+    width: 100%;
+}
+
+/* Contenedor de chekins */
+.conten-actions{
+    width: 100%;
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.text-dias{
+    background-color: #019EFF;
+    color: white;
+    padding: .5rem;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 3rem;
+    margin-right: 3rem;
+
+    border-radius: 15px;
+}
+
+
+/* contenedor de cada chekin */
+.conten-check{
+    margin: 3rem 4rem 2rem 4rem;
+}
+
+/* fecha de cada chekin */
+.form-check{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    background-color: #6acbff;
+
+    width: 100%;
+
+    padding: 0;
+}
+.fecha{
+    text-align: start;
+    font-size: 18px;
+    font-weight: bold;
+    padding: .5rem;
+}
+
+/* input de texto resumen */
+.conten-inputs{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+
+}
+.resumen-input{
+    width: 100%;
+    height: 120px;
+    border: 6px solid #ff4901;
+    border-radius: 10px;
+    padding: 1rem;
+    
+}
+.resumen-input-save{
+    width: 85%;
+    height: 120px;
+    border: 6px solid #01ff7c;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-right: 1rem;
+}
+
+
+/* checkboxs */
+input[type="checkbox"] {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #1B59F8;
+    margin-left: .5rem;
+    margin-bottom: 1rem;
+    /* Otros estilos de los checkboxes */
+}
+
+.form-check .form-check-input {
+    float: left;
+    margin-left: 0;
+}
+
+input[type="checkbox"]:checked {
+background-color: green;
+/* Otros estilos para el estado checked */
+}
+
+
+
+
+/* contenedor de calendario */
+.contend-calender{
+    width: 100%;
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.text-calender{
+    background-color: #019EFF;
+    color: white;
+    padding: .5rem;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-right: 3rem;
+    border-radius: 15px;
+}
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 768px y 992px -------------------------------*/
+@media (min-width: 768px) and (max-width: 992px) {
+
+/* encabezado de informacion */
+.conten-info{
+    background-color: #3C84AB;
+    
+    text-align: center;
+    padding: 1rem 0rem;
+}
+
+.titulo{
+    color: white;
+    margin: 0;
+}
+
+.resumen{
+    color: white;
+    margin: 0;
+    font-size: 16px;
+}
+
+
+/* fecha de inicio y fin */
+.fecha-activ{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: auto;
+
+    background-color: #1B59F8;
+    border-radius: 15px;
+
+    margin: 1rem 5rem;
+    padding: .5rem 2rem;
+}
+
+.text-f{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding-right: 2rem;
+}
+
+.text-inicio{
+    font-size: 20px;
+    color: white;
+}
+
+.text-fin{
+    font-size: 20px;
+    color: white;
+    margin-left: 1rem;
+}
+
+
+/* contenedor de contendio */
+.conten-conten{
+    width: 100%;
+}
+
+/* Contenedor de chekins */
+.conten-actions{
+    width: 100%;
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.text-dias{
+    background-color: #019EFF;
+    color: white;
+    padding: .5rem;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 3rem;
+    margin-right: 3rem;
+
+    border-radius: 15px;
+}
+
+
+/* contenedor de cada chekin */
+.conten-check{
+    margin: 3rem 4rem 2rem 4rem;
+}
+
+/* fecha de cada chekin */
+.form-check{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    background-color: #6acbff;
+
+    width: 100%;
+
+    padding: 0;
+}
+.fecha{
+    text-align: start;
+    font-size: 18px;
+    font-weight: bold;
+    padding: .5rem;
+}
+
+/* input de texto resumen */
+.conten-inputs{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+
+}
+.resumen-input{
+    width: 100%;
+    height: 120px;
+    border: 6px solid #ff4901;
+    border-radius: 10px;
+    padding: 1rem;
+    
+}
+.resumen-input-save{
+    width: 85%;
+    height: 120px;
+    border: 6px solid #01ff7c;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-right: 1rem;
+}
+
+
+/* checkboxs */
+input[type="checkbox"] {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #1B59F8;
+    margin-left: .5rem;
+    margin-bottom: 1rem;
+    /* Otros estilos de los checkboxes */
+}
+
+.form-check .form-check-input {
+    float: left;
+    margin-left: 0;
+}
+
+input[type="checkbox"]:checked {
+background-color: green;
+/* Otros estilos para el estado checked */
+}
+
+
+
+
+/* contenedor de calendario */
+.contend-calender{
+    width: 100%;
+    padding-bottom: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.text-calender{
+    background-color: #019EFF;
+    color: white;
+    padding: .5rem;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-right: 3rem;
+    border-radius: 15px;
+}
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 992px y 1200px -------------------------------*/
+@media (min-width: 992px) and (max-width: 1200px) {
+
+/* encabezado de informacion */
+.conten-info{
+    background-color: #3C84AB;
+    
+    text-align: center;
+    padding: 1rem 0rem;
+}
+
+.titulo{
+    color: white;
+    margin: 0;
+}
+
+.resumen{
+    color: white;
+    margin: 0;
+    font-size: 16px;
+}
+
+
+/* fecha de inicio y fin */
+.fecha-activ{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: auto;
+
+    background-color: #1B59F8;
+    border-radius: 15px;
+
+    margin: 1rem 12rem;
+    padding: .5rem 2rem;
+}
+
+.text-f{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding-right: 2rem;
+}
+
+.text-inicio{
+    font-size: 20px;
+    color: white;
+}
+
+.text-fin{
+    font-size: 20px;
+    color: white;
+    margin-left: 1rem;
+}
+
+
+/* contenedor de contendio */
+.conten-conten{
+    width: 100%;
+    display: flex;
+}
+
+/* Contenedor de chekins */
+.conten-actions{
+    width: 60%;
+    padding-bottom: 5rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.text-dias{
+    background-color: #019EFF;
+    color: white;
+    padding: .5rem;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 3rem;
+    margin-right: 1rem;
+
+    border-radius: 15px;
+}
+
+
+/* contenedor de cada chekin */
+.conten-check{
+    margin: 3rem 2rem 2rem 4rem;
+}
+
+/* fecha de cada chekin */
+.form-check{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    background-color: #6acbff;
+
+    width: 100%;
+
+    padding: 0;
+}
+.fecha{
+    text-align: start;
+    font-size: 18px;
+    font-weight: bold;
+    padding: .5rem;
+}
+
+/* input de texto resumen */
+.conten-inputs{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+
+}
+.resumen-input{
+    width: 100%;
+    height: 120px;
+    border: 6px solid #ff4901;
+    border-radius: 10px;
+    padding: 1rem;
+    
+}
+.resumen-input-save{
+    width: 85%;
+    height: 120px;
+    border: 6px solid #01ff7c;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-right: 1rem;
+}
+
+
+/* checkboxs */
+input[type="checkbox"] {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #1B59F8;
+    margin-left: .5rem;
+    margin-bottom: 1rem;
+    /* Otros estilos de los checkboxes */
+}
+
+.form-check .form-check-input {
+    float: left;
+    margin-left: 0;
+}
+
+input[type="checkbox"]:checked {
+background-color: green;
+/* Otros estilos para el estado checked */
+}
+
+
+
+
+/* contenedor de calendario */
+.contend-calender{
+    width: 40%;
+    padding-bottom: 5rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.text-calender{
+    background-color: #019EFF;
+    color: white;
+    padding: .5rem;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-right: 3rem;
+    border-radius: 15px;
+}
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 1200px y 1400px -------------------------------*/
+@media (min-width: 1200px) and (max-width: 1400px) {
+
+/* encabezado de informacion */
+.conten-info{
+    background-color: #3C84AB;
+    
+    text-align: center;
+    padding: 1rem 0rem;
+}
+
+.titulo{
+    color: white;
+    margin: 0;
+}
+
+.resumen{
+    color: white;
+    margin: 0;
+    font-size: 16px;
+}
+
+
+/* fecha de inicio y fin */
+.fecha-activ{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: auto;
+
+    background-color: #1B59F8;
+    border-radius: 15px;
+
+    margin: 1rem 12rem;
+    padding: .5rem 2rem;
+}
+
+.text-f{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding-right: 2rem;
+}
+
+.text-inicio{
+    font-size: 20px;
+    color: white;
+}
+
+.text-fin{
+    font-size: 20px;
+    color: white;
+    margin-left: 1rem;
+}
+
+
+/* contenedor de contendio */
+.conten-conten{
+    width: 100%;
+    display: flex;
+}
+
+/* Contenedor de chekins */
+.conten-actions{
+    width: 60%;
+    padding-bottom: 5rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.text-dias{
+    background-color: #019EFF;
+    color: white;
+    padding: .5rem;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 3rem;
+    margin-right: 1rem;
+
+    border-radius: 15px;
+}
+
+
+/* contenedor de cada chekin */
+.conten-check{
+    margin: 3rem 2rem 2rem 4rem;
+}
+
+/* fecha de cada chekin */
+.form-check{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    background-color: #6acbff;
+
+    width: 100%;
+
+    padding: 0;
+}
+.fecha{
+    text-align: start;
+    font-size: 18px;
+    font-weight: bold;
+    padding: .5rem;
+}
+
+/* input de texto resumen */
+.conten-inputs{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+
+}
+.resumen-input{
+    width: 100%;
+    height: 120px;
+    border: 6px solid #ff4901;
+    border-radius: 10px;
+    padding: 1rem;
+    
+}
+.resumen-input-save{
+    width: 85%;
+    height: 120px;
+    border: 6px solid #01ff7c;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-right: 1rem;
+}
+
+
+/* checkboxs */
+input[type="checkbox"] {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #1B59F8;
+    margin-left: .5rem;
+    margin-bottom: 1rem;
+    /* Otros estilos de los checkboxes */
+}
+
+.form-check .form-check-input {
+    float: left;
+    margin-left: 0;
+}
+
+input[type="checkbox"]:checked {
+background-color: green;
+/* Otros estilos para el estado checked */
+}
+
+
+
+
+/* contenedor de calendario */
+.contend-calender{
+    width: 40%;
+    padding-bottom: 5rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.text-calender{
+    background-color: #019EFF;
+    color: white;
+    padding: .5rem;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-right: 3rem;
+    border-radius: 15px;
+}
+}
+
+/* --------------------------------------- Estilos para pantallas de 1400px o más -------------------------------*/
+@media (min-width: 1400px) {
+
+/* encabezado de informacion */
+.conten-info{
+    background-color: #3C84AB;
+    
+    text-align: center;
+    padding: 1rem 0rem;
+}
+
+.titulo{
+    color: white;
+    margin: 0;
+}
+
+.resumen{
+    color: white;
+    margin: 0;
+    font-size: 16px;
+}
+
+
+/* fecha de inicio y fin */
+.fecha-activ{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: auto;
+
+    background-color: #1B59F8;
+    border-radius: 15px;
+
+    margin: 1rem 12rem;
+    padding: .5rem 2rem;
+}
+
+.text-f{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    padding-right: 2rem;
+}
+
+.text-inicio{
+    font-size: 20px;
+    color: white;
+}
+
+.text-fin{
+    font-size: 20px;
+    color: white;
+    margin-left: 1rem;
+}
+
+
+/* contenedor de contendio */
+.conten-conten{
+    width: 100%;
+    display: flex;
+}
+
+/* Contenedor de chekins */
+.conten-actions{
+    width: 60%;
+    padding-bottom: 5rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.text-dias{
+    background-color: #019EFF;
+    color: white;
+    padding: .5rem;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 3rem;
+    margin-right: 1rem;
+
+    border-radius: 15px;
+}
+
+
+/* contenedor de cada chekin */
+.conten-check{
+    margin: 3rem 2rem 2rem 4rem;
+}
+
+/* fecha de cada chekin */
+.form-check{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+
+    background-color: #6acbff;
+
+    width: 100%;
+
+    padding: 0;
+}
+.fecha{
+    text-align: start;
+    font-size: 18px;
+    font-weight: bold;
+    padding: .5rem;
+}
+
+/* input de texto resumen */
+.conten-inputs{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+
+}
+.resumen-input{
+    width: 100%;
+    height: 120px;
+    border: 6px solid #ff4901;
+    border-radius: 10px;
+    padding: 1rem;
+    
+}
+.resumen-input-save{
+    width: 85%;
+    height: 120px;
+    border: 6px solid #01ff7c;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-right: 1rem;
+}
+
+
+/* checkboxs */
+input[type="checkbox"] {
+    width: 32px;
+    height: 32px;
+    border: 2px solid #1B59F8;
+    margin-left: .5rem;
+    margin-bottom: 1rem;
+    /* Otros estilos de los checkboxes */
+}
+
+.form-check .form-check-input {
+    float: left;
+    margin-left: 0;
+}
+
+input[type="checkbox"]:checked {
+background-color: green;
+/* Otros estilos para el estado checked */
+}
+
+
+
+
+/* contenedor de calendario */
+.contend-calender{
+    width: 40%;
+    padding-bottom: 5rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.text-calender{
+    background-color: #019EFF;
+    color: white;
+    padding: .5rem;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 1rem;
+    margin-right: 3rem;
+    border-radius: 15px;
+}
+
+}

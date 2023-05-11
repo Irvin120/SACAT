@@ -10,6 +10,230 @@
     align-items: center;
 }
 
+
+ /* ------------------------------------- Estilos para pantallas de 463px o menos ----------------------------------*/
+@media (max-width: 463px) {
+
+.content-activades{
+    margin-top: 2rem;
+    background-color: #3C84AB;
+    padding: 1rem 1rem .1rem 1rem;
+    border-radius: 20px;
+}
+
+.icon-activid{
+    padding: .5rem 0rem .5rem 2rem;
+}
+
+.name-activid{
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+
+    padding: .5rem 1rem;
+}
+
+.actividad{
+    display: flex;
+    text-align: start;
+    align-items: center;
+
+    width: 18rem;
+
+    background-color: #019EFF;
+    margin-bottom: 1rem;
+}
+
+.actividad:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.boton-volver{
+    background-color: #3C84AB !important;
+}
+
+}
+
+/* ------------------------------------- Estilos para pantallas de 463px a 577px ----------------------------------*/
+@media (min-width: 463px) and (max-width: 577px) {
+
+.content-activades{
+    margin-top: 2rem;
+    background-color: #3C84AB;
+    padding: 1rem 1rem .1rem 1rem;
+    border-radius: 20px;
+}
+
+.icon-activid{
+    padding: .5rem 0rem .5rem 2rem;
+}
+
+.name-activid{
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+
+    padding: .5rem 1rem;
+}
+
+.actividad{
+    display: flex;
+    text-align: start;
+    align-items: center;
+
+    width: 26rem;
+
+    background-color: #019EFF;
+    margin-bottom: 1rem;
+}
+
+.actividad:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.boton-volver{
+    background-color: #3C84AB !important;
+}
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 577px y 768px -------------------------------*/
+@media (min-width: 577px) and (max-width: 768px) {
+
+.content-activades{
+    margin-top: 3rem;
+    background-color: #3C84AB;
+    padding: 1rem 1rem .1rem 1rem;
+    border-radius: 20px;
+}
+
+.icon-activid{
+    padding: .5rem 0rem .5rem 2rem;
+}
+
+.name-activid{
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+
+    padding: .5rem 2rem;
+}
+
+.actividad{
+    display: flex;
+    text-align: start;
+    align-items: center;
+
+    width: 30rem;
+
+    background-color: #019EFF;
+    margin-bottom: 1rem;
+}
+
+.actividad:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.boton-volver{
+    background-color: #3C84AB !important;
+}
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 768px y 992px -------------------------------*/
+@media (min-width: 768px) and (max-width: 992px) {
+
+.content-activades{
+    margin-top: 3rem;
+    background-color: #3C84AB;
+    padding: 1rem 1rem .1rem 1rem;
+    border-radius: 20px;
+}
+
+.icon-activid{
+    padding: .5rem 0rem .5rem 2rem;
+}
+
+.name-activid{
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+
+    padding: .5rem 2rem;
+}
+
+.actividad{
+    display: flex;
+    text-align: start;
+    align-items: center;
+
+    width: 36rem;
+
+    background-color: #019EFF;
+    margin-bottom: 1rem;
+}
+
+.actividad:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.boton-volver{
+    background-color: #3C84AB !important;
+}
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 992px y 1200px -------------------------------*/
+@media (min-width: 992px) and (max-width: 1200px) {
+
+.content-activades{
+    margin-top: 3rem;
+    background-color: #3C84AB;
+    padding: 2rem 2rem 1rem 2rem;
+    border-radius: 20px;
+}
+
+.icon-activid{
+    padding: .5rem 0rem .5rem 2rem;
+}
+
+.name-activid{
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+
+    padding: .5rem 2rem;
+}
+
+.actividad{
+    display: flex;
+    text-align: start;
+    align-items: center;
+
+    width: 44rem;
+
+    background-color: #019EFF;
+    margin-bottom: 1rem;
+}
+
+.actividad:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.boton-volver{
+    background-color: #3C84AB !important;
+}    
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 1200px y 1400px -------------------------------*/
+@media (min-width: 1200px) and (max-width: 1400px) {
+
 .content-activades{
     margin-top: 3rem;
     background-color: #3C84AB;
@@ -49,5 +273,48 @@
     background-color: #3C84AB !important;
 }
 
+}
 
- 
+/* --------------------------------------- Estilos para pantallas de 1400px o más -------------------------------*/
+@media (min-width: 1400px) {
+
+.content-activades{
+    margin-top: 3rem;
+    background-color: #3C84AB;
+    padding: 2rem 2rem 1rem 2rem;
+    border-radius: 20px;
+}
+
+.icon-activid{
+    padding: .5rem 0rem .5rem 2rem;
+}
+
+.name-activid{
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+
+    padding: .5rem 2rem;
+}
+
+.actividad{
+    display: flex;
+    text-align: start;
+    align-items: center;
+
+    width: 44rem;
+
+    background-color: #019EFF;
+    margin-bottom: 1rem;
+}
+
+.actividad:hover{
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+.boton-volver{
+    background-color: #3C84AB !important;
+}
+
+}
