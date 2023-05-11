@@ -46,11 +46,8 @@
                 <form class="conten-check" method="post" action="{{ route('registrarActividad') }}">
                     @csrf
 
-
-
-                    <input type="hidden" name="idActividad" value="{{ $actividad->idActividad }}">
-                    <input type="hidden" name="idUsuario" value="{{ $usuario->idUsuario }}">
-
+                    <!-- <input type="hidden" name="idActividad" value="{{ $actividad->idActividad }}">
+                    <input type="hidden" name="idUsuario" value="{{ $usuario->idUsuario }}"> -->
 
                     @foreach ($dias as $dia)
                         <form class="conten-check" method="post" action="{{ route('registrarActividad') }}">
@@ -74,14 +71,15 @@
                                 @if ($registrosUsuario->contains('fechaRegistroActividad', $dia))
                                     <input type="hidden" name="resumenes[{{ $dia }}]" class="resumen-input"
                                         value="{{ $registrosUsuario->where('fechaRegistroActividad', $dia)->first()->resumenRegistroActividad }}">
-                                    <input type="text" class="resumen-input"
-                                        value="{{ $registrosUsuario->where('fechaRegistroActividad', $dia)->first()->resumenRegistroActividad }}"readonly>
-                                        
+                                    <!-- imput de tarea guardad -->
+                                    <textarea class="resumen-input-save " readonly>{{ $registrosUsuario->where('fechaRegistroActividad', $dia)->first()->resumenRegistroActividad }}</textarea>
                                     <!-- <textarea type="text" value="{{ $registrosUsuario->where('fechaRegistroActividad', $dia)->first()->resumenRegistroActividad }}"readonly
                                     class="form-control" id="exampleFormControlTextarea1" rows="3">
                                     </textarea> -->
                                 @else
-                                    <textarea type="text" name="resumenes[{{ $dia }}]" placeholder="Resumen del día" class="resumen-input" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                    <!-- imput de tarea no guardad -->
+                                    <textarea type="text" name="resumenes[{{ $dia }}]" placeholder="Resumen del día" class="resumen-input"
+                                    class="form-control" id="exampleFormControlTextarea1 validationDefault01" required></textarea>                                
                                 @endif
 
                                 <div class="checks">
