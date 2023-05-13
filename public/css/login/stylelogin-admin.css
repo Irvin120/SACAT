@@ -100,7 +100,7 @@ body{
 
 
 /* botones de ingresar y registro */
-.btn{
+.btn-acced {
     background: #0E87C2 !important;
     border-radius: 35px !important;
     border: 0 !important;
@@ -108,6 +108,8 @@ body{
     padding: .5rem;
 
     font-size: 16px;
+
+    margin-bottom: 3rem;
 }    
 
 }
@@ -194,7 +196,7 @@ body{
 
 
 /* botones de ingresar y registro */
-.btn{
+.btn-acced {
     background: #0E87C2 !important;
     border-radius: 35px !important;
     border: 0 !important;
@@ -202,6 +204,8 @@ body{
     padding: .5rem;
 
     font-size: 16px;
+
+    margin-bottom: 3rem;
 }    
 
 }
@@ -288,7 +292,7 @@ body{
 
 
 /* botones de ingresar y registro */
-.btn{
+.btn-acced {
     background: #0E87C2 !important;
     border-radius: 35px !important;
     border: 0 !important;
@@ -296,7 +300,9 @@ body{
     padding: .5rem;
 
     font-size: 16px;
-}    
+
+    margin-bottom: 3rem;
+}   
 
 }
 
@@ -381,7 +387,7 @@ body{
 
 
 /* botones de ingresar y registro */
-.btn{
+.btn-acced {
     background: #0E87C2 !important;
     border-radius: 35px !important;
     border: 0 !important;
@@ -389,6 +395,8 @@ body{
     padding: .5rem;
 
     font-size: 16px;
+
+    margin-bottom: 3rem;
 }    
 
 }
@@ -474,7 +482,7 @@ body{
 
 
 /* botones de ingresar y registro */
-.btn{
+.btn-acced {
     background: #0E87C2 !important;
     border-radius: 35px !important;
     border: 0 !important;
@@ -482,7 +490,9 @@ body{
     padding: .5rem;
 
     font-size: 16px;
-}    
+
+    margin-bottom: 3rem;
+}  
 
 }
 
@@ -568,7 +578,7 @@ body{
 
 
 /* botones de ingresar y registro */
-.btn{
+.btn-acced {
     background: #0E87C2 !important;
     border-radius: 35px !important;
     border: 0 !important;
@@ -576,7 +586,10 @@ body{
     padding: .5rem;
 
     font-size: 16px;
-}    
+
+    margin-bottom: 3rem;
+}  
+
 
 }
 
@@ -661,7 +674,7 @@ body{
 
 
 /* botones de ingresar y registro */
-.btn{
+.btn-acced {
     background: #0E87C2 !important;
     border-radius: 35px !important;
     border: 0 !important;
@@ -669,6 +682,8 @@ body{
     padding: .5rem;
 
     font-size: 16px;
+
+    margin-bottom: 3rem;
 }    
 
 }

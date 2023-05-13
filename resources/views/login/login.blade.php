@@ -84,9 +84,9 @@
                         </div>
 
                         <!-- boton de regitro -->
-                        <div class="d-grid gap-2 col-7 mt-4 mb-5 mx-auto">
+                        <!-- <div class="d-grid gap-2 col-7 mt-4 mb-5 mx-auto">
                         <button class="btn-register btn btn-primary" type="button">REGISTRARME</button>
-                        </div>
+                        </div> -->
                     </div>
 
                     @if($errors->any())

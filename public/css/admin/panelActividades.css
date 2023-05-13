@@ -3,14 +3,35 @@
     padding: 0;
 }
 
+/* estilos glovales */
+.contendbutton{
+    text-align: center;
+}
+
+/* encabezado de ventana */
+.modal-header{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #3C84AB;
+}
+.modal-header .btn-close {
+    margin: 0;
+}
+
+.btnVolver{
+    margin-top: 4rem;
+}
+
+
+/* informacion del aula */
 .info-aula{
     background-color:#019EFF;
 
     display: flex;
-    justify-content: space-between;
-    
+    justify-content: space-between; 
 }
-
 
 .name-aula p{
     margin: 0;
@@ -27,48 +48,844 @@
 }
 
 
+/* ------------------------------------- Estilos para pantallas de 463px o menos ----------------------------------*/
+@media (max-width: 463px) {
+
+/* informacion del aula */
+.info-aula{
+    background-color:#019EFF;
+
+    display: flex;
+    justify-content: space-between; 
+}
+
+.name-aula p{
+    margin: 0;
+    padding: 1rem 1rem;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.id-aula p{
+    margin: 0;
+    padding: 1rem 1rem;
+    font-size: 16px;
+    font-weight: bold;
+}
 
 
+/* conten principal con 3 botones */
 .options-actvs{
     display: flex;
-    
+    width: 100%;
+    height: 56px;    
 }
 
+/* BOTON 1 */
+/* Agregar y ver actividades */
+
+/* contenedor de agregar y ver actividades */
 .accordion{
     width: 33.333%;
+    height: 100%;
 }
 
+.accordion-item{
+    height: 100%;
+}
+
+/* contenedor */
+.contendbutton{
+    text-align: center;
+    height: 100%;
+}
+
+
+/* boton de agregar y ver actividades */
 .accordion-button{
     background-color: #019EFF;
     border: solid 1px#000000;
 
-    font-size: 18px;
-    font-weight: bold;
+    height: 100%;
 }
 
-.btnmodal{
-    background-color: #019EFF;
-    border: solid 1px#000000;
+/* boton y contenedor por actividad boton*/
+.activity{ 
+    display: flex;
+    align-items: center;
+    height: 100%;
 
-    font-size: 18px;
-    font-weight: bold;
+    margin: .5rem 0;
 }
 
-.contendbutton{
+.nameActivity{
+    font-size: 14px;
+    margin: 0;
+}
+
+
+
+/* Boton para abrir ventana para crear una actividad */
+.btnCrear{
+    font-size: 14px;
+
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+/* nombre del la ventana */
+.modal-title{
+    width: 95%;
+}
+
+/* contenedor del formulario body */
+.conten-modal{
+    width: 100%;
+}
+
+/* formulario inputs */
+.card-instruc{
+    width: 100%;
+}
+
+/* contenedor de los 3 inputs */
+.cardDesc{
+    background-color: #DEFCF9;
+}
+
+
+
+/* establecer fecha */
+.fecha{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+
+    margin-top: 2rem;
+}
+
+/* titulo fecha */
+.nameDate{
+    margin: 0;
+    font-size: 18px;
+    margin-left: 1rem;
+    font-weight: normal;
     text-align: center;
 }
 
+/* fecha inicial y final */
+.date-if{
+    display:flex ;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+/* FIN Agregar y ver actividades */
+
+
+
+/* BOTON 2 */
+/* Revisar actividades */
+
+/* Button Abrir ventana de revisar actividades */
+.contendButtonRevi{
+    width: 33.333%;
+    height: 100%;
+}
+
+.buttonActivityOptions{
+    width: 100%;
+    height: 100%;
+
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    padding: 0rem 1rem;
+    border-radius: 0;
+    
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+
+}
+.buttonActivityOptions:hover{
+    background-color: #019EFF;
+    border: solid 1px#000000;
+    color: #000000;
+}
+
+.name-btn-rev{
+    width: 100%;
+    margin: 0;
+    font-size: 12px;
+}
+
+.icon-boton{
+    margin: 0;
+    display: none;
+}
+
+/* ventana revisar actividad */
+
+/* lista de actividades por revisar */
+.actividaxRevisar{
+    display: flex;
+    align-items: center;
+    
+    background-color: #019EFF;
+    margin-top: 1rem;
+    
+}
+.iconActividaxRevisar{
+    margin-left: 1rem;
+    width: 10%;
+}
+
+/* boton de revisar */
+.btnActividadxRevisar{
+    width: 90%;
+
+    padding: 1rem;
+    
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* FIN Revisar actividades */
+
+
+
+/* BOTON 3 */
+/* Ver y aceptar solicitudes */
+
+/* boton aceptar solicitudes */
+.accordion-butto{
+    height: 100%;
+}
+
+.accordion-header{
+    height: 100%;
+}
+
 .accordion-button{
-    padding-left: 10%;
+    height: 100%;
+
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    font-size: 18px;
+    font-weight: bold;
 }
 
-.icon{
-    margin-left: 20%;
+/* contenedor solicitud de el usuario  */
+.accordion-body{
+    padding: .5rem;
+}
+
+.SolicitudUser{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: 1rem;
+}
+
+/* nombre de usuario */
+.NameUser{
+    width: 80%;
+
+    margin: 0;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.btn-slt{
+    padding: 0rem 0rem 0rem .5rem;
+    border: 0;
+}
+
+/* FIN Ver y aceptar solicitudes */
+
+.icon-boton{
+    display: none !important;
+}
+
+}
+
+/* ------------------------------------- Estilos para pantallas de 463px a 577px ----------------------------------*/
+@media (min-width: 463px) and (max-width: 577px) {
+
+    /* informacion del aula */
+.info-aula{
+    background-color:#019EFF;
+
+    display: flex;
+    justify-content: space-between; 
+}
+
+.name-aula p{
+    margin: 0;
+    padding: 1rem 1rem;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.id-aula p{
+    margin: 0;
+    padding: 1rem 1rem;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* conten principal con 3 botones */
+.options-actvs{
+    display: flex;
+    width: 100%;
+    height: 56px;    
+}
+
+/* BOTON 1 */
+/* Agregar y ver actividades */
+
+/* contenedor de agregar y ver actividades */
+.accordion{
+    width: 33.333%;
+    height: 100%;
+}
+
+.accordion-item{
+    height: 100%;
+}
+
+/* contenedor */
+.contendbutton{
+    text-align: center;
+    height: 100%;
+}
+
+
+/* boton de agregar y ver actividades */
+.accordion-button{
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    height: 100%;
+}
+
+/* boton y contenedor por actividad boton*/
+.activity{ 
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    margin: .5rem 0;
+}
+
+.nameActivity{
+    font-size: 14px;
+    margin: 0;
 }
 
 
 
-.activity{
+/* Boton para abrir ventana para crear una actividad */
+.btnCrear{
+    font-size: 14px;
+
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+/* nombre del la ventana */
+.modal-title{
+    width: 95%;
+}
+
+/* contenedor del formulario body */
+.conten-modal{
+    width: 100%;
+}
+
+/* formulario inputs */
+.card-instruc{
+    width: 100%;
+}
+
+/* contenedor de los 3 inputs */
+.cardDesc{
+    background-color: #DEFCF9;
+}
+
+
+
+/* establecer fecha */
+.fecha{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+
+    margin-top: 2rem;
+}
+
+/* titulo fecha */
+.nameDate{
+    margin: 0;
+    font-size: 18px;
+    margin-left: 1rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+/* fecha inicial y final */
+.date-if{
+    display:flex ;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+/* FIN Agregar y ver actividades */
+
+
+
+/* BOTON 2 */
+/* Revisar actividades */
+
+/* Button Abrir ventana de revisar actividades */
+.contendButtonRevi{
+    width: 33.333%;
+    height: 100%;
+}
+
+.buttonActivityOptions{
+    width: 100%;
+    height: 100%;
+
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    padding: 0rem 1rem;
+    border-radius: 0;
+    
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+
+}
+.buttonActivityOptions:hover{
+    background-color: #019EFF;
+    border: solid 1px#000000;
+    color: #000000;
+}
+
+.name-btn-rev{
+    width: 100%;
+    margin: 0;
+    font-size: 12px;
+}
+
+.icon-boton{
+    margin: 0;
+    display: none;
+}
+
+/* ventana revisar actividad */
+
+/* lista de actividades por revisar */
+.actividaxRevisar{
+    display: flex;
+    align-items: center;
+    
+    background-color: #019EFF;
+    margin-top: 1rem;
+    
+}
+.iconActividaxRevisar{
+    margin-left: 1rem;
+    width: 10%;
+}
+
+/* boton de revisar */
+.btnActividadxRevisar{
+    width: 90%;
+
+    padding: 1rem;
+    
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* FIN Revisar actividades */
+
+
+
+/* BOTON 3 */
+/* Ver y aceptar solicitudes */
+
+/* boton aceptar solicitudes */
+.accordion-butto{
+    height: 100%;
+}
+
+.accordion-header{
+    height: 100%;
+}
+
+.accordion-button{
+    height: 100%;
+
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* contenedor solicitud de el usuario  */
+.accordion-body{
+    padding: .5rem;
+}
+
+.SolicitudUser{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: 1rem;
+}
+
+/* nombre de usuario */
+.NameUser{
+    width: 80%;
+
+    margin: 0;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.btn-slt{
+    padding: 0rem 0rem 0rem .5rem;
+    border: 0;
+}
+
+/* FIN Ver y aceptar solicitudes */
+
+.icon-boton{
+    display: none !important;
+}
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 577px y 768px -------------------------------*/
+@media (min-width: 577px) and (max-width: 768px) {
+
+/* informacion del aula */
+.info-aula{
+    background-color:#019EFF;
+
+    display: flex;
+    justify-content: space-between; 
+}
+
+.name-aula p{
+    margin: 0;
+    padding: 1rem 1rem;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.id-aula p{
+    margin: 0;
+    padding: 1rem 1rem;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* conten principal con 3 botones */
+.options-actvs{
+    display: flex;
+    width: 100%;
+    height: 56px;    
+}
+
+/* BOTON 1 */
+/* Agregar y ver actividades */
+
+/* contenedor de agregar y ver actividades */
+.accordion{
+    width: 33.333%;
+    height: 100%;
+}
+
+.accordion-item{
+    height: 100%;
+}
+
+/* contenedor */
+.contendbutton{
+    text-align: center;
+    height: 100%;
+}
+
+
+/* boton de agregar y ver actividades */
+.accordion-button{
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    height: 100%;
+}
+
+/* boton y contenedor por actividad boton*/
+.activity{ 
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    margin: .5rem 0;
+}
+
+.nameActivity{
+    font-size: 14px;
+    margin: 0;
+}
+
+
+
+/* Boton para abrir ventana para crear una actividad */
+.btnCrear{
+    font-size: 14px;
+
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+/* nombre del la ventana */
+.modal-title{
+    width: 95%;
+}
+
+/* contenedor del formulario body */
+.conten-modal{
+    width: 100%;
+}
+
+/* formulario inputs */
+.card-instruc{
+    width: 100%;
+}
+
+/* contenedor de los 3 inputs */
+.cardDesc{
+    background-color: #DEFCF9;
+}
+
+
+
+/* establecer fecha */
+.fecha{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+
+    margin-top: 2rem;
+}
+
+/* titulo fecha */
+.nameDate{
+    margin: 0;
+    font-size: 18px;
+    margin-left: 1rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+/* fecha inicial y final */
+.date-if{
+    display:flex ;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+/* FIN Agregar y ver actividades */
+
+
+
+/* BOTON 2 */
+/* Revisar actividades */
+
+/* Button Abrir ventana de revisar actividades */
+.contendButtonRevi{
+    width: 33.333%;
+    height: 100%;
+}
+
+.buttonActivityOptions{
+    width: 100%;
+    height: 100%;
+
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    padding: 0rem 1rem;
+    border-radius: 0;
+    
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+
+}
+.buttonActivityOptions:hover{
+    background-color: #019EFF;
+    border: solid 1px#000000;
+    color: #000000;
+}
+
+.name-btn-rev{
+    width: 100%;
+    margin: 0;
+    font-size: 12px;
+}
+
+.icon-boton{
+    margin: 0;
+    display: none;
+}
+
+/* ventana revisar actividad */
+
+/* lista de actividades por revisar */
+.actividaxRevisar{
+    display: flex;
+    align-items: center;
+    
+    background-color: #019EFF;
+    margin-top: 1rem;
+    
+}
+.iconActividaxRevisar{
+    margin-left: 1rem;
+    width: 10%;
+}
+
+/* boton de revisar */
+.btnActividadxRevisar{
+    width: 90%;
+
+    padding: 1rem;
+    
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* FIN Revisar actividades */
+
+
+
+/* BOTON 3 */
+/* Ver y aceptar solicitudes */
+
+/* boton aceptar solicitudes */
+.accordion-butto{
+    height: 100%;
+}
+
+.accordion-header{
+    height: 100%;
+}
+
+.accordion-button{
+    height: 100%;
+
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* contenedor solicitud de el usuario  */
+.accordion-body{
+    padding: .5rem;
+}
+
+.SolicitudUser{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: 1rem;
+}
+
+/* nombre de usuario */
+.NameUser{
+    width: 80%;
+
+    margin: 0;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.btn-slt{
+    padding: 0rem 0rem 0rem .5rem;
+    border: 0;
+}
+
+/* FIN Ver y aceptar solicitudes */
+
+.icon-boton{
+    display: none !important;
+}
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 768px y 992px -------------------------------*/
+@media (min-width: 768px) and (max-width: 992px) {
+
+/* conten principal con 3 botones */
+.options-actvs{
+    display: flex;
+    width: 100%;
+    height: 86px;    
+}
+
+/* BOTON 1 */
+/* Agregar y ver actividades */
+
+/* contenedor de agregar y ver actividades */
+.accordion{
+    width: 33.333%;
+    height: 100%;
+}
+
+.accordion-item{
+    height: 100%;
+}
+
+/* contenedor */
+.contendbutton{
+    text-align: center;
+    height: 100%;
+}
+
+
+/* boton de agregar y ver actividades */
+.accordion-button{
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    height: 100%;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* boton y contenedor por actividad boton*/
+.activity{ 
     display: flex;
     align-items: center;
     height: 100%;
@@ -82,14 +899,9 @@
 
     font-size: 18px;
     font-weight: bold;
-
 }
 
-
-.contendButton{
-    text-align: center;
-}
-
+/* Boton para abrir ventana para crear una actividad */
 .btnCrear{
     font-size: 24px;
 
@@ -97,134 +909,69 @@
     padding: 0 1rem;
 }
 
-
-
-.cardTitle{
-    background-color: #3C84AB;
-    
+/* nombre del la ventana */
+.modal-title{
+    width: 95%;
 }
 
+/* contenedor del formulario body */
+.conten-modal{
+    width: 100%;
+}
+
+/* formulario inputs */
+.card-instruc{
+    width: 100%;
+}
+
+/* contenedor de los 3 inputs */
 .cardDesc{
     background-color: #DEFCF9;
 }
 
 
-.intructions{
-    border: solid 1px #000000;
-    width: 100%;
-    height: 4rem;
 
-}
-
-.inputInstr{
-    background-color: #defcf9d2;
-    height: 8rem;
-}
-
-
-.conten-modal{
-    display: flex;
-}
-
-.card-instruc{
-    width: 50%;
-    margin: 1rem;
-}
-
+/* establecer fecha */
 .fecha{
-    margin: 2rem;
+    width: 100%;
     text-align: center;
     font-weight: bold;
+
+    margin-top: 2rem;
 }
 
+/* titulo fecha */
+.nameDate{
+    margin: 0;
+    font-size: 18px;
+    margin-left: 1rem;
+    font-weight: normal;
+    text-align: center;
+}
+
+/* fecha inicial y final */
 .date-if{
     display:flex ;
     align-items: center;
     margin-top: 1rem;
 }
 
-
-.nameDate{
-    margin: 0;
-    font-size: 18px;
-    margin-left: 1rem;
-    font-weight: normal;
-}
-
-
-.modal-header{
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    background-color: #3C84AB;
-}
-
-.modal-header .btn-close {
-    margin: 0;
-}
-
-.TitleModal{
-    width: 95%;
-}
-
-.Para{
-    display: flex;
-    align-items: center;
-    margin-top: 2rem;
-}
-
-.ParaOption{
-    margin: 0;
-    font-size: 18px;
-    margin-right: 1rem;
-
-}
-
-.SolicitudUser{
-    display: flex;
-    align-items: center;
-    height: 100%;
-    margin-top: 1rem;
-}
-
-.NameUser{
-    width: 80%;
-
-    margin: 0;
-
-    font-size: 18px;
-    font-weight: bold;
-}
+/* FIN Agregar y ver actividades */
 
 
 
+/* BOTON 2 */
+/* Revisar actividades */
 
-.InfoActyMost{
-    background: #3C84AB;
-    display: flex;
-    padding: 1rem;
-    align-items: center;
-    margin-top: 1rem;
-}
-
-.iconActivity{
-    margin: 0;
-    margin-right: 2rem;
-}
-
-.NameActivityM{
-    margin: 0;
-}
-
-
-
+/* Button Abrir ventana de revisar actividades */
 .contendButtonRevi{
     width: 33.333%;
+    height: 100%;
 }
 
 .buttonActivityOptions{
     width: 100%;
+    height: 100%;
 
     background-color: #019EFF;
     border: solid 1px#000000;
@@ -237,16 +984,24 @@
     color: #000000;
 
 }
-
 .buttonActivityOptions:hover{
     background-color: #019EFF;
     border: solid 1px#000000;
     color: #000000;
 }
 
+.name-btn-rev{
+    width: 100%;
+    margin: 0;
+}
 
+.icon-boton{
+    margin: 0;
+}
 
+/* ventana revisar actividad */
 
+/* lista de actividades por revisar */
 .actividaxRevisar{
     display: flex;
     align-items: center;
@@ -255,12 +1010,12 @@
     margin-top: 1rem;
     
 }
-
 .iconActividaxRevisar{
     margin-left: 1rem;
     width: 10%;
 }
 
+/* boton de revisar */
 .btnActividadxRevisar{
     width: 90%;
 
@@ -271,183 +1026,720 @@
     color: #000000;
 }
 
+/* FIN Revisar actividades */
 
 
-.titleVistas{
+
+/* BOTON 3 */
+/* Ver y aceptar solicitudes */
+
+/* boton aceptar solicitudes */
+.accordion-butto{
+    height: 100%;
+}
+
+.accordion-header{
+    height: 100%;
+}
+
+.accordion-button{
+    height: 100%;
+
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* contenedor solicitud de el usuario  */
+.SolicitudUser{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: 1rem;
+}
+
+/* nombre de usuario */
+.NameUser{
+    width: 80%;
+
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* FIN Ver y aceptar solicitudes */
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 992px y 1200px -------------------------------*/
+@media (min-width: 992px) and (max-width: 1200px) {
+
+
+/* conten principal con 3 botones */
+.options-actvs{
+    display: flex;
+    
+}
+
+
+/* BOTON 1 */
+/* Agregar y ver actividades */
+
+/* contenedor de agregar y ver actividades */
+.accordion{
+    width: 33.333%;
+}
+
+/* contenedor */
+.contendbutton{
+    text-align: center;
+}
+
+
+
+/* boton de agregar y ver actividades */
+.accordion-button{
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+.icon{
+    margin-left: 20%;
+}
+
+
+
+/* boton y contenedor por actividad boton*/
+.activity{ 
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: 1rem;
+}
+
+.nameActivity{
+    width: 80%;
+
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+/* Boton para abrir ventana para crear una actividad */
+.btnCrear{
+    font-size: 24px;
+
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+/* nombre del la ventana */
+.modal-title{
+    width: 95%;
+}
+
+
+/* contenedor del formulario body */
+.conten-modal{
+    display: flex;
+}
+
+/* formulario inputs */
+.card-instruc{
+    width: 50%;
+    margin: 1rem;
+}
+
+/* contenedor de los 3 inputs */
+.cardDesc{
+    background-color: #DEFCF9;
+}
+
+
+
+/* establecer fecha */
+.fecha{
+    margin: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* titulo fecha */
+.nameDate{
+    margin: 0;
+    font-size: 18px;
+    margin-left: 1rem;
+    font-weight: normal;
+}
+
+/* fecha inicial y final */
+.date-if{
+    display:flex ;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+/* FIN Agregar y ver actividades */
+
+
+
+/* BOTON 2 */
+/* Revisar actividades */
+
+/* Button Abrir ventana de revisar actividades */
+.contendButtonRevi{
+    width: 33.333%;
+}
+
+.buttonActivityOptions{
+    display: flex;
+    width: 100%;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    padding: 1rem;
+    border-radius: 0;
+    
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+
+}
+.buttonActivityOptions:hover{
+    background-color: #019EFF;
+    border: solid 1px#000000;
+    color: #000000;
+}
+
+.name-btn-rev{
+    width: 100%;
+    margin: 0;
+}
+
+.icon-boton{
+    margin: 0;
+}
+
+/* ventana revisar actividad */
+
+/* lista de actividades por revisar */
+.actividaxRevisar{
+    display: flex;
+    align-items: center;
+    
     background-color: #019EFF;
     margin-top: 1rem;
-    padding: 0.5rem;
-    width: 100%;
-} 
-
-/* tabla semana */
-.encabezadoSemana{
-    display: flex;
-
-    background-color: #a0a0a0;
-
-    padding: 1rem 0rem;
-    margin: 1rem 0rem;
+    
 }
-
-.titleSem{
-    width: 20%;
-}
-
-
-.nameSem{
+.iconActividaxRevisar{
     margin-left: 1rem;
-    font-size: 16px;
-    font-weight: bold;
-    color: #000000;
-
-    margin-bottom: 0rem;
+    width: 10%;
 }
 
-.diasDeSem{
+/* boton de revisar */
+.btnActividadxRevisar{
+    width: 90%;
+
+    padding: 1rem;
+    
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* FIN Revisar actividades */
+
+
+
+/* BOTON 3 */
+/* Ver y aceptar solicitudes */
+
+/* boton aceptar solicitudes */
+.accordion-button{
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* contenedor solicitud de el usuario  */
+.SolicitudUser{
     display: flex;
-    width: 65%;
-
-    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin-top: 1rem;
 }
 
-.diaSem{
-    margin-bottom: 0rem;
+/* nombre de usuario */
+.NameUser{
+    width: 80%;
 
-    font-size: 16px;
+    margin: 0;
+
+    font-size: 18px;
     font-weight: bold;
-    color: #000000;
+}
 
-    padding: 0rem .5rem;
+/* FIN Ver y aceptar solicitudes */    
 
+}
+
+/* -------------------------------------- Estilos para pantallas de 1200px y 1400px -------------------------------*/
+@media (min-width: 1200px) and (max-width: 1400px) {
+
+/* conten principal con 3 botones */
+.options-actvs{
+    display: flex;
+    
+}
+
+
+/* BOTON 1 */
+/* Agregar y ver actividades */
+
+/* contenedor de agregar y ver actividades */
+.accordion{
+    width: 33.333%;
+}
+
+/* contenedor */
+.contendbutton{
+    text-align: center;
 }
 
 
 
+/* boton de agregar y ver actividades */
+.accordion-button{
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+.icon{
+    margin-left: 20%;
+}
 
 
-.alumnoActivSem{
+
+/* boton y contenedor por actividad boton*/
+.activity{ 
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: 1rem;
+}
+
+.nameActivity{
+    width: 80%;
+
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+/* Boton para abrir ventana para crear una actividad */
+.btnCrear{
+    font-size: 24px;
+
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+
+/* nombre del la ventana */
+.modal-title{
+    width: 95%;
+}
+
+
+/* contenedor del formulario body */
+.conten-modal{
+    display: flex;
+}
+
+/* formulario inputs */
+.card-instruc{
+    width: 50%;
+    margin: 1rem;
+}
+
+/* contenedor de los 3 inputs */
+.cardDesc{
+    background-color: #DEFCF9;
+}
+
+
+
+/* establecer fecha */
+.fecha{
+    margin: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* titulo fecha */
+.nameDate{
+    margin: 0;
+    font-size: 18px;
+    margin-left: 1rem;
+    font-weight: normal;
+}
+
+/* fecha inicial y final */
+.date-if{
+    display:flex ;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+/* FIN Agregar y ver actividades */
+
+
+
+/* BOTON 2 */
+/* Revisar actividades */
+
+/* Button Abrir ventana de revisar actividades */
+.contendButtonRevi{
+    width: 33.333%;
+}
+
+.buttonActivityOptions{
     display: flex;
     width: 100%;
 
-    background-color: #bababa;
-}
-
-.conteNameAlumno{
-    width: 20%;
-}
-.nameAlumno{
-    margin-left: 1rem;
-    font-size: 16px;
-    font-weight: bold;
-    color: #000000;
-
-    margin-bottom: 0rem;
-}
-
-
-.resultadosDia{
-    width: 65%;
-    display: flex;
-
-    justify-content: space-between;
-}
-
-.cumplimientoDia{
-    margin-bottom: 0rem;
-
-    font-size: 16px;
-    font-weight: bold;
-    color: #000000;
-
-    padding: 0rem 1rem;
-}
-
-
-
-.notaSema{
-    width: 15%;
-    display: flex;
+    text-align: center;
+    align-items: center;
     justify-content: center;
-    align-content: center;
-}
-.btnVerNotas{
-    margin-bottom: 0rem;
 
-    font-size: 16px;
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    padding: 1rem;
+    border-radius: 0;
+    
+    font-size: 18px;
     font-weight: bold;
-    color: #3C84AB;
-
-    padding: 0rem 1rem;
-}
-
-
-
-
-
-.titleSemNotas{
-    width: 20%;
-}
-
-.diasDeSemNotas{
-    width: 80%;
-    display: flex;
-
-    justify-content: space-between;
-}
-
-
-.conteNameAlumnoNotas{
-    width: 20%;
-}
-
-.resultadosDiaNotas{
-    width: 80%;
-    display: flex;
-
-    justify-content: space-between;
-}
-
-.notasDia{
-    margin-bottom: 0rem;
-
-    font-size: 12px;
     color: #000000;
 
-    padding: 0rem 0.5rem;
+}
+.buttonActivityOptions:hover{
+    background-color: #019EFF;
+    border: solid 1px#000000;
+    color: #000000;
+}
+
+.name-btn-rev{
+    width: 80%;
+    margin: 0;
+}
+
+.icon-boton{
+    margin: 0;
+}
+
+/* ventana revisar actividad */
+
+/* lista de actividades por revisar */
+.actividaxRevisar{
+    display: flex;
+    align-items: center;
+    
+    background-color: #019EFF;
+    margin-top: 1rem;
+    
+}
+.iconActividaxRevisar{
+    margin-left: 1rem;
+    width: 10%;
+}
+
+/* boton de revisar */
+.btnActividadxRevisar{
+    width: 90%;
+
+    padding: 1rem;
+    
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* FIN Revisar actividades */
+
+
+
+/* BOTON 3 */
+/* Ver y aceptar solicitudes */
+
+/* boton aceptar solicitudes */
+.accordion-button{
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* contenedor solicitud de el usuario  */
+.SolicitudUser{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: 1rem;
+}
+
+/* nombre de usuario */
+.NameUser{
+    width: 80%;
+
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* FIN Ver y aceptar solicitudes */
+    
+
+}
+
+/* --------------------------------------- Estilos para pantallas de 1400px o más -------------------------------*/
+@media (min-width: 1400px) {
+
+/* conten principal con 3 botones */
+.options-actvs{
+    display: flex;
+    
+}
+
+
+/* BOTON 1 */
+/* Agregar y ver actividades */
+
+/* contenedor de agregar y ver actividades */
+.accordion{
+    width: 33.333%;
+}
+
+/* contenedor */
+.contendbutton{
+    text-align: center;
 }
 
 
 
+/* boton de agregar y ver actividades */
+.accordion-button{
+    background-color: #019EFF;
+    border: solid 1px#000000;
 
-
-
-
-
-.btnVolver{
-    margin-top: 4rem;
+    font-size: 18px;
+    font-weight: bold;
+}
+.icon{
+    margin-left: 20%;
 }
 
 
 
+/* boton y contenedor por actividad boton*/
+.activity{ 
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: 1rem;
+}
 
+.nameActivity{
+    width: 80%;
 
+    margin: 0;
 
-/* Contenedor Oculto */
-.contenedor-actividades{
-    visibility: hidden;
-    display: none;
+    font-size: 18px;
+    font-weight: bold;
 }
 
 
-/* La clase active hace que el contenedor se vea */
-.contenedor-actividades.activo{
-    visibility: visible;
-    display: block;
+
+/* Boton para abrir ventana para crear una actividad */
+.btnCrear{
+    font-size: 24px;
+
+    margin-top: 2rem;
+    padding: 0 1rem;
 }
 
-.contenedor-actividades.desactivo{
-    visibility: hidden;
-    display: none;
+/* nombre del la ventana */
+.modal-title{
+    width: 95%;
 }
 
+/* contenedor del formulario body */
+.conten-modal{
+    display: flex;
+}
+
+/* formulario inputs */
+.card-instruc{
+    width: 50%;
+    margin: 1rem;
+}
+
+/* contenedor de los 3 inputs */
+.cardDesc{
+    background-color: #DEFCF9;
+}
+
+
+
+/* establecer fecha */
+.fecha{
+    margin: 2rem;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* titulo fecha */
+.nameDate{
+    margin: 0;
+    font-size: 18px;
+    margin-left: 1rem;
+    font-weight: normal;
+}
+
+/* fecha inicial y final */
+.date-if{
+    display:flex ;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+/* FIN Agregar y ver actividades */
+
+
+
+/* BOTON 2 */
+/* Revisar actividades */
+
+/* Button Abrir ventana de revisar actividades */
+.contendButtonRevi{
+    width: 33.333%;
+}
+
+.buttonActivityOptions{
+    display: flex;
+    width: 100%;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    padding: 1rem;
+    border-radius: 0;
+    
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+
+}
+.buttonActivityOptions:hover{
+    background-color: #019EFF;
+    border: solid 1px#000000;
+    color: #000000;
+}
+
+.name-btn-rev{
+    width: 80%;
+    margin: 0;
+}
+
+.icon-boton{
+    margin: 0;
+}
+
+/* ventana revisar actividad */
+
+/* lista de actividades por revisar */
+.actividaxRevisar{
+    display: flex;
+    align-items: center;
+    
+    background-color: #019EFF;
+    margin-top: 1rem;
+    
+}
+.iconActividaxRevisar{
+    margin-left: 1rem;
+    width: 10%;
+}
+
+/* boton de revisar */
+.btnActividadxRevisar{
+    width: 90%;
+
+    padding: 1rem;
+    
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+}
+
+/* FIN Revisar actividades */
+
+
+
+/* BOTON 3 */
+/* Ver y aceptar solicitudes */
+
+/* boton aceptar solicitudes */
+.accordion-button{
+    background-color: #019EFF;
+    border: solid 1px#000000;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* contenedor solicitud de el usuario  */
+.SolicitudUser{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-top: 1rem;
+}
+
+/* nombre de usuario */
+.NameUser{
+    width: 80%;
+
+    margin: 0;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* FIN Ver y aceptar solicitudes */
+
+}
