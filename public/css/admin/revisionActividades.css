@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* contenedor principal */
+.contain-pr{
+    width: 100%;
+}
+
+
+
+/* titulo */
+.cont-titulo{
+    width: 100%;
+
+    background-color: #019EFF;
+    background-color: #3C84AB;
+    
+}
+
+.text-titulo{
+
+}
+
+
+
+/* contenedor tabla */
+.conten-tabla{
+
+}
+
+/* tabla */
+.tabla{
+    
+
+}
+
+/* encabezado de la tabla */
+.coconten-encabezado{
+
+}
+
+.encabezado{
+
+}
+
+/* titulo dia */
+.titulo-dia{
+    border: solid 1px black;
+
+}
+
+/* fecha y dia */
+.nombre-dia{
+    border: solid 1px black;
+
+}
+
+
+
+/* contenido de la tabla */
+.conten-contenido-tabla{
+
+}
+
+.contenido-tabla{
+
+}
+
+/* nombre del usuario */
+.nombre-usuario{
+    border: solid 1px black;
+
+}
+
+/* resumen */
+.resumen{
+    border: solid 1px black;
+
+}
+
+
+/* ------------------------------------- Estilos para pantallas de 463px o menos ----------------------------------*/
+@media (max-width: 463px) {
+  
+
+}
+
+/* ------------------------------------- Estilos para pantallas de 463px a 577px ----------------------------------*/
+@media (min-width: 463px) and (max-width: 577px) {
+
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 577px y 768px -------------------------------*/
+@media (min-width: 577px) and (max-width: 768px) {
+
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 768px y 992px -------------------------------*/
+@media (min-width: 768px) and (max-width: 992px) {
+  
+
+}
+
+/* -------------------------------------- Estilos para pantallas de 992px y 1200px -------------------------------*/
+@media (min-width: 992px) and (max-width: 1200px) {
+
+
+}
+
+/* --------------------------------------- Estilos para pantallas de 1400px o más -------------------------------*/
+@media (min-width: 1400px) {
+
+}
