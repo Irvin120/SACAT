@@ -26,41 +26,35 @@
             <table class="tabla">
                 <!-- encabezado de la tabla -->
                 <thead class="encabezado">
-                    <tr class="coconten-encabezado">
+                    @foreach ($usuarios as $usuario)
+                    <tr class="conten-encabezado">
                         <!-- titulo dia -->
-                        <th class="titulo-dia">Día</th>
+                        <td class="nombre-usuario">{{ $usuario->nombreUsuario }}</td>
                         @foreach ($dias as $dia)
                             <!-- fecha y dia -->
-                            <th class="nombre-dia"> {{ date('d/m/Y', strtotime($dia)) }} -
+                            <th class="nombre-dia">
+                                <div >
+                                {{ date('d/m/Y', strtotime($dia)) }} -
                                 {{ \Carbon\Carbon::parse($dia)->locale('es')->dayName }}
-                            </th>
-                        @endforeach
-                    </tr>
-                </thead>
-
-                <!-- contenido de la tabla -->
-                <tbody class="conten-contenido-tabla">
-                    @foreach ($usuarios as $usuario)
-                        <tr class="contenido-tabla">
-
-                            <!-- nombre del usuario -->
-                            <td class="nombre-usuario">{{ $usuario->nombreUsuario }}</td>
-                            @foreach ($dias as $dia)
-                                <!-- resumen -->
-                                <td class="resumen">
-                                    @php
+                                </div>
+                                
+                                <div>
+                                @php
                                         $registro = $registros
                                             ->where('idUsuario', $usuario->idUsuario)
                                             ->where('fechaRegistroActividad', $dia)
                                             ->first();
-                                    @endphp
-                                    {{ $registro ? $registro->resumenRegistroActividad : '-' }}
-                                </td>
-                            @endforeach
+                                @endphp
+                                {{ $registro ? $registro->resumenRegistroActividad : '-' }}
+                                </div>
 
-                        </tr>
+                                
+                            </th>
+                        @endforeach
+                    </tr>
                     @endforeach
-                </tbody>
+                </thead>
+
 
             </table>
         </div>

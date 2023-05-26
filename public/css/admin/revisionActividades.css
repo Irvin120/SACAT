@@ -9,7 +9,6 @@
 }
 
 
-
 /* titulo */
 .cont-titulo{
     width: 100%;
@@ -20,65 +19,52 @@
 }
 
 .text-titulo{
+    padding: 1rem;
 
+}
+
+.tabla {
+    border-collapse: collapse;
+    width: 100%;
 }
 
 
 
-/* contenedor tabla */
-.conten-tabla{
-
+.encabezado {
+    background-color: #ddd;
 }
 
-/* tabla */
-.tabla{
+.nombre-usuario {
+    width: 10%;
+    background-color: #00FFFF;
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
     
-
 }
 
-/* encabezado de la tabla */
-.coconten-encabezado{
-
+.nombre-dia {
+    width: 50%;
+    height: 150px;
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: center;
+    background-color: #3C84AB;
 }
 
-.encabezado{
-
+/* Estilo para las primeras cuatro celdas de la columna nombre-dia */
+.nombre-dia:nth-child(-n+3) {
+    display: inline-block;
 }
 
-/* titulo dia */
-.titulo-dia{
-    border: solid 1px black;
-
-}
-
-/* fecha y dia */
-.nombre-dia{
-    border: solid 1px black;
-
+/* Estilo para las celdas restantes de la columna nombre-dia */
+.nombre-dia:nth-child(n+4) {
+    display: inline-block;
 }
 
 
 
-/* contenido de la tabla */
-.conten-contenido-tabla{
-
-}
-
-.contenido-tabla{
-
-}
-
-/* nombre del usuario */
-.nombre-usuario{
-    border: solid 1px black;
-
-}
-
-/* resumen */
-.resumen{
-    border: solid 1px black;
-
-}
 
 
 /* ------------------------------------- Estilos para pantallas de 463px o menos ----------------------------------*/
